@@ -75,6 +75,16 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Lightning Component Styles */
+.lightning-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
 /* Container System */
 .container {
     max-width: 1400px;
@@ -723,7 +733,8 @@ a:hover {
     position: relative;
     padding: 120px 0 60px;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--current-bg-primary) 0%, var(--current-bg-secondary) 50%, var(--current-bg-primary) 100%);
+    /* Removed solid background to allow lightning to show through */
+    background: transparent;
 }
 
 .hero-content {
@@ -1378,6 +1389,10 @@ a:hover {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+    
+    .lightning-container {
+        display: none !important;
+    }
 }
 
 /* Focus Styles */
@@ -1490,7 +1505,8 @@ a:focus {
     .header,
     .footer,
     .whatsapp-float,
-    .scroll-to-top {
+    .scroll-to-top,
+    .lightning-container {
         display: none !important;
     }
 }

@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
 import ScrollToTop from '@/components/ScrollToTop'
 import ThemeProvider from '@/components/ThemeProvider'
+import GlobalLightningBackground from '@/components/GlobalLightningBackground'
 
 const nunito = Nunito({ 
   subsets: ['latin'],
@@ -91,6 +92,7 @@ export default function RootLayout({
       </head>
       <body className={nunito.className} suppressHydrationWarning>
         <ThemeProvider>
+          <GlobalLightningBackground />
           <Header />
           <main>{children}</main>
           <Footer />
