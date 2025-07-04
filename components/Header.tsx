@@ -79,7 +79,6 @@ export default function Header() {
                     priority
                   />
                 </div>
-                <span className="logo-text">ManageEx</span>
               </div>
             </Link>
             
@@ -203,7 +202,6 @@ export default function Header() {
           backdrop-filter: blur(15px);
           z-index: 1000;
           padding: 12px 0;
-          border-bottom: 1px solid rgba(91, 67, 137, 0.1);
           transition: all 0.3s ease;
         }
 
@@ -245,15 +243,10 @@ export default function Header() {
 
         .logo-image {
           position: relative;
-          width: 65px;
-          height: 39px;
+          width: 150px;
+          height: 150px;
           cursor: pointer;
           transition: all 0.3s ease;
-        }
-
-        .logo-image:hover {
-          transform: scale(1.05);
-          filter: drop-shadow(0 8px 20px rgba(91, 67, 137, 0.3));
         }
 
         .logo-img {
@@ -263,16 +256,7 @@ export default function Header() {
           transition: all 0.3s ease;
         }
 
-        .logo-text {
-          font-size: 24px;
-          font-weight: 800;
-          color: var(--primary-color);
-          letter-spacing: -1px;
-          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
+    
 
         /* Desktop Navigation */
         .desktop-nav {
@@ -712,8 +696,8 @@ export default function Header() {
           }
 
           .logo-image {
-            width: 55px;
-            height: 33px;
+            width: 200px;
+            height: 100px;
           }
 
           .logo-text {
@@ -743,10 +727,14 @@ export default function Header() {
           }
 
           .logo-image {
-            width: 50px;
-            height: 30px;
+            width: 100px;
+            height: 100px;
           }
 
+          .logo-img {
+            width:200px;
+            height: 200px
+          }
           .logo-text {
             font-size: 18px;
           }
