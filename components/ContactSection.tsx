@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import AnimatedElement from './AnimatedElement'
+import Image from "next/image";
+import Link from "next/link";
+import AnimatedElement from "./AnimatedElement";
 
 export default function ContactSection() {
   return (
@@ -23,10 +23,12 @@ export default function ContactSection() {
                 </div>
               </div>
               <h2>Let's Discuss How to Make your Business Better.</h2>
-              <Link href="/contact" className="btn-golden">DISCOVER MORE</Link>
+              <Link href="/contact" className="btn-golden">
+                DISCOVER MORE
+              </Link>
             </div>
           </AnimatedElement>
-          
+
           <AnimatedElement animation="roll-in-right" delay={0.3}>
             <div className="contact-info">
               <div className="info-grid">
@@ -36,20 +38,27 @@ export default function ContactSection() {
                   </div>
                   <div className="info-content">
                     <h4>Address</h4>
-                    <p>Zahraa Al Maadi 50 St, Saint Anthony Church Square, Cairo, Egypt</p>
+                    <p>
+                      Zahraa Al Maadi 50 St, Saint Anthony Church Square, Cairo,
+                      Egypt
+                    </p>
                   </div>
                 </div>
-                
+
                 <div className="info-item">
                   <div className="info-icon">
                     <i className="fas fa-envelope"></i>
                   </div>
                   <div className="info-content">
                     <h4>Email</h4>
-                    <p>info@manageex.com<br />01022333634</p>
+                    <p>
+                      info@manageex.com
+                      <br />
+                      01022333634
+                    </p>
                   </div>
                 </div>
-                
+
                 <div className="info-item">
                   <div className="info-icon">
                     <i className="fas fa-clock"></i>
@@ -97,7 +106,8 @@ export default function ContactSection() {
         }
 
         @keyframes icon-pulse {
-          0%, 100% {
+          0%,
+          100% {
             box-shadow: 0 0 0 0 rgba(139, 124, 200, 0.4);
             transform: scale(1);
           }
@@ -109,8 +119,8 @@ export default function ContactSection() {
 
         .logo-image {
           position: relative;
-          width: 80px;
-          height: 48px;
+          width: 180px;
+          height: 148px;
           cursor: pointer;
           transition: all 0.3s ease;
         }
@@ -129,7 +139,8 @@ export default function ContactSection() {
         }
 
         @keyframes logo-breathe {
-          0%, 100% {
+          0%,
+          100% {
             transform: scale(1);
             filter: drop-shadow(0 5px 15px rgba(91, 67, 137, 0.4));
           }
@@ -196,21 +207,33 @@ export default function ContactSection() {
         @media (max-width: 768px) {
           .info-item {
             flex-direction: column;
+            margin: 0 auto;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .info-icon {
+            text-align: center;
+            margin: 0 auto; /* Center horizontally */
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
 
           .logo-icon {
-            width: 100px;
-            height: 65px;
+            width: 200px;
+            height: 165px;
             margin: 0 auto 30px;
           }
 
           .logo-image {
-            width: 65px;
-            height: 39px;
+            width: 165px;
+            height: 139px;
           }
+         
         }
       `}</style>
     </section>
-  )
+  );
 }

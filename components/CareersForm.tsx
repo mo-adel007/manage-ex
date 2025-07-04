@@ -1,138 +1,248 @@
-'use client'
-
-import { useState } from 'react'
-import AnimatedElement from './AnimatedElement'
+"use client";
+import React, { useState } from 'react';
+import { User, Mail, MessageSquare, PlaneIcon as PaperPlaneIcon, Briefcase, Check, Phone, MapPin } from 'lucide-react';
+import AnimatedElement from './AnimatedElement';
 
 export default function CareersForm() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const mailtoLink = `mailto:info@manageex.com?subject=Career Inquiry&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`
-    )}`
-    window.location.href = mailtoLink
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const mailtoLink = `mailto:Hi@ManageEx.com?subject=Career Inquiry&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`
+      )}`;
+      window.location.href = mailtoLink;
+    } catch (error) {
+      console.error('Error sending email:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
-    <section className="careers-form-section">
-      <div className="container">
-        <AnimatedElement animation="text-focus">
-          <div className="section-header">
-            <span className="section-tag">JOIN OUR TEAM</span>
-            <h2 className="section-title">Start Your Career Journey</h2>
-            <p className="section-subtitle">Ready to be part of something amazing? Let's discuss your future with us.</p>
-          </div>
-        </AnimatedElement>
+    <>
+      <section id="careers-form" className="careers-section">
+        <div className="container">
+          <AnimatedElement animation="text-focus">
+            <div className="section-header">
+              <span className="section-badge">
+                Join Our Team
+              </span>
+              <h2 className="section-title">
+                Start Your Career Journey
+              </h2>
+              <p className="section-description">
+                Ready to be part of something amazing? Let's discuss your future with us.
+              </p>
+            </div>
+          </AnimatedElement>
 
-        <AnimatedElement animation="slide-fwd" delay={0.3}>
-          <div className="form-wrapper">
-            <form className="careers-form" onSubmit={handleSubmit}>
-              <AnimatedElement animation="flip-in" delay={0.5}>
-                <div className="form-group">
-                  <label htmlFor="name">
-                    <i className="fas fa-user"></i>
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Enter your full name"
-                    required
-                  />
-                </div>
-              </AnimatedElement>
+          <AnimatedElement animation="slide-fwd" delay={0.3}>
+            <div className="form-grid">
+              {/* Main Form */}
+              <div className="form-column">
+                <form className="careers-form" onSubmit={handleSubmit}>
+                  <AnimatedElement animation="flip-in" delay={0.5}>
+                    <div className="form-group">
+                      <label htmlFor="name" className="form-label">
+                        <User className="label-icon" />
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Enter your full name"
+                        required
+                        className="form-input"
+                      />
+                    </div>
+                  </AnimatedElement>
 
-              <AnimatedElement animation="flip-in" delay={0.6}>
-                <div className="form-group">
-                  <label htmlFor="email">
-                    <i className="fas fa-envelope"></i>
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Enter your email address"
-                    required
-                  />
-                </div>
-              </AnimatedElement>
+                  <AnimatedElement animation="flip-in" delay={0.6}>
+                    <div className="form-group">
+                      <label htmlFor="email" className="form-label">
+                        <Mail className="label-icon" />
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Enter your email address"
+                        required
+                        className="form-input"
+                      />
+                    </div>
+                  </AnimatedElement>
 
-              <AnimatedElement animation="flip-in" delay={0.7}>
-                <div className="form-group">
-                  <label htmlFor="message">
-                    <i className="fas fa-comment"></i>
-                    Tell Us About Yourself
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Share your experience, skills, and why you want to join our team..."
-                    required
-                  ></textarea>
-                </div>
-              </AnimatedElement>
+                  <AnimatedElement animation="flip-in" delay={0.7}>
+                    <div className="form-group">
+                      <label htmlFor="message" className="form-label">
+                        <MessageSquare className="label-icon" />
+                        Tell Us About Yourself
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Share your experience, skills, and why you want to join our team..."
+                        required
+                        rows={6}
+                        className="form-textarea"
+                      />
+                    </div>
+                  </AnimatedElement>
 
-              <AnimatedElement animation="scale-in" delay={0.8}>
-                <button type="submit" className="btn-primary submit-btn">
-                  <i className="fas fa-paper-plane"></i>
-                  Submit Application
-                </button>
-              </AnimatedElement>
-            </form>
-
-            <AnimatedElement animation="scale-in" delay={0.4}>
-              <div className="form-sidebar">
-                <div className="contact-card">
-                  <div className="contact-icon">
-                    <i className="fas fa-briefcase"></i>
-                  </div>
-                  <h3>Why Join Us?</h3>
-                  <ul className="benefits-list">
-                    <li><i className="fas fa-check"></i> Competitive salary packages</li>
-                    <li><i className="fas fa-check"></i> Professional growth opportunities</li>
-                    <li><i className="fas fa-check"></i> Flexible working environment</li>
-                    <li><i className="fas fa-check"></i> Creative and innovative projects</li>
-                  </ul>
-                </div>
-
-                <div className="contact-info">
-                  <div className="info-item">
-                    <i className="fas fa-envelope"></i>
-                    <span>info@manageex.com</span>
-                  </div>
-                  <div className="info-item">
-                    <i className="fas fa-phone"></i>
-                    <span>01022333634</span>
-                  </div>
-                  <div className="info-item">
-                    <i className="fas fa-map-marker-alt"></i>
-                    <span>Cairo, Egypt</span>
-                  </div>
-                </div>
+                  <AnimatedElement animation="scale-in" delay={0.8}>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="submit-button"
+                    >
+                      <PaperPlaneIcon className="button-icon" />
+                      {isSubmitting ? 'Sending...' : 'Submit Application'}
+                    </button>
+                  </AnimatedElement>
+                </form>
               </div>
-            </AnimatedElement>
-          </div>
-        </AnimatedElement>
-      </div>
+
+              {/* Sidebar */}
+              <div className="sidebar">
+                <AnimatedElement animation="scale-in" delay={0.4}>
+                  <div className="sidebar-card">
+                    <div className="card-icon-wrapper">
+                      <Briefcase className="card-icon" />
+                    </div>
+                    <h3 className="card-title">
+                      Why Join Us?
+                    </h3>
+                    <ul className="benefits-list">
+                      {[
+                        'Competitive salary packages',
+                        'Professional growth opportunities',
+                        'Flexible working environment',
+                        'Creative and innovative projects'
+                      ].map((benefit, index) => (
+                        <li key={index} className="benefit-item">
+                          <Check className="check-icon" />
+                          <span className="benefit-text">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </AnimatedElement>
+
+                <AnimatedElement animation="scale-in" delay={0.5}>
+                  <div className="contact-card">
+                    <h3 className="contact-title">
+                      Get In Touch
+                    </h3>
+                    <div className="contact-info">
+                      <div className="contact-item">
+                        <div className="contact-icon email-icon">
+                          <Mail className="icon" />
+                        </div>
+                        <div className="contact-details">
+                          <p className="contact-label">Email</p>
+                          <p className="contact-value">Hi@ManageEx.com</p>
+                        </div>
+                      </div>
+                      <div className="contact-item">
+                        <div className="contact-icon phone-icon">
+                          <Phone className="icon" />
+                        </div>
+                        <div className="contact-details">
+                          <p className="contact-label">Phone</p>
+                          <p className="contact-value">01022333634</p>
+                        </div>
+                      </div>
+                      <div className="contact-item">
+                        <div className="contact-icon location-icon">
+                          <MapPin className="icon" />
+                        </div>
+                        <div className="contact-details">
+                          <p className="contact-label">Location</p>
+                          <p className="contact-value">Cairo, Egypt</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </AnimatedElement>
+              </div>
+            </div>
+          </AnimatedElement>
+        </div>
+      </section>
 
       <style jsx>{`
-        .careers-form-section {
-          padding: 100px 0;
-          background: var(--current-bg-primary);
+        :root {
+          --primary-color: #5b4389;
+          --secondary-color: #c297c1;
+          --accent-black: #000000;
+          --accent-white: #ffffff;
+          --golden-accent: #8b7cc8;
+          
+          /* Dark Theme Colors */
+          --bg-primary: #1a1a1a;
+          --bg-secondary: #2d2d2d;
+          --bg-tertiary: #0d0d0d;
+          --text-primary: #ffffff;
+          --text-secondary: #cccccc;
+          --text-muted: #888888;
+          
+          /* Light Theme Colors */
+          --bg-primary-light: #ffffff;
+          --bg-secondary-light: #f8f9fa;
+          --bg-tertiary-light: #e9ecef;
+          --text-primary-light: #000000;
+          --text-secondary-light: #333333;
+          --text-muted-light: #666666;
+          
+          /* Current theme variables */
+          --current-bg-primary: var(--bg-primary-light);
+          --current-bg-secondary: var(--bg-secondary-light);
+          --current-bg-tertiary: var(--bg-tertiary-light);
+          --current-text-primary: var(--text-primary-light);
+          --current-text-secondary: var(--text-secondary-light);
+          --current-text-muted: var(--text-muted-light);
+        }
+
+        @media (prefers-color-scheme: dark) {
+          :root {
+            --current-bg-primary: var(--bg-primary);
+            --current-bg-secondary: var(--bg-secondary);
+            --current-bg-tertiary: var(--bg-tertiary);
+            --current-text-primary: var(--text-primary);
+            --current-text-secondary: var(--text-secondary);
+            --current-text-muted: var(--text-muted);
+          }
+        }
+
+        .careers-section {
+        margin-top: 50px;
+          padding: 96px 0;
+          min-height: 100vh;
+        }
+
+        .container {
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: 0 16px;
         }
 
         .section-header {
@@ -140,195 +250,338 @@ export default function CareersForm() {
           margin-bottom: 80px;
         }
 
-        .form-wrapper {
+        .section-badge {
+          display: inline-block;
+          padding: 8px 16px;
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--golden-accent) 100%);
+          color: var(--accent-white);
+          font-size: 14px;
+          font-weight: 600;
+          border-radius: 9999px;
+          margin-bottom: 16px;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        }
+
+        .section-title {
+          font-size: 3rem;
+          font-weight: 700;
+          color: var(--current-text-primary);
+          margin-bottom: 24px;
+          line-height: 1.2;
+        }
+
+        @media (min-width: 768px) {
+          .section-title {
+            font-size: 3.75rem;
+          }
+        }
+
+        .section-description {
+          font-size: 1.25rem;
+          color: var(--current-text-secondary);
+          max-width: 672px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .form-grid {
           display: grid;
-          grid-template-columns: 2fr 1fr;
-          gap: 60px;
+          grid-template-columns: 1fr;
+          gap: 48px;
           align-items: start;
         }
 
+        @media (min-width: 1024px) {
+          .form-grid {
+            grid-template-columns: 2fr 1fr;
+          }
+        }
+
         .careers-form {
-          background: var(--current-bg-secondary);
+          background: var(--current-bg-primary);
           padding: 40px;
-          border-radius: 20px;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-          border: 1px solid rgba(91, 67, 137, 0.1);
+          border-radius: 24px;
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+          border: 1px solid var(--current-bg-tertiary);
+          backdrop-filter: blur(8px);
+        }
+
+        @media (min-width: 768px) {
+          .careers-form {
+            padding: 48px;
+          }
         }
 
         .form-group {
-          margin-bottom: 25px;
+          margin-bottom: 32px;
         }
 
-        .form-group label {
+        .form-label {
           display: flex;
           align-items: center;
-          gap: 10px;
-          margin-bottom: 10px;
-          font-weight: 600;
-          color: var(--current-text-primary);
+          gap: 12px;
           font-size: 14px;
+          font-weight: 600;
+          color: var(--current-text-secondary);
+          margin-bottom: 12px;
           text-transform: uppercase;
-          letter-spacing: 1px;
+          letter-spacing: 0.05em;
         }
 
-        .form-group label i {
+        .label-icon {
+          width: 20px;
+          height: 20px;
           color: var(--primary-color);
-          font-size: 16px;
         }
 
-        .form-group input,
-        .form-group textarea {
+        .form-input,
+        .form-textarea {
           width: 100%;
-          padding: 15px 20px;
-          border: 2px solid rgba(91, 67, 137, 0.1);
-          border-radius: 10px;
-          background: var(--current-bg-primary);
+          padding: 16px 24px;
+          border: 2px solid var(--current-bg-tertiary);
+          border-radius: 12px;
+          background: var(--current-bg-secondary);
           color: var(--current-text-primary);
-          font-size: 16px;
-          font-family: 'Nunito', sans-serif;
+          font-size: 18px;
+          font-weight: 500;
           transition: all 0.3s ease;
           box-sizing: border-box;
         }
 
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
+        .form-input::placeholder,
+        .form-textarea::placeholder {
           color: var(--current-text-muted);
         }
 
-        .form-group textarea {
-          resize: vertical;
-          min-height: 120px;
-          line-height: 1.6;
+        .form-textarea {
+          resize: none;
+          min-height: 144px;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-          border-color: var(--primary-color);
+        .form-input:hover,
+        .form-textarea:hover {
+          border-color: var(--secondary-color);
+          transform: translateY(-4px);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
           outline: none;
-          box-shadow: 0 0 0 3px rgba(91, 67, 137, 0.1);
-          transform: translateY(-2px);
+          border-color: var(--primary-color);
+          box-shadow: 0 0 0 4px rgba(91, 67, 137, 0.1);
+          transform: translateY(-4px);
         }
 
-        .submit-btn {
+        @media (prefers-color-scheme: dark) {
+          .form-input:focus,
+          .form-textarea:focus {
+            box-shadow: 0 0 0 4px rgba(91, 67, 137, 0.3);
+          }
+        }
+
+        .submit-button {
           width: 100%;
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 10px;
-          font-size: 16px;
-          padding: 18px;
-          margin-top: 20px;
+          gap: 12px;
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--golden-accent) 100%);
+          color: var(--accent-white);
+          font-weight: 600;
+          padding: 20px 32px;
+          border-radius: 12px;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-size: 18px;
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        .submit-btn:hover {
-          transform: translateY(-3px);
+        .submit-button:hover {
+          background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+          transform: translateY(-4px);
         }
 
-        .form-sidebar {
+        .submit-button:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+          transform: none;
+        }
+
+        .button-icon {
+          width: 20px;
+          height: 20px;
+        }
+
+        .sidebar {
           display: flex;
           flex-direction: column;
-          gap: 30px;
+          gap: 32px;
         }
 
+        .sidebar-card,
         .contact-card {
-          background: var(--current-bg-secondary);
-          padding: 30px;
-          border-radius: 15px;
-          text-align: center;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          background: var(--current-bg-primary);
+          padding: 32px;
+          border-radius: 24px;
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+          border: 1px solid var(--current-bg-tertiary);
         }
 
-        .contact-icon {
+        .sidebar-card {
+          text-align: center;
+        }
+
+        .card-icon-wrapper {
           width: 80px;
           height: 80px;
-          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--golden-accent) 100%);
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin: 0 auto 20px;
-          color: var(--accent-white);
-          font-size: 24px;
+          margin: 0 auto 24px;
         }
 
-        .contact-card h3 {
-          font-size: 20px;
+        .card-icon {
+          width: 32px;
+          height: 32px;
+          color: var(--accent-white);
+        }
+
+        .card-title {
+          font-size: 1.5rem;
           font-weight: 700;
           color: var(--current-text-primary);
-          margin-bottom: 20px;
+          margin-bottom: 24px;
         }
 
         .benefits-list {
           list-style: none;
           padding: 0;
+          margin: 0;
           text-align: left;
         }
 
-        .benefits-list li {
+        .benefit-item {
           display: flex;
           align-items: center;
-          gap: 10px;
-          margin-bottom: 10px;
-          color: var(--current-text-secondary);
-          font-size: 14px;
+          gap: 12px;
+          margin-bottom: 16px;
         }
 
-        .benefits-list li i {
-          color: var(--primary-color);
-          font-size: 12px;
-        }
-
-        .contact-info {
-          background: var(--current-bg-secondary);
-          padding: 25px;
-          border-radius: 15px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .info-item {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-          margin-bottom: 15px;
-          color: var(--current-text-secondary);
-          font-size: 14px;
-        }
-
-        .info-item:last-child {
-          margin-bottom: 0;
-        }
-
-        .info-item i {
-          color: var(--golden-accent);
-          font-size: 16px;
+        .check-icon {
           width: 20px;
+          height: 20px;
+          color: var(--golden-accent);
+          flex-shrink: 0;
+        }
+
+        .benefit-text {
+          font-weight: 500;
+          color: var(--current-text-secondary);
+        }
+
+        .contact-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: var(--current-text-primary);
+          margin-bottom: 24px;
           text-align: center;
         }
 
-        @media (max-width: 1024px) {
-          .form-wrapper {
-            grid-template-columns: 1fr;
-            gap: 40px;
-          }
+        .contact-info {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        .contact-item {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+
+        .contact-icon {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .email-icon {
+          background: linear-gradient(135deg, var(--golden-accent) 0%, var(--primary-color) 100%);
+        }
+
+        .phone-icon {
+          background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+        }
+
+        .location-icon {
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+
+        .icon {
+          width: 20px;
+          height: 20px;
+          color: var(--accent-white);
+        }
+
+        .contact-details {
+          flex: 1;
+        }
+
+        .contact-label {
+          font-size: 14px;
+          color: var(--current-text-muted);
+          font-weight: 500;
+          margin: 0 0 4px 0;
+        }
+
+        .contact-value {
+          font-weight: 600;
+          color: var(--current-text-primary);
+          margin: 0;
         }
 
         @media (max-width: 768px) {
+          .careers-section {
+            padding: 48px 0;
+          }
+
+          .section-title {
+            font-size: 2rem;
+          }
+
+          .section-description {
+            font-size: 1rem;
+          }
+
           .careers-form {
-            padding: 25px;
+            padding: 24px;
           }
 
-          .form-group input,
-          .form-group textarea {
-            padding: 12px 15px;
-            font-size: 14px;
+          .form-input,
+          .form-textarea {
+            padding: 12px 16px;
+            font-size: 16px;
           }
 
-          .submit-btn {
-            padding: 15px;
-            font-size: 14px;
+          .submit-button {
+            padding: 16px 24px;
+            font-size: 16px;
+          }
+
+          .sidebar-card,
+          .contact-card {
+            padding: 24px;
           }
         }
       `}</style>
-    </section>
-  )
+    </>
+  );
 }

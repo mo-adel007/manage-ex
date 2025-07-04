@@ -17,7 +17,6 @@ export default function Footer() {
                   className="logo-img"
                 />
               </div>
-              <span className="logo-text">ManageEx</span>
             </div>
           </div>
           
@@ -54,7 +53,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .footer {
           background: var(--current-bg-tertiary);
           padding: 60px 0 30px;
@@ -77,8 +76,8 @@ export default function Footer() {
 
         .logo-image {
           position: relative;
-          width: 60px;
-          height: 36px;
+          width: 160px;
+          height: 136px;
           cursor: pointer;
           transition: all 0.3s ease;
         }
@@ -193,22 +192,35 @@ export default function Footer() {
             grid-template-columns: 1fr;
             gap: 30px;
             text-align: center;
+            justify-content: center;
+            align-items: center;
           }
           
           .footer-info {
             flex-direction: column;
             gap: 20px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+          }
+          
+          .footer-social {
+            justify-content: center;
+            align-items: center;
           }
           
           .footer-bottom {
             flex-direction: column;
             gap: 20px;
             text-align: center;
+            align-items: center;
+            justify-content: center;
           }
 
           .logo-image {
-            width: 50px;
-            height: 30px;
+            width: 150px;
+            height: 130px;
+            margin: 0 auto;
           }
 
           .logo-text {

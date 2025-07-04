@@ -40,7 +40,7 @@ export default function Hero() {
             <div className="hero-image">
               <div className="image-wrapper">
                 {/* <Image
-                  src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="../public/logo0.png"
                   alt="Business Management Workspace"
                   width={800}
                   height={600}

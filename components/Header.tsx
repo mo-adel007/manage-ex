@@ -130,12 +130,6 @@ export default function Header() {
         <div className="mobile-nav-content">
           <div className="mobile-nav-header">
             <Link href="/" className="mobile-logo" onClick={handleLinkClick}>
-              <Image
-                src="/logo.png"
-                alt="ManageEx Logo"
-                width={45}
-                height={27}
-              />
               <span>ManageEx</span>
             </Link>
             <button 
@@ -243,8 +237,8 @@ export default function Header() {
 
         .logo-image {
           position: relative;
-          width: 150px;
-          height: 150px;
+          width: 90px;
+          height: 90px;
           cursor: pointer;
           transition: all 0.3s ease;
         }

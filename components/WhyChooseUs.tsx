@@ -203,8 +203,8 @@ export default function WhyChooseUs() {
 
         .logo-image {
           position: relative;
-          width: 120px;
-          height: 72px;
+          width: 200px;
+          height: 172px;
           cursor: pointer;
         }
 
@@ -262,18 +262,41 @@ export default function WhyChooseUs() {
           }
           
           .main-logo {
-            padding: 40px;
+            padding: 30px;
           }
 
           .logo-circle {
-            width: 130px;
-            height: 130px;
+            width: 170px;
+            height: 170px;
           }
 
           .logo-image {
-            width: 100px;
-            height: 60px;
+            width: 150px;
+            height: 120px;
           }
+
+          .logo-text h3 {
+            font-size: 32px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .main-logo {
+            padding: 18px;
+          }
+          .logo-circle {
+            width: 160px;
+            height: 160px;
+          }
+          .logo-image {
+            width: 200px;
+            height: 180px;
+          }
+          .logo-text h3 {
+            font-size: 24px;
+          }
+            .feature-icon {
+            margin: auto
         }
       `}</style>
     </section>
