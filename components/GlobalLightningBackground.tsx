@@ -16,31 +16,48 @@ export default function GlobalLightningBackground() {
     return null
   }
 
-  // Purple brand colors for both themes
-  const purpleColors = [
+  // Enhanced purple brand colors for better visibility
+  const darkThemeColors = [
     "#5b4389",  // Primary purple
     "#8b7cc8",  // Golden accent purple
     "#c297c1",  // Secondary purple
     "#9d8bd1",  // Light purple variant
     "#6750A2",  // Deep purple
-    "#7a6bb5"   // Medium purple
+    "#7a6bb5",  // Medium purple
+    "#a855f7",  // Bright purple
+    "#8b5cf6"   // Vivid purple
   ]
+
+  // More visible colors for light theme
+  const lightThemeColors = [
+    "#4c1d95",  // Very dark purple
+    "#5b21b6",  // Dark purple
+    "#6d28d9",  // Medium dark purple
+    "#7c3aed",  // Purple
+    "#8b5cf6",  // Light purple
+    "#a855f7",  // Bright purple
+    "#3730a3",  // Indigo purple
+    "#4338ca"   // Blue purple
+  ]
+
+  const colors = theme === 'dark' ? darkThemeColors : lightThemeColors
 
   return (
     <div className="global-background-effect">
       <Particles
-        particleColors={purpleColors}
-        particleCount={theme === 'dark' ? 800 : 600}
-        particleSpread={theme === 'dark' ? 12 : 10}
-        speed={theme === 'dark' ? 0.08 : 0.06}
-        particleBaseSize={theme === 'dark' ? 120 : 100}
+        particleColors={colors}
+        particleCount={theme === 'dark' ? 900 : 700}
+        particleSpread={theme === 'dark' ? 14 : 12}
+        speed={theme === 'dark' ? 0.1 : 0.08}
+        particleBaseSize={theme === 'dark' ? 140 : 120}
         moveParticlesOnHover={true}
         alphaParticles={true}
-        sizeRandomness={theme === 'dark' ? 1.2 : 1.0}
-        cameraDistance={theme === 'dark' ? 25 : 22}
+        sizeRandomness={theme === 'dark' ? 1.4 : 1.2}
+        cameraDistance={theme === 'dark' ? 28 : 25}
         disableRotation={false}
-        particleHoverFactor={theme === 'dark' ? 0.8 : 0.6}
-        glowIntensity={theme === 'dark' ? 1.4 : 1.0}
+        particleHoverFactor={theme === 'dark' ? 1.0 : 0.8}
+        glowIntensity={theme === 'dark' ? 1.6 : 1.8}
+        brightnessMultiplier={theme === 'dark' ? 1.3 : 1.5}
       />
 
       <style jsx>{`
@@ -57,27 +74,54 @@ export default function GlobalLightningBackground() {
 
         /* Enhanced visibility for dark theme particles */
         [data-theme="dark"] .global-background-effect {
-          opacity: 0.9;
+          opacity: 1.0;
           mix-blend-mode: screen;
-          filter: brightness(1.3) contrast(1.2) saturate(1.2);
+          filter: brightness(1.4) contrast(1.3) saturate(1.3);
         }
 
-        /* Subtle but visible effect for light theme */
+        /* Much more visible effect for light theme */
         [data-theme="light"] .global-background-effect {
-          opacity: 0.7;
+          opacity: 0.9;
           mix-blend-mode: multiply;
-          filter: brightness(0.8) contrast(1.1) saturate(1.1);
+          filter: brightness(0.6) contrast(1.4) saturate(1.4);
         }
 
+        /* Mobile optimizations with enhanced visibility */
         @media (max-width: 768px) {
           [data-theme="dark"] .global-background-effect {
-            opacity: 0.75;
+            opacity: 0.95;
+            filter: brightness(1.3) contrast(1.2) saturate(1.2);
+          }
+          
+          [data-theme="light"] .global-background-effect {
+            opacity: 0.85;
+            filter: brightness(0.5) contrast(1.3) saturate(1.3);
+          }
+        }
+
+        /* Small mobile with maintained visibility */
+        @media (max-width: 480px) {
+          [data-theme="dark"] .global-background-effect {
+            opacity: 0.9;
             filter: brightness(1.2) contrast(1.1) saturate(1.1);
           }
           
           [data-theme="light"] .global-background-effect {
-            opacity: 0.6;
-            filter: brightness(0.7) contrast(1.0) saturate(1.0);
+            opacity: 0.8;
+            filter: brightness(0.45) contrast(1.2) saturate(1.2);
+          }
+        }
+
+        /* Extra small mobile */
+        @media (max-width: 360px) {
+          [data-theme="dark"] .global-background-effect {
+            opacity: 0.85;
+            filter: brightness(1.1) contrast(1.0) saturate(1.0);
+          }
+          
+          [data-theme="light"] .global-background-effect {
+            opacity: 0.75;
+            filter: brightness(0.4) contrast(1.1) saturate(1.1);
           }
         }
 
@@ -87,28 +131,58 @@ export default function GlobalLightningBackground() {
           }
         }
 
-        /* Performance optimization for low-end devices */
-        @media (max-width: 480px) {
-          [data-theme="dark"] .global-background-effect {
-            opacity: 0.65;
-          }
-          
-          [data-theme="light"] .global-background-effect {
-            opacity: 0.5;
-          }
-        }
-
         /* Enhanced glow effects for better visibility */
         .global-background-effect :global(canvas) {
           transition: filter 0.5s ease;
         }
 
         [data-theme="dark"] .global-background-effect :global(canvas) {
-          filter: drop-shadow(0 0 10px rgba(139, 124, 200, 0.3));
+          filter: drop-shadow(0 0 15px rgba(139, 124, 200, 0.4)) 
+                  drop-shadow(0 0 30px rgba(91, 67, 137, 0.2));
         }
 
         [data-theme="light"] .global-background-effect :global(canvas) {
-          filter: drop-shadow(0 0 8px rgba(91, 67, 137, 0.2));
+          filter: drop-shadow(0 0 12px rgba(76, 29, 149, 0.3)) 
+                  drop-shadow(0 0 25px rgba(91, 67, 137, 0.2));
+        }
+
+        /* Mobile glow adjustments */
+        @media (max-width: 768px) {
+          [data-theme="dark"] .global-background-effect :global(canvas) {
+            filter: drop-shadow(0 0 12px rgba(139, 124, 200, 0.35)) 
+                    drop-shadow(0 0 25px rgba(91, 67, 137, 0.15));
+          }
+
+          [data-theme="light"] .global-background-effect :global(canvas) {
+            filter: drop-shadow(0 0 10px rgba(76, 29, 149, 0.25)) 
+                    drop-shadow(0 0 20px rgba(91, 67, 137, 0.15));
+          }
+        }
+
+        /* Performance optimization for low-end devices */
+        @media (max-width: 480px) and (max-height: 800px) {
+          .global-background-effect {
+            will-change: transform;
+            transform: translateZ(0);
+          }
+        }
+
+        /* Landscape mobile optimization */
+        @media (max-width: 768px) and (orientation: landscape) {
+          [data-theme="dark"] .global-background-effect {
+            opacity: 0.8;
+          }
+          
+          [data-theme="light"] .global-background-effect {
+            opacity: 0.7;
+          }
+        }
+
+        /* High DPI display optimization */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          [data-theme="light"] .global-background-effect {
+            filter: brightness(0.35) contrast(1.5) saturate(1.5);
+          }
         }
       `}</style>
     </div>

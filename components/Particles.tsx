@@ -29,17 +29,23 @@ const vertex = `
   uniform float uSizeRandomness;
   uniform float uGlow;
   uniform float uBrightness;
+  uniform float uContrast;
+  uniform float uSaturation;
   
   varying vec4 vRandom;
   varying vec3 vColor;
   varying float vGlow;
   varying float vBrightness;
+  varying float vContrast;
+  varying float vSaturation;
   
   void main() {
     vRandom = random;
     vColor = color;
     vGlow = uGlow;
     vBrightness = uBrightness;
+    vContrast = uContrast;
+    vSaturation = uSaturation;
     
     vec3 pos = position * uSpread;
     pos.z *= 10.0;
@@ -63,10 +69,14 @@ const fragment = `
   uniform float uAlphaParticles;
   uniform float uGlow;
   uniform float uBrightness;
+  uniform float uContrast;
+  uniform float uSaturation;
   varying vec4 vRandom;
   varying vec3 vColor;
   varying float vGlow;
   varying float vBrightness;
+  varying float vContrast;
+  varying float vSaturation;
   
   void main() {
     vec2 uv = gl_PointCoord.xy;
@@ -78,25 +88,36 @@ const fragment = `
       }
       vec3 finalColor = vColor + 0.3 * sin(uv.yxx + uTime + vRandom.y * 6.28);
       // Add glow effect for purple particles
-      finalColor += vGlow * 0.4 * (1.0 - d) * vColor * vBrightness;
+      finalColor += vGlow * 0.5 * (1.0 - d) * vColor * vBrightness;
+      
+      // Apply contrast and saturation
+      finalColor = mix(vec3(0.5), finalColor, vContrast);
+      vec3 gray = vec3(dot(finalColor, vec3(0.299, 0.587, 0.114)));
+      finalColor = mix(gray, finalColor, vSaturation);
+      
       finalColor *= vBrightness;
       gl_FragColor = vec4(finalColor, 1.0);
     } else {
-      float circle = smoothstep(0.5, 0.3, d);
+      float circle = smoothstep(0.5, 0.2, d);
       vec3 finalColor = vColor + 0.3 * sin(uv.yxx + uTime + vRandom.y * 6.28);
       
       // Enhanced glow for alpha particles
-      float glow = vGlow * (1.0 - smoothstep(0.3, 0.7, d)) * 0.6 * vBrightness;
+      float glow = vGlow * (1.0 - smoothstep(0.2, 0.8, d)) * 0.8 * vBrightness;
       finalColor += glow * vColor;
       
       // Add rim lighting effect
-      float rim = smoothstep(0.4, 0.5, d) * smoothstep(0.5, 0.4, d) * vBrightness;
-      finalColor += rim * vGlow * 0.8 * vColor;
+      float rim = smoothstep(0.3, 0.5, d) * smoothstep(0.5, 0.3, d) * vBrightness;
+      finalColor += rim * vGlow * 1.0 * vColor;
+      
+      // Apply contrast and saturation
+      finalColor = mix(vec3(0.5), finalColor, vContrast);
+      vec3 gray = vec3(dot(finalColor, vec3(0.299, 0.587, 0.114)));
+      finalColor = mix(gray, finalColor, vSaturation);
       
       // Apply overall brightness
       finalColor *= vBrightness;
       
-      float alpha = circle * (0.7 + glow * 0.3);
+      float alpha = circle * (0.8 + glow * 0.4);
       gl_FragColor = vec4(finalColor, alpha);
     }
   }
@@ -116,6 +137,8 @@ interface ParticlesProps {
   disableRotation?: boolean;
   glowIntensity?: number;
   brightnessMultiplier?: number;
+  contrastLevel?: number;
+  saturationLevel?: number;
   className?: string;
 }
 
@@ -133,6 +156,8 @@ const Particles = ({
   disableRotation = false,
   glowIntensity = 1.0,
   brightnessMultiplier = 1.0,
+  contrastLevel = 1.0,
+  saturationLevel = 1.0,
   className = '',
 }: ParticlesProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -208,6 +233,8 @@ const Particles = ({
         uAlphaParticles: { value: alphaParticles ? 1 : 0 },
         uGlow: { value: glowIntensity },
         uBrightness: { value: brightnessMultiplier },
+        uContrast: { value: contrastLevel },
+        uSaturation: { value: saturationLevel },
       },
       transparent: true,
       depthTest: false,
@@ -270,6 +297,8 @@ const Particles = ({
     disableRotation,
     glowIntensity,
     brightnessMultiplier,
+    contrastLevel,
+    saturationLevel,
   ]);
 
   return (
