@@ -4,8 +4,8 @@ import AnimatedElement from './AnimatedElement'
 
 export default function WhatsAppFloat() {
   const handleClick = () => {
-    const phoneNumber = '1234567890' // Replace with actual phone number
-    const message = 'Hello! I\'m interested in your digital marketing services.'
+    const phoneNumber = '966505154013' // +966 50 515 4013
+    const message = 'Hello! I\'m interested in your business management services.'
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }

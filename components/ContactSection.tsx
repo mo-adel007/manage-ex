@@ -40,8 +40,7 @@ export default function ContactSection() {
                   <div className="info-content">
                     <h4>{t('contact.address')}</h4>
                     <p>
-                      Zahraa Al Maadi 50 St, Saint Anthony Church Square, Cairo,
-                      Egypt
+                      {t('contact.info.saudi.address')}
                     </p>
                   </div>
                 </div>
@@ -53,9 +52,9 @@ export default function ContactSection() {
                   <div className="info-content">
                     <h4>{t('contact.email')}</h4>
                     <p>
-                      info@manageex.com
+                      {t('contact.info.email')}
                       <br />
-                      01022333634
+                      {t('contact.info.phone')}
                     </p>
                   </div>
                 </div>

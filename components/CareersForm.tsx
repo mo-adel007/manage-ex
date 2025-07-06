@@ -161,7 +161,7 @@ export default function CareersForm() {
                         </div>
                         <div className="contact-details">
                           <p className="contact-label">{t('contact.email')}</p>
-                          <p className="contact-value">Hi@ManageEx.com</p>
+                          <p className="contact-value">{t('contact.info.email')}</p>
                         </div>
                       </div>
                       <div className="contact-item">
@@ -170,7 +170,8 @@ export default function CareersForm() {
                         </div>
                         <div className="contact-details">
                           <p className="contact-label">Phone</p>
-                          <p className="contact-value">01022333634</p>
+                          <p className="contact-label">{t('careers.form.phone')}</p>
+                          <p className="contact-value">{t('contact.info.phone')}</p>
                         </div>
                       </div>
                       <div className="contact-item">
@@ -179,7 +180,8 @@ export default function CareersForm() {
                         </div>
                         <div className="contact-details">
                           <p className="contact-label">Location</p>
-                          <p className="contact-value">Cairo, Egypt</p>
+                          <p className="contact-label">{t('contact.address')}</p>
+                          <p className="contact-value">{t('contact.info.saudi.address')}</p>
                         </div>
                       </div>
                     </div>

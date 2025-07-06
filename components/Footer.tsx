@@ -26,15 +26,15 @@ export default function Footer() {
           <div className="footer-info">
             <div className="info-item">
               <i className="fas fa-envelope"></i>
-              <span>info@manageex.com</span>
+              <span>{t('contact.info.email')}</span>
             </div>
             <div className="info-item">
               <i className="fas fa-phone"></i>
-              <span>+1 (555) 123-4567</span>
+              <span>{t('contact.info.phone')}</span>
             </div>
             <div className="info-item">
               <i className="fas fa-map-marker-alt"></i>
-              <span>123 Business St, City, State 12345</span>
+              <span>{t('contact.info.saudi.address')}</span>
             </div>
           </div>
           

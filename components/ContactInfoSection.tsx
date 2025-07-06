@@ -17,7 +17,7 @@ export default function ContactInfoSection() {
               </div>
               <div className="contact-content">
                 <h4>{t('contact.address')}</h4>
-                <p>Zahraa Al Maadi 50 St, Saint Anthony Church Square, Cairo, Egypt</p>
+                <p>{t('contact.info.saudi.address')}</p>
               </div>
             </div>
           </AnimatedElement>
@@ -29,7 +29,7 @@ export default function ContactInfoSection() {
               </div>
               <div className="contact-content">
                 <h4>{t('contact.email')}</h4>
-                <p>info@manageex.com<br />01022333634</p>
+                <p>{t('contact.info.email')}<br />{t('contact.info.phone')}</p>
               </div>
             </div>
           </AnimatedElement>
