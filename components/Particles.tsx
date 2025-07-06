@@ -86,9 +86,9 @@ const fragment = `
       if(d > 0.5) {
         discard;
       }
-      vec3 finalColor = vColor + 0.3 * sin(uv.yxx + uTime + vRandom.y * 6.28);
-      // Add glow effect for purple particles
-      finalColor += vGlow * 0.5 * (1.0 - d) * vColor * vBrightness;
+      vec3 finalColor = vColor + 0.4 * sin(uv.yxx + uTime + vRandom.y * 6.28);
+      // Enhanced glow effect for purple particles
+      finalColor += vGlow * 0.8 * (1.0 - d) * vColor * vBrightness;
       
       // Apply contrast and saturation
       finalColor = mix(vec3(0.5), finalColor, vContrast);
@@ -98,16 +98,16 @@ const fragment = `
       finalColor *= vBrightness;
       gl_FragColor = vec4(finalColor, 1.0);
     } else {
-      float circle = smoothstep(0.5, 0.2, d);
-      vec3 finalColor = vColor + 0.3 * sin(uv.yxx + uTime + vRandom.y * 6.28);
+      float circle = smoothstep(0.5, 0.15, d);
+      vec3 finalColor = vColor + 0.4 * sin(uv.yxx + uTime + vRandom.y * 6.28);
       
       // Enhanced glow for alpha particles
-      float glow = vGlow * (1.0 - smoothstep(0.2, 0.8, d)) * 0.8 * vBrightness;
+      float glow = vGlow * (1.0 - smoothstep(0.15, 0.9, d)) * 1.0 * vBrightness;
       finalColor += glow * vColor;
       
       // Add rim lighting effect
-      float rim = smoothstep(0.3, 0.5, d) * smoothstep(0.5, 0.3, d) * vBrightness;
-      finalColor += rim * vGlow * 1.0 * vColor;
+      float rim = smoothstep(0.25, 0.5, d) * smoothstep(0.5, 0.25, d) * vBrightness;
+      finalColor += rim * vGlow * 1.2 * vColor;
       
       // Apply contrast and saturation
       finalColor = mix(vec3(0.5), finalColor, vContrast);
@@ -117,7 +117,7 @@ const fragment = `
       // Apply overall brightness
       finalColor *= vBrightness;
       
-      float alpha = circle * (0.8 + glow * 0.4);
+      float alpha = circle * (0.9 + glow * 0.5);
       gl_FragColor = vec4(finalColor, alpha);
     }
   }
@@ -181,6 +181,14 @@ const Particles = ({
     container.appendChild(gl.canvas);
     gl.clearColor(0, 0, 0, 0);
 
+    // Force LTR for canvas regardless of page direction
+    gl.canvas.style.direction = 'ltr';
+    gl.canvas.style.position = 'absolute';
+    gl.canvas.style.top = '0';
+    gl.canvas.style.left = '0';
+    gl.canvas.style.width = '100%';
+    gl.canvas.style.height = '100%';
+
     const camera = new Camera(gl, { fov: 15 });
     camera.position.set(0, 0, cameraDistance);
 
@@ -188,26 +196,16 @@ const Particles = ({
       const width = container.clientWidth;
       const height = container.clientHeight;
       
-      // Force proper sizing for RTL layouts
-      if (isRTL) {
-        gl.canvas.style.position = 'absolute';
-        gl.canvas.style.top = '0';
-        gl.canvas.style.left = '0';
-        gl.canvas.style.width = '100%';
-        gl.canvas.style.height = '100%';
-        gl.canvas.style.direction = 'ltr';
-      }
-      
-      
-      // Force proper sizing for RTL layouts
-      if (isRTL) {
-        gl.canvas.style.position = 'absolute';
-        gl.canvas.style.top = '0';
-        gl.canvas.style.left = '0';
-        gl.canvas.style.width = '100%';
-        gl.canvas.style.height = '100%';
-        gl.canvas.style.direction = 'ltr';
-      }
+      // Force proper sizing for all layouts
+      gl.canvas.style.position = 'absolute';
+      gl.canvas.style.top = '0';
+      gl.canvas.style.left = '0';
+      gl.canvas.style.width = '100%';
+      gl.canvas.style.height = '100%';
+      gl.canvas.style.direction = 'ltr';
+      gl.canvas.style.display = 'block';
+      gl.canvas.style.visibility = 'visible';
+      gl.canvas.style.opacity = '1';
       
       renderer.setSize(width, height);
       camera.perspective({ aspect: gl.canvas.width / gl.canvas.height });
@@ -317,16 +315,6 @@ const Particles = ({
       if (container.contains(gl.canvas)) {
         container.removeChild(gl.canvas);
       }
-      
-      // Cleanup RTL specific styles
-      if (gl.canvas) {
-        gl.canvas.style.position = '';
-        gl.canvas.style.top = '';
-        gl.canvas.style.left = '';
-        gl.canvas.style.width = '';
-        gl.canvas.style.height = '';
-        gl.canvas.style.direction = '';
-      }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
@@ -360,6 +348,9 @@ const Particles = ({
         zIndex: 0,
         pointerEvents: 'none',
         direction: 'ltr', // Force LTR for particles
+        display: 'block',
+        visibility: 'visible',
+        opacity: 1,
       }}
     />
   );
