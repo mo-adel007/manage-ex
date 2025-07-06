@@ -75,6 +75,99 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    direction: ltr;
+}
+
+[dir="rtl"] body {
+    direction: rtl;
+}
+
+/* RTL Support */
+[dir="rtl"] .nav-list {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-content {
+    grid-template-columns: 1fr 1fr;
+}
+
+[dir="rtl"] .hero-text {
+    text-align: right;
+}
+
+[dir="rtl"] .hero-actions {
+    justify-content: flex-end;
+}
+
+[dir="rtl"] .feature-item {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .contact-item {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .info-item {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .mobile-nav-link {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .language-options {
+    left: 0;
+    right: auto;
+}
+
+[dir="rtl"] .header-controls {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-content {
+    grid-template-columns: auto 1fr auto;
+}
+
+[dir="rtl"] .footer-bottom {
+    flex-direction: row-reverse;
+}
+
+/* Arabic Font Support */
+[dir="rtl"] {
+    font-family: 'Nunito', 'Tajawal', 'Cairo', 'Amiri', sans-serif;
+}
+
+/* Responsive RTL adjustments */
+@media (max-width: 1024px) {
+    [dir="rtl"] .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    [dir="rtl"] .hero-text {
+        text-align: center;
+    }
+    
+    [dir="rtl"] .hero-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    [dir="rtl"] .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    [dir="rtl"] .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    [dir="rtl"] .info-item {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 /* Lightning Component Styles */

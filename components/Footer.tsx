@@ -1,7 +1,10 @@
 'use client'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 
 export default function Footer() {
+  const { t } = useTranslation('common')
+
   return (
     <footer className="footer">
       <div className="container">
@@ -45,10 +48,10 @@ export default function Footer() {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; 2024 ManageEx. All rights reserved.</p>
+          <p>{t('footer.copyright')}</p>
           <div className="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <a href="#">{t('footer.privacyPolicy')}</a>
+            <a href="#">{t('footer.termsOfService')}</a>
           </div>
         </div>
       </div>

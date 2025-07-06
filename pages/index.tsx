@@ -1,19 +1,11 @@
-import { Metadata } from 'next'
+import { GetStaticProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Hero from '@/components/Hero'
 import ServicesGrid from '@/components/ServicesGrid'
 import ProjectsSection from '@/components/ProjectsSection'
 import BlogSection from '@/components/BlogSection'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import ContactSection from '@/components/ContactSection'
-
-export const metadata: Metadata = {
-  title: 'Home - Professional Business Management Solutions',
-  description: 'Transform your business operations with our comprehensive management solutions. Expert consulting, digital transformation, and strategic planning services.',
-  openGraph: {
-    title: 'ManageEx - Professional Business Management Solutions',
-    description: 'Transform your business operations with our comprehensive management solutions.',
-  },
-}
 
 export default function Home() {
   return (
@@ -26,4 +18,12 @@ export default function Home() {
       <ContactSection />
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+    },
+  }
 }

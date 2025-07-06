@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import { User, Mail, MessageSquare, PlaneIcon as PaperPlaneIcon, Briefcase, Check, Phone, MapPin } from 'lucide-react';
 import AnimatedElement from './AnimatedElement';
+import { useTranslation } from 'next-i18next';
 
 export default function CareersForm() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useTranslation('common');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -35,13 +37,13 @@ export default function CareersForm() {
           <AnimatedElement animation="text-focus">
             <div className="section-header">
               <span className="section-badge">
-                Join Our Team
+                {t('careers.tag')}
               </span>
               <h2 className="section-title">
-                Start Your Career Journey
+                {t('careers.title')}
               </h2>
               <p className="section-description">
-                Ready to be part of something amazing? Let's discuss your future with us.
+                {t('careers.description')}
               </p>
             </div>
           </AnimatedElement>
@@ -55,7 +57,7 @@ export default function CareersForm() {
                     <div className="form-group">
                       <label htmlFor="name" className="form-label">
                         <User className="label-icon" />
-                        Full Name
+                        {t('careers.form.fullName')}
                       </label>
                       <input
                         type="text"
@@ -63,7 +65,7 @@ export default function CareersForm() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="Enter your full name"
+                        placeholder={t('careers.form.fullName')}
                         required
                         className="form-input"
                       />
@@ -74,7 +76,7 @@ export default function CareersForm() {
                     <div className="form-group">
                       <label htmlFor="email" className="form-label">
                         <Mail className="label-icon" />
-                        Email Address
+                        {t('careers.form.email')}
                       </label>
                       <input
                         type="email"
@@ -82,7 +84,7 @@ export default function CareersForm() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="Enter your email address"
+                        placeholder={t('careers.form.email')}
                         required
                         className="form-input"
                       />
@@ -93,14 +95,14 @@ export default function CareersForm() {
                     <div className="form-group">
                       <label htmlFor="message" className="form-label">
                         <MessageSquare className="label-icon" />
-                        Tell Us About Yourself
+                        {t('careers.form.message')}
                       </label>
                       <textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Share your experience, skills, and why you want to join our team..."
+                        placeholder={t('careers.form.messagePlaceholder')}
                         required
                         rows={6}
                         className="form-textarea"
@@ -115,7 +117,7 @@ export default function CareersForm() {
                       className="submit-button"
                     >
                       <PaperPlaneIcon className="button-icon" />
-                      {isSubmitting ? 'Sending...' : 'Submit Application'}
+                      {isSubmitting ? t('careers.form.sending') : t('careers.form.submit')}
                     </button>
                   </AnimatedElement>
                 </form>
@@ -129,14 +131,14 @@ export default function CareersForm() {
                       <Briefcase className="card-icon" />
                     </div>
                     <h3 className="card-title">
-                      Why Join Us?
+                      {t('careers.whyJoinUs')}
                     </h3>
                     <ul className="benefits-list">
                       {[
-                        'Competitive salary packages',
-                        'Professional growth opportunities',
-                        'Flexible working environment',
-                        'Creative and innovative projects'
+                        t('careers.benefits.salary'),
+                        t('careers.benefits.growth'),
+                        t('careers.benefits.flexible'),
+                        t('careers.benefits.projects')
                       ].map((benefit, index) => (
                         <li key={index} className="benefit-item">
                           <Check className="check-icon" />
@@ -150,7 +152,7 @@ export default function CareersForm() {
                 <AnimatedElement animation="scale-in" delay={0.5}>
                   <div className="contact-card">
                     <h3 className="contact-title">
-                      Get In Touch
+                      {t('careers.getInTouch')}
                     </h3>
                     <div className="contact-info">
                       <div className="contact-item">
@@ -158,7 +160,7 @@ export default function CareersForm() {
                           <Mail className="icon" />
                         </div>
                         <div className="contact-details">
-                          <p className="contact-label">Email</p>
+                          <p className="contact-label">{t('contact.email')}</p>
                           <p className="contact-value">Hi@ManageEx.com</p>
                         </div>
                       </div>
