@@ -86,9 +86,9 @@ const fragment = `
       if(d > 0.5) {
         discard;
       }
-      vec3 finalColor = vColor + 0.4 * sin(uv.yxx + uTime + vRandom.y * 6.28);
+      vec3 finalColor = vColor + 0.6 * sin(uv.yxx + uTime + vRandom.y * 6.28);
       // Enhanced glow effect for purple particles
-      finalColor += vGlow * 0.8 * (1.0 - d) * vColor * vBrightness;
+      finalColor += vGlow * 1.2 * (1.0 - d) * vColor * vBrightness;
       
       // Apply contrast and saturation
       finalColor = mix(vec3(0.5), finalColor, vContrast);
@@ -98,16 +98,16 @@ const fragment = `
       finalColor *= vBrightness;
       gl_FragColor = vec4(finalColor, 1.0);
     } else {
-      float circle = smoothstep(0.5, 0.15, d);
-      vec3 finalColor = vColor + 0.4 * sin(uv.yxx + uTime + vRandom.y * 6.28);
+      float circle = smoothstep(0.5, 0.1, d);
+      vec3 finalColor = vColor + 0.6 * sin(uv.yxx + uTime + vRandom.y * 6.28);
       
       // Enhanced glow for alpha particles
-      float glow = vGlow * (1.0 - smoothstep(0.15, 0.9, d)) * 1.0 * vBrightness;
+      float glow = vGlow * (1.0 - smoothstep(0.1, 0.9, d)) * 1.4 * vBrightness;
       finalColor += glow * vColor;
       
       // Add rim lighting effect
-      float rim = smoothstep(0.25, 0.5, d) * smoothstep(0.5, 0.25, d) * vBrightness;
-      finalColor += rim * vGlow * 1.2 * vColor;
+      float rim = smoothstep(0.2, 0.5, d) * smoothstep(0.5, 0.2, d) * vBrightness;
+      finalColor += rim * vGlow * 1.6 * vColor;
       
       // Apply contrast and saturation
       finalColor = mix(vec3(0.5), finalColor, vContrast);
@@ -117,7 +117,7 @@ const fragment = `
       // Apply overall brightness
       finalColor *= vBrightness;
       
-      float alpha = circle * (0.9 + glow * 0.5);
+      float alpha = circle * (0.95 + glow * 0.8);
       gl_FragColor = vec4(finalColor, alpha);
     }
   }
@@ -181,13 +181,19 @@ const Particles = ({
     container.appendChild(gl.canvas);
     gl.clearColor(0, 0, 0, 0);
 
-    // Force LTR for canvas regardless of page direction
-    gl.canvas.style.direction = 'ltr';
-    gl.canvas.style.position = 'absolute';
-    gl.canvas.style.top = '0';
-    gl.canvas.style.left = '0';
-    gl.canvas.style.width = '100%';
-    gl.canvas.style.height = '100%';
+    // CRITICAL: Force LTR and proper positioning for canvas regardless of page direction
+    gl.canvas.style.direction = 'ltr !important';
+    gl.canvas.style.position = 'absolute !important';
+    gl.canvas.style.top = '0 !important';
+    gl.canvas.style.left = '0 !important';
+    gl.canvas.style.width = '100% !important';
+    gl.canvas.style.height = '100% !important';
+    gl.canvas.style.display = 'block !important';
+    gl.canvas.style.visibility = 'visible !important';
+    gl.canvas.style.opacity = '1 !important';
+    gl.canvas.style.zIndex = '0';
+    gl.canvas.style.transform = 'translateZ(0)';
+    gl.canvas.style.backfaceVisibility = 'hidden';
 
     const camera = new Camera(gl, { fov: 15 });
     camera.position.set(0, 0, cameraDistance);
@@ -196,16 +202,18 @@ const Particles = ({
       const width = container.clientWidth;
       const height = container.clientHeight;
       
-      // Force proper sizing for all layouts
-      gl.canvas.style.position = 'absolute';
-      gl.canvas.style.top = '0';
-      gl.canvas.style.left = '0';
-      gl.canvas.style.width = '100%';
-      gl.canvas.style.height = '100%';
-      gl.canvas.style.direction = 'ltr';
-      gl.canvas.style.display = 'block';
-      gl.canvas.style.visibility = 'visible';
-      gl.canvas.style.opacity = '1';
+      // CRITICAL: Force proper sizing for all layouts, especially Arabic
+      gl.canvas.style.position = 'absolute !important';
+      gl.canvas.style.top = '0 !important';
+      gl.canvas.style.left = '0 !important';
+      gl.canvas.style.width = '100% !important';
+      gl.canvas.style.height = '100% !important';
+      gl.canvas.style.direction = 'ltr !important';
+      gl.canvas.style.display = 'block !important';
+      gl.canvas.style.visibility = 'visible !important';
+      gl.canvas.style.opacity = '1 !important';
+      gl.canvas.style.transform = 'translateZ(0)';
+      gl.canvas.style.backfaceVisibility = 'hidden';
       
       renderer.setSize(width, height);
       camera.perspective({ aspect: gl.canvas.width / gl.canvas.height });
@@ -351,6 +359,8 @@ const Particles = ({
         display: 'block',
         visibility: 'visible',
         opacity: 1,
+        transform: 'translateZ(0)',
+        backfaceVisibility: 'hidden',
       }}
     />
   );
