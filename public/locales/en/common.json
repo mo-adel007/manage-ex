@@ -63,12 +63,52 @@
   "projects": {
     "tag": "OUR PROJECTS",
     "title": "Latest Work Showcase",
-    "subtitle": "Discover our recent successful projects and client transformations."
+    "subtitle": "Discover our recent successful projects and client transformations.",
+    "ecommerce": {
+      "title": "E-Commerce Platform",
+      "category": "Web Development",
+      "description": "Modern e-commerce solution with advanced features"
+    },
+    "branding": {
+      "title": "Brand Identity Design",
+      "category": "Graphic Design",
+      "description": "Complete brand identity for tech startup"
+    },
+    "socialCampaign": {
+      "title": "Social Media Campaign",
+      "category": "Social Media",
+      "description": "Viral social media campaign that increased engagement by 300%"
+    },
+    "mobileApp": {
+      "title": "Mobile App Design",
+      "category": "UI/UX Design",
+      "description": "User-friendly mobile app with intuitive design"
+    }
   },
   "blog": {
     "tag": "OUR BLOG",
     "title": "Latest Insights & Tips",
-    "subtitle": "Stay updated with the latest digital marketing insights and industry trends."
+    "subtitle": "Stay updated with the latest digital marketing insights and industry trends.",
+    "posts": {
+      "digitalTrends": {
+        "title": "10 Digital Marketing Trends for 2024",
+        "excerpt": "Stay ahead of the curve with these emerging digital marketing trends that will shape the industry.",
+        "date": "Dec 15, 2023",
+        "readTime": "5 min read"
+      },
+      "brandStorytelling": {
+        "title": "The Power of Brand Storytelling",
+        "excerpt": "Learn how compelling brand stories can transform your marketing strategy and connect with audiences.",
+        "date": "Dec 10, 2023",
+        "readTime": "7 min read"
+      },
+      "seoBest": {
+        "title": "SEO Best Practices That Actually Work",
+        "excerpt": "Discover proven SEO strategies that will boost your search rankings and drive organic traffic.",
+        "date": "Dec 5, 2023",
+        "readTime": "6 min read"
+      }
+    }
   },
   "whyChooseUs": {
     "tag": "WHY CHOOSE US",
@@ -129,6 +169,7 @@
   },
   "common": {
     "readMore": "Read More",
+    "readMoreArrow": "Read More →",
     "learnMore": "Learn More",
     "viewAll": "View All",
     "loading": "Loading...",

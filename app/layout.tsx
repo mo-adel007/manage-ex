@@ -1,13 +1,6 @@
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import './globals.css'
-import { appWithTranslation } from 'next-i18next'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import WhatsAppFloat from '@/components/WhatsAppFloat'
-import ScrollToTop from '@/components/ScrollToTop'
-import ThemeProvider from '@/components/ThemeProvider'
-import GlobalLightningBackground from '@/components/GlobalLightningBackground'
 
 const nunito = Nunito({ 
   subsets: ['latin'],
@@ -92,14 +85,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://images.pexels.com" />
       </head>
       <body className={nunito.className} suppressHydrationWarning>
-        <ThemeProvider>
-          <GlobalLightningBackground />
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <WhatsAppFloat />
-          <ScrollToTop />
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   )

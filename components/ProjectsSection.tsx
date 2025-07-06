@@ -2,43 +2,46 @@
 
 import Image from 'next/image'
 import AnimatedElement from './AnimatedElement'
-
-const projects = [
-  {
-    title: 'E-Commerce Platform',
-    category: 'Web Development',
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600',
-    description: 'Modern e-commerce solution with advanced features'
-  },
-  {
-    title: 'Brand Identity Design',
-    category: 'Graphic Design',
-    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-    description: 'Complete brand identity for tech startup'
-  },
-  {
-    title: 'Social Media Campaign',
-    category: 'Social Media',
-    image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=600',
-    description: 'Viral social media campaign that increased engagement by 300%'
-  },
-  {
-    title: 'Mobile App Design',
-    category: 'UI/UX Design',
-    image: 'https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=600',
-    description: 'User-friendly mobile app with intuitive design'
-  }
-]
+import { useTranslation } from 'next-i18next'
 
 export default function ProjectsSection() {
+  const { t } = useTranslation('common')
+
+  const projects = [
+    {
+      title: t('projects.ecommerce.title'),
+      category: t('projects.ecommerce.category'),
+      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600',
+      description: t('projects.ecommerce.description')
+    },
+    {
+      title: t('projects.branding.title'),
+      category: t('projects.branding.category'),
+      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
+      description: t('projects.branding.description')
+    },
+    {
+      title: t('projects.socialCampaign.title'),
+      category: t('projects.socialCampaign.category'),
+      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=600',
+      description: t('projects.socialCampaign.description')
+    },
+    {
+      title: t('projects.mobileApp.title'),
+      category: t('projects.mobileApp.category'),
+      image: 'https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=600',
+      description: t('projects.mobileApp.description')
+    }
+  ]
+
   return (
     <section className="projects-section">
       <div className="container">
         <AnimatedElement animation="roll-in-top">
           <div className="section-header">
-            <span className="section-tag">OUR PROJECTS</span>
-            <h2 className="section-title">Latest Work Showcase</h2>
-            <p className="section-subtitle">Discover our recent successful projects and client transformations.</p>
+            <span className="section-tag">{t('projects.tag')}</span>
+            <h2 className="section-title">{t('projects.title')}</h2>
+            <p className="section-subtitle">{t('projects.subtitle')}</p>
           </div>
         </AnimatedElement>
 

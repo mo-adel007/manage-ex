@@ -2,40 +2,43 @@
 
 import Image from 'next/image'
 import AnimatedElement from './AnimatedElement'
-
-const blogPosts = [
-  {
-    title: '10 Digital Marketing Trends for 2024',
-    excerpt: 'Stay ahead of the curve with these emerging digital marketing trends that will shape the industry.',
-    image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600',
-    date: 'Dec 15, 2023',
-    readTime: '5 min read'
-  },
-  {
-    title: 'The Power of Brand Storytelling',
-    excerpt: 'Learn how compelling brand stories can transform your marketing strategy and connect with audiences.',
-    image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600',
-    date: 'Dec 10, 2023',
-    readTime: '7 min read'
-  },
-  {
-    title: 'SEO Best Practices That Actually Work',
-    excerpt: 'Discover proven SEO strategies that will boost your search rankings and drive organic traffic.',
-    image: 'https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=600',
-    date: 'Dec 5, 2023',
-    readTime: '6 min read'
-  }
-]
+import { useTranslation } from 'next-i18next'
 
 export default function BlogSection() {
+  const { t } = useTranslation('common')
+
+  const blogPosts = [
+    {
+      title: t('blog.posts.digitalTrends.title'),
+      excerpt: t('blog.posts.digitalTrends.excerpt'),
+      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600',
+      date: t('blog.posts.digitalTrends.date'),
+      readTime: t('blog.posts.digitalTrends.readTime')
+    },
+    {
+      title: t('blog.posts.brandStorytelling.title'),
+      excerpt: t('blog.posts.brandStorytelling.excerpt'),
+      image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600',
+      date: t('blog.posts.brandStorytelling.date'),
+      readTime: t('blog.posts.brandStorytelling.readTime')
+    },
+    {
+      title: t('blog.posts.seoBest.title'),
+      excerpt: t('blog.posts.seoBest.excerpt'),
+      image: 'https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=600',
+      date: t('blog.posts.seoBest.date'),
+      readTime: t('blog.posts.seoBest.readTime')
+    }
+  ]
+
   return (
     <section className="blog-section">
       <div className="container">
         <AnimatedElement animation="text-focus">
           <div className="section-header">
-            <span className="section-tag">OUR BLOG</span>
-            <h2 className="section-title">Latest Insights & Tips</h2>
-            <p className="section-subtitle">Stay updated with the latest digital marketing insights and industry trends.</p>
+            <span className="section-tag">{t('blog.tag')}</span>
+            <h2 className="section-title">{t('blog.title')}</h2>
+            <p className="section-subtitle">{t('blog.subtitle')}</p>
           </div>
         </AnimatedElement>
 
@@ -62,7 +65,7 @@ export default function BlogSection() {
                   </div>
                   <h3>{post.title}</h3>
                   <p>{post.excerpt}</p>
-                  <a href="#" className="read-more">Read More →</a>
+                  <a href="#" className="read-more">{t('common.readMoreArrow')}</a>
                 </div>
               </article>
             </AnimatedElement>

@@ -2,41 +2,44 @@
 
 import Image from 'next/image'
 import AnimatedElement from './AnimatedElement'
-
-const features = [
-  {
-    icon: 'fas fa-rocket',
-    title: 'Latest Technology',
-    description: 'We use cutting-edge technology and tools to deliver exceptional results that keep you ahead of the competition.'
-  },
-  {
-    icon: 'fas fa-users',
-    title: 'Certified Experts',
-    description: 'Our team consists of certified professionals with years of experience in business management and development.'
-  },
-  {
-    icon: 'fas fa-dollar-sign',
-    title: 'Get Reasonable Price',
-    description: 'Quality services at competitive prices. We believe in providing value without compromising on excellence.'
-  },
-  {
-    icon: 'fas fa-clock',
-    title: '24/7 Support',
-    description: 'Round-the-clock support to ensure your business never stops growing. We\'re here when you need us.'
-  }
-]
+import { useTranslation } from 'next-i18next'
 
 export default function WhyChooseUs() {
+  const { t } = useTranslation('common')
+
+  const features = [
+    {
+      icon: 'fas fa-rocket',
+      title: t('whyChooseUs.latestTechnology.title'),
+      description: t('whyChooseUs.latestTechnology.description')
+    },
+    {
+      icon: 'fas fa-users',
+      title: t('whyChooseUs.certifiedExperts.title'),
+      description: t('whyChooseUs.certifiedExperts.description')
+    },
+    {
+      icon: 'fas fa-dollar-sign',
+      title: t('whyChooseUs.reasonablePrice.title'),
+      description: t('whyChooseUs.reasonablePrice.description')
+    },
+    {
+      icon: 'fas fa-clock',
+      title: t('whyChooseUs.support.title'),
+      description: t('whyChooseUs.support.description')
+    }
+  ]
+
   return (
     <section className="why-choose-us">
       <div className="container">
         <div className="content-wrapper">
           <div className="text-content">
             <AnimatedElement animation="roll-in-left">
-              <span className="section-tag">WHY CHOOSE US</span>
+              <span className="section-tag">{t('whyChooseUs.tag')}</span>
             </AnimatedElement>
             <AnimatedElement animation="swing-in" delay={0.2}>
-              <h2 className="section-title">Easy & Fastest Build your Business.</h2>
+              <h2 className="section-title">{t('whyChooseUs.title')}</h2>
             </AnimatedElement>
             
             <div className="features-list">
