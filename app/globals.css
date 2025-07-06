@@ -984,6 +984,19 @@ html[lang="ar"] .global-background-effect canvas {
     mix-blend-mode: multiply !important;
 }
 
+/* Enhanced Arabic visibility - CRITICAL */
+html[lang="ar"][data-theme="dark"] .global-background-effect {
+    opacity: 1.0 !important;
+    mix-blend-mode: screen !important;
+    filter: brightness(3.5) contrast(2.8) saturate(2.8) !important;
+}
+
+html[lang="ar"][data-theme="light"] .global-background-effect {
+    opacity: 1.0 !important;
+    mix-blend-mode: multiply !important;
+    filter: brightness(0.02) contrast(4.0) saturate(4.0) !important;
+}
+
 /* Lightning container adjustments */
 [data-theme="light"] .lightning-container {
     filter: brightness(0.8) contrast(0.9);
@@ -1011,6 +1024,20 @@ html[lang="ar"] .global-background-effect canvas {
     .particles-container {
         will-change: transform;
         transform: translateZ(0);
+    }
+    
+    /* Mobile optimizations with enhanced visibility */
+    /* Enhanced Arabic mobile visibility - CRITICAL */
+    html[lang="ar"][data-theme="dark"] .global-background-effect {
+        opacity: 1.0 !important;
+        filter: brightness(4.0) contrast(3.0) saturate(3.0) !important;
+        mix-blend-mode: screen !important;
+    }
+
+    html[lang="ar"][data-theme="light"] .global-background-effect {
+        opacity: 1.0 !important;
+        filter: brightness(0.01) contrast(4.5) saturate(4.5) !important;
+        mix-blend-mode: multiply !important;
     }
     
     /* RTL Mobile particle fixes */
@@ -1128,6 +1155,19 @@ html[lang="ar"] .global-background-effect canvas {
         opacity: 0.8;
     }
     
+    /* Enhanced Arabic small mobile visibility - CRITICAL */
+    html[lang="ar"][data-theme="dark"] .global-background-effect {
+        opacity: 1.0 !important;
+        filter: brightness(3.8) contrast(2.8) saturate(2.8) !important;
+        mix-blend-mode: screen !important;
+    }
+
+    html[lang="ar"][data-theme="light"] .global-background-effect {
+        opacity: 1.0 !important;
+        filter: brightness(0.005) contrast(4.2) saturate(4.2) !important;
+        mix-blend-mode: multiply !important;
+    }
+    
     /* Small mobile RTL fixes */
     [dir="rtl"] .particles-container {
         position: fixed !important;
@@ -1229,6 +1269,19 @@ html[lang="ar"] .global-background-effect canvas {
         opacity: 0.75;
     }
     
+    /* Enhanced Arabic extra small visibility */
+    html[lang="ar"][data-theme="dark"] .global-background-effect {
+        opacity: 1.0 !important;
+        filter: brightness(3.5) contrast(2.5) saturate(2.5) !important;
+        mix-blend-mode: screen !important;
+    }
+
+    html[lang="ar"][data-theme="light"] .global-background-effect {
+        opacity: 1.0 !important;
+        filter: brightness(0.003) contrast(4.0) saturate(4.0) !important;
+        mix-blend-mode: multiply !important;
+    }
+    
     /* Extra small RTL fixes */
     [dir="rtl"] .particles-container {
         position: fixed !important;
@@ -1281,6 +1334,11 @@ html[lang="ar"] .global-background-effect canvas {
         filter: brightness(0.35) contrast(1.5) saturate(1.5);
     }
     
+    /* Enhanced Arabic high DPI visibility */
+    html[lang="ar"][data-theme="light"] .global-background-effect {
+        filter: brightness(0.001) contrast(4.5) saturate(4.5) !important;
+    }
+    
     [dir="rtl"] .particles-container {
         direction: ltr !important;
         transform: translateZ(0) !important;
@@ -1310,6 +1368,17 @@ html[lang="ar"] .global-background-effect canvas {
     
     [data-theme="light"] .particles-container {
         opacity: 0.7;
+    }
+    
+    /* Enhanced Arabic landscape visibility */
+    html[lang="ar"][data-theme="dark"] .global-background-effect {
+        opacity: 1.0 !important;
+        filter: brightness(3.8) contrast(2.6) saturate(2.6) !important;
+    }
+
+    html[lang="ar"][data-theme="light"] .global-background-effect {
+        opacity: 1.0 !important;
+        filter: brightness(0.002) contrast(4.2) saturate(4.2) !important;
     }
     
     [dir="rtl"] .particles-container {
