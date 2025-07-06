@@ -3,10 +3,12 @@
 import { useEffect, useState } from 'react'
 import Particles from './Particles'
 import { useTheme } from './ThemeProvider'
+import { useRouter } from 'next/router'
 
 export default function GlobalLightningBackground() {
   const [mounted, setMounted] = useState(false)
   const { theme } = useTheme()
+  const router = useRouter()
 
   useEffect(() => {
     setMounted(true)
@@ -41,9 +43,10 @@ export default function GlobalLightningBackground() {
   ]
 
   const colors = theme === 'dark' ? darkThemeColors : lightThemeColors
+  const isRTL = router.locale === 'ar'
 
   return (
-    <div className="global-background-effect">
+    <div className={`global-background-effect ${isRTL ? 'rtl-particles' : 'ltr-particles'}`}>
       <Particles
         particleColors={colors}
         particleCount={theme === 'dark' ? 900 : 700}
@@ -58,6 +61,8 @@ export default function GlobalLightningBackground() {
         particleHoverFactor={theme === 'dark' ? 1.0 : 0.8}
         glowIntensity={theme === 'dark' ? 1.6 : 1.8}
         brightnessMultiplier={theme === 'dark' ? 1.3 : 1.5}
+        contrastLevel={theme === 'dark' ? 1.3 : 1.4}
+        saturationLevel={theme === 'dark' ? 1.3 : 1.4}
       />
 
       <style jsx>{`
@@ -70,6 +75,20 @@ export default function GlobalLightningBackground() {
           z-index: 0;
           pointer-events: none;
           transition: opacity 0.5s ease, mix-blend-mode 0.5s ease, filter 0.5s ease;
+          will-change: transform, opacity, filter;
+          transform: translateZ(0);
+          backface-visibility: hidden;
+        }
+
+        /* RTL specific fixes */
+        .rtl-particles {
+          direction: ltr !important;
+          transform: translateZ(0) scaleX(1);
+        }
+
+        .ltr-particles {
+          direction: ltr;
+          transform: translateZ(0);
         }
 
         /* Enhanced visibility for dark theme particles */
@@ -86,8 +105,35 @@ export default function GlobalLightningBackground() {
           filter: brightness(0.6) contrast(1.4) saturate(1.4);
         }
 
+        /* Arabic/RTL specific particle fixes */
+        [dir="rtl"] .global-background-effect {
+          direction: ltr !important;
+          transform: translateZ(0);
+          left: 0;
+          right: auto;
+          width: 100vw;
+          height: 100vh;
+        }
+
+        [dir="rtl"] .global-background-effect canvas {
+          direction: ltr !important;
+          transform: translateZ(0);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100% !important;
+          height: 100% !important;
+        }
+
         /* Mobile optimizations with enhanced visibility */
         @media (max-width: 768px) {
+          .global-background-effect {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+          }
+
           [data-theme="dark"] .global-background-effect {
             opacity: 0.95;
             filter: brightness(1.3) contrast(1.2) saturate(1.2);
@@ -96,6 +142,30 @@ export default function GlobalLightningBackground() {
           [data-theme="light"] .global-background-effect {
             opacity: 0.85;
             filter: brightness(0.5) contrast(1.3) saturate(1.3);
+          }
+
+          /* RTL Mobile specific fixes */
+          [dir="rtl"] .global-background-effect {
+            direction: ltr !important;
+            transform: translateZ(0);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: auto;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: 0;
+          }
+
+          [dir="rtl"] .global-background-effect canvas {
+            direction: ltr !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: auto !important;
+            width: 100% !important;
+            height: 100% !important;
+            transform: translateZ(0) !important;
           }
         }
 
@@ -110,6 +180,31 @@ export default function GlobalLightningBackground() {
             opacity: 0.8;
             filter: brightness(0.45) contrast(1.2) saturate(1.2);
           }
+
+          /* Enhanced RTL mobile fixes */
+          [dir="rtl"] .global-background-effect {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: auto !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            direction: ltr !important;
+            transform: translateZ(0) !important;
+            z-index: 0 !important;
+          }
+
+          [dir="rtl"] .global-background-effect canvas {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: auto !important;
+            width: 100% !important;
+            height: 100% !important;
+            direction: ltr !important;
+            transform: translateZ(0) !important;
+            backface-visibility: hidden !important;
+          }
         }
 
         /* Extra small mobile */
@@ -123,6 +218,17 @@ export default function GlobalLightningBackground() {
             opacity: 0.75;
             filter: brightness(0.4) contrast(1.1) saturate(1.1);
           }
+
+          /* Extra small RTL fixes */
+          [dir="rtl"] .global-background-effect {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            direction: ltr !important;
+            z-index: 0 !important;
+          }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -134,6 +240,9 @@ export default function GlobalLightningBackground() {
         /* Enhanced glow effects for better visibility */
         .global-background-effect :global(canvas) {
           transition: filter 0.5s ease;
+          will-change: transform;
+          transform: translateZ(0);
+          backface-visibility: hidden;
         }
 
         [data-theme="dark"] .global-background-effect :global(canvas) {
@@ -157,6 +266,14 @@ export default function GlobalLightningBackground() {
             filter: drop-shadow(0 0 10px rgba(76, 29, 149, 0.25)) 
                     drop-shadow(0 0 20px rgba(91, 67, 137, 0.15));
           }
+
+          /* RTL Canvas glow fixes */
+          [dir="rtl"] .global-background-effect :global(canvas) {
+            filter: drop-shadow(0 0 10px rgba(139, 124, 200, 0.3)) 
+                    drop-shadow(0 0 20px rgba(91, 67, 137, 0.15));
+            direction: ltr !important;
+            transform: translateZ(0) !important;
+          }
         }
 
         /* Performance optimization for low-end devices */
@@ -164,6 +281,13 @@ export default function GlobalLightningBackground() {
           .global-background-effect {
             will-change: transform;
             transform: translateZ(0);
+            backface-visibility: hidden;
+          }
+
+          [dir="rtl"] .global-background-effect {
+            will-change: transform !important;
+            transform: translateZ(0) !important;
+            backface-visibility: hidden !important;
           }
         }
 
@@ -176,12 +300,79 @@ export default function GlobalLightningBackground() {
           [data-theme="light"] .global-background-effect {
             opacity: 0.7;
           }
+
+          [dir="rtl"] .global-background-effect {
+            position: fixed !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            direction: ltr !important;
+          }
         }
 
         /* High DPI display optimization */
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           [data-theme="light"] .global-background-effect {
             filter: brightness(0.35) contrast(1.5) saturate(1.5);
+          }
+
+          [dir="rtl"] .global-background-effect {
+            direction: ltr !important;
+            transform: translateZ(0) !important;
+          }
+        }
+
+        /* Force LTR for particles in RTL layouts */
+        [dir="rtl"] .global-background-effect,
+        [dir="rtl"] .global-background-effect *,
+        [dir="rtl"] .global-background-effect canvas {
+          direction: ltr !important;
+          text-align: left !important;
+        }
+
+        /* Arabic language specific fixes */
+        html[lang="ar"] .global-background-effect {
+          direction: ltr !important;
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100vw !important;
+          height: 100vh !important;
+          z-index: 0 !important;
+        }
+
+        html[lang="ar"] .global-background-effect canvas {
+          direction: ltr !important;
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          transform: translateZ(0) !important;
+        }
+
+        /* Mobile Arabic specific fixes */
+        @media (max-width: 768px) {
+          html[lang="ar"] .global-background-effect {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: auto !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            direction: ltr !important;
+            z-index: 0 !important;
+            transform: translateZ(0) !important;
+          }
+
+          html[lang="ar"] .global-background-effect canvas {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: auto !important;
+            width: 100% !important;
+            height: 100% !important;
+            direction: ltr !important;
+            transform: translateZ(0) !important;
           }
         }
       `}</style>

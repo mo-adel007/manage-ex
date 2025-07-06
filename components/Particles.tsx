@@ -162,6 +162,15 @@ const Particles = ({
 }: ParticlesProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
+  const [isRTL, setIsRTL] = useState(false);
+
+  useEffect(() => {
+    // Check if we're in RTL mode
+    const htmlElement = document.documentElement;
+    const direction = htmlElement.dir || htmlElement.getAttribute('dir');
+    const lang = htmlElement.lang;
+    setIsRTL(direction === 'rtl' || lang === 'ar');
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -178,6 +187,17 @@ const Particles = ({
     const resize = () => {
       const width = container.clientWidth;
       const height = container.clientHeight;
+      
+      // Force proper sizing for RTL layouts
+      if (isRTL) {
+        gl.canvas.style.position = 'absolute';
+        gl.canvas.style.top = '0';
+        gl.canvas.style.left = '0';
+        gl.canvas.style.width = '100%';
+        gl.canvas.style.height = '100%';
+        gl.canvas.style.direction = 'ltr';
+      }
+      
       renderer.setSize(width, height);
       camera.perspective({ aspect: gl.canvas.width / gl.canvas.height });
     };
@@ -186,7 +206,11 @@ const Particles = ({
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = container.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      // Adjust mouse coordinates for RTL layouts
+      let x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      if (isRTL) {
+        x = -x; // Flip X coordinate for RTL
+      }
       const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
       mouseRef.current = { x, y };
     };
@@ -282,6 +306,16 @@ const Particles = ({
       if (container.contains(gl.canvas)) {
         container.removeChild(gl.canvas);
       }
+      
+      // Cleanup RTL specific styles
+      if (gl.canvas) {
+        gl.canvas.style.position = '';
+        gl.canvas.style.top = '';
+        gl.canvas.style.left = '';
+        gl.canvas.style.width = '';
+        gl.canvas.style.height = '';
+        gl.canvas.style.direction = '';
+      }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
@@ -299,6 +333,7 @@ const Particles = ({
     brightnessMultiplier,
     contrastLevel,
     saturationLevel,
+    isRTL,
   ]);
 
   return (
@@ -313,6 +348,7 @@ const Particles = ({
         height: '100vh',
         zIndex: 0,
         pointerEvents: 'none',
+        direction: 'ltr', // Force LTR for particles
       }}
     />
   );
