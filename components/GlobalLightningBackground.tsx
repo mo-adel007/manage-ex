@@ -43,26 +43,25 @@ export default function GlobalLightningBackground() {
   ]
 
   const colors = theme === 'dark' ? darkThemeColors : lightThemeColors
-  const isRTL = router.locale === 'ar'
 
   return (
     <div className={`global-background-effect ${isRTL ? 'rtl-layout' : 'ltr-layout'}`}>
       <Particles
         particleColors={colors}
-        particleCount={isRTL ? 2000 : (theme === 'dark' ? 1200 : 1000)}
-        particleSpread={isRTL ? 25 : (theme === 'dark' ? 16 : 14)}
-        speed={isRTL ? 0.22 : (theme === 'dark' ? 0.12 : 0.1)}
-        particleBaseSize={isRTL ? 280 : (theme === 'dark' ? 160 : 140)}
+        particleCount={theme === 'dark' ? 1200 : 1000}
+        particleSpread={theme === 'dark' ? 16 : 14}
+        speed={theme === 'dark' ? 0.12 : 0.1}
+        particleBaseSize={theme === 'dark' ? 160 : 140}
         moveParticlesOnHover={true}
         alphaParticles={true}
-        sizeRandomness={isRTL ? 2.8 : (theme === 'dark' ? 1.6 : 1.4)}
-        cameraDistance={isRTL ? 40 : (theme === 'dark' ? 30 : 28)}
+        sizeRandomness={theme === 'dark' ? 1.6 : 1.4}
+        cameraDistance={theme === 'dark' ? 30 : 28}
         disableRotation={false}
-        particleHoverFactor={isRTL ? 2.0 : (theme === 'dark' ? 1.2 : 1.0)}
-        glowIntensity={isRTL ? 3.5 : (theme === 'dark' ? 1.8 : 2.0)}
-        brightnessMultiplier={isRTL ? 2.8 : (theme === 'dark' ? 1.4 : 1.6)}
-        contrastLevel={isRTL ? 2.5 : (theme === 'dark' ? 1.4 : 1.5)}
-        saturationLevel={isRTL ? 2.5 : (theme === 'dark' ? 1.4 : 1.5)}
+        particleHoverFactor={theme === 'dark' ? 1.2 : 1.0}
+        glowIntensity={theme === 'dark' ? 1.8 : 2.0}
+        brightnessMultiplier={theme === 'dark' ? 1.4 : 1.6}
+        contrastLevel={theme === 'dark' ? 1.4 : 1.5}
+        saturationLevel={theme === 'dark' ? 1.4 : 1.5}
       />
 
       <style jsx>{`
@@ -222,14 +221,14 @@ export default function GlobalLightningBackground() {
         /* Enhanced Arabic visibility - CRITICAL */
         html[lang="ar"][data-theme="dark"] .global-background-effect {
           opacity: 1.0 !important;
-          mix-blend-mode: screen !important;
-          filter: brightness(2.8) contrast(2.2) saturate(2.2) !important;
+          mix-blend-mode: screen;
+          filter: brightness(1.8) contrast(1.6) saturate(1.6);
         }
 
         html[lang="ar"][data-theme="light"] .global-background-effect {
           opacity: 1.0 !important;
-          mix-blend-mode: multiply !important;
-          filter: brightness(0.08) contrast(3.0) saturate(3.0) !important;
+          mix-blend-mode: multiply;
+          filter: brightness(0.25) contrast(2.2) saturate(2.2);
         }
 
         /* Mobile optimizations with enhanced visibility */
@@ -339,14 +338,12 @@ export default function GlobalLightningBackground() {
           /* Enhanced Arabic mobile visibility - CRITICAL */
           html[lang="ar"][data-theme="dark"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(2.5) contrast(2.0) saturate(2.0) !important;
-            mix-blend-mode: screen !important;
+            filter: brightness(1.8) contrast(1.5) saturate(1.5);
           }
 
           html[lang="ar"][data-theme="light"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(0.05) contrast(2.8) saturate(2.8) !important;
-            mix-blend-mode: multiply !important;
+            filter: brightness(0.2) contrast(2.0) saturate(2.0);
           }
         }
 
@@ -442,14 +439,12 @@ export default function GlobalLightningBackground() {
           /* Enhanced Arabic small mobile visibility - CRITICAL */
           html[lang="ar"][data-theme="dark"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(2.2) contrast(1.8) saturate(1.8) !important;
-            mix-blend-mode: screen !important;
+            filter: brightness(1.6) contrast(1.4) saturate(1.4);
           }
 
           html[lang="ar"][data-theme="light"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(0.03) contrast(2.5) saturate(2.5) !important;
-            mix-blend-mode: multiply !important;
+            filter: brightness(0.15) contrast(1.8) saturate(1.8);
           }
         }
 
@@ -507,14 +502,12 @@ export default function GlobalLightningBackground() {
           /* Enhanced Arabic extra small visibility */
           html[lang="ar"][data-theme="dark"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(2.0) contrast(1.6) saturate(1.6) !important;
-            mix-blend-mode: screen !important;
+            filter: brightness(1.5) contrast(1.3) saturate(1.3);
           }
 
           html[lang="ar"][data-theme="light"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(0.02) contrast(2.2) saturate(2.2) !important;
-            mix-blend-mode: multiply !important;
+            filter: brightness(0.12) contrast(1.6) saturate(1.6);
           }
         }
 
@@ -553,13 +546,13 @@ export default function GlobalLightningBackground() {
 
         /* Enhanced Arabic canvas glow */
         html[lang="ar"][data-theme="dark"] .global-background-effect :global(canvas) {
-          filter: drop-shadow(0 0 35px rgba(139, 124, 200, 1.0)) 
-                  drop-shadow(0 0 70px rgba(91, 67, 137, 0.8)) !important;
+          filter: drop-shadow(0 0 25px rgba(139, 124, 200, 0.8)) 
+                  drop-shadow(0 0 50px rgba(91, 67, 137, 0.6));
         }
 
         html[lang="ar"][data-theme="light"] .global-background-effect :global(canvas) {
-          filter: drop-shadow(0 0 32px rgba(76, 29, 149, 0.9)) 
-                  drop-shadow(0 0 65px rgba(91, 67, 137, 0.7)) !important;
+          filter: drop-shadow(0 0 22px rgba(76, 29, 149, 0.7)) 
+                  drop-shadow(0 0 45px rgba(91, 67, 137, 0.5));
         }
 
         /* Mobile glow adjustments */
@@ -603,8 +596,8 @@ export default function GlobalLightningBackground() {
           }
 
           html[lang="ar"] .global-background-effect :global(canvas) {
-            filter: drop-shadow(0 0 30px rgba(139, 124, 200, 0.9)) 
-                    drop-shadow(0 0 60px rgba(91, 67, 137, 0.7)) !important;
+            filter: drop-shadow(0 0 22px rgba(139, 124, 200, 0.7)) 
+                    drop-shadow(0 0 45px rgba(91, 67, 137, 0.5));
             direction: ltr !important;
             transform: translateZ(0) !important;
             position: absolute !important;
@@ -708,12 +701,12 @@ export default function GlobalLightningBackground() {
           /* Enhanced Arabic landscape visibility */
           html[lang="ar"][data-theme="dark"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(2.2) contrast(1.6) saturate(1.6) !important;
+            filter: brightness(1.8) contrast(1.5) saturate(1.5);
           }
 
           html[lang="ar"][data-theme="light"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(0.04) contrast(2.2) saturate(2.2) !important;
+            filter: brightness(0.2) contrast(2.0) saturate(2.0);
           }
         }
 
@@ -755,7 +748,7 @@ export default function GlobalLightningBackground() {
 
           /* Enhanced Arabic high DPI visibility */
           html[lang="ar"][data-theme="light"] .global-background-effect {
-            filter: brightness(0.02) contrast(2.8) saturate(2.8) !important;
+            filter: brightness(0.15) contrast(2.2) saturate(2.2);
           }
         }
 
