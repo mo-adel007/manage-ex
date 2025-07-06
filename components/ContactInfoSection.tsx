@@ -1,8 +1,11 @@
 'use client'
 
 import AnimatedElement from './AnimatedElement'
+import { useTranslation } from 'next-i18next'
 
 export default function ContactInfoSection() {
+  const { t } = useTranslation('common')
+
   return (
     <section className="contact-info-section">
       <div className="container">
@@ -13,7 +16,7 @@ export default function ContactInfoSection() {
                 <i className="fas fa-map-marker-alt"></i>
               </div>
               <div className="contact-content">
-                <h4>Address</h4>
+                <h4>{t('contact.address')}</h4>
                 <p>Zahraa Al Maadi 50 St, Saint Anthony Church Square, Cairo, Egypt</p>
               </div>
             </div>
@@ -25,7 +28,7 @@ export default function ContactInfoSection() {
                 <i className="fas fa-envelope"></i>
               </div>
               <div className="contact-content">
-                <h4>Email & Phone</h4>
+                <h4>{t('contact.email')}</h4>
                 <p>info@manageex.com<br />01022333634</p>
               </div>
             </div>
@@ -37,8 +40,8 @@ export default function ContactInfoSection() {
                 <i className="fas fa-clock"></i>
               </div>
               <div className="contact-content">
-                <h4>Working Hours</h4>
-                <p>Sun - Thu: 10 AM to 7 PM</p>
+                <h4>{t('contact.workingHours')}</h4>
+                <p>{t('contact.workingTime')}</p>
               </div>
             </div>
           </AnimatedElement>
