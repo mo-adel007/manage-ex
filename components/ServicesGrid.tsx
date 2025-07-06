@@ -11,44 +11,34 @@ export default function ServicesGrid() {
 
   const services = [
     {
-      title: t('services.webDevelopment.title'),
-      description: t('services.webDevelopment.description'),
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=400'
+      title: t('services.designServices.title'),
+      description: t('services.designServices.description'),
+      image: '/gd.jpg',
     },
     {
-      title: t('services.graphicDesign.title'),
-      description: t('services.graphicDesign.description'),
-      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400'
+      title: t('services.accountingSolutions.title'),
+      description: t('services.accountingSolutions.description'),
+      image: '/b.jpg'
     },
     {
-      title: t('services.brandIdentity.title'),
-      description: t('services.brandIdentity.description'),
-      image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=400'
+      title: t('services.marketing.title'),
+      description: t('services.marketing.description'),
+      image: '/md.jpg'
     },
     {
-      title: t('services.socialMedia.title'),
-      description: t('services.socialMedia.description'),
-      image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    {
-      title: t('services.videoEditing.title'),
-      description: t('services.videoEditing.description'),
-      image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpg?auto=compress&cs=tinysrgb&w=400'
-    },
-    {
-      title: t('services.planning.title'),
-      description: t('services.planning.description'),
-      image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    {
-      title: t('services.seo.title'),
-      description: t('services.seo.description'),
-      image: 'https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=400'
+      title: t('services.businessServices.title'),
+      description: t('services.businessServices.description'),
+      image: '/marketing.jpg'
     },
     {
       title: t('services.influencer.title'),
       description: t('services.influencer.description'),
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '/accounting.jpg'
+    },
+    {
+      title: t('services.seo.title'),
+      description: t('services.seo.description'),
+      image: '/seo.jpg'
     }
   ]
 

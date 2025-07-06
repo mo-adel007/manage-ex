@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About us",
     "services": "Services",
+    "whyChooseUs": "Why ManageEx",
     "contact": "Contact Us",
     "careers": "Careers"
   },
@@ -11,9 +12,9 @@
       "line1": "TRUSTED",
       "line2": "MANAGEMENT,",
       "line3": "SUSTAINABLE",
-      "line4": "GROWTH",
+      "line4": "",
       "line5": "",
-      "line6": ""
+      "line6": "GROWTH"
     },
     "description": "Managex offers tailored business services in marketing, design, accounting, and HR — powered by smart systems and deep market insight.",
     "getStarted": "Get Started",
@@ -53,7 +54,7 @@
     "youNameItTitle": "You Name IT We Make IT",
     "highlights": {
       "highQuality": "High Quality Services",
-      "skilledDevelopers": "Skilled Developers",
+      "skilledDevelopers": "Skilled Designers",
       "perfectSolution": "Perfect Web Solution"
     },
     "categories": {
@@ -137,36 +138,34 @@
         "needs": "Let us know your needs — we'll build your perfect package."
       }
     },
-    "socialMedia": {
-      "title": "Social Media Management",
-      "description": "Comprehensive social media strategy and management"
+    "hrSolutions": {
+      "title": "HR Solutions",
+      "description": "Comprehensive strategy and management"
     },
-    "brandIdentity": {
-      "title": "Brand Identity Design",
-      "description": "Professional brand identity and visual design solutions"
+    "accountingSolutions": {
+      "title": "Accounting Solutions",
+      "description": "Professional Accounting and visual design solutions"
     },
-    "graphicDesign": {
-      "title": "Graphic Design",
+    "designServices": {
+      "title": "Desigin Services ",
       "description": "Creative graphic design for all your business needs"
     },
-    "videoEditing": {
-      "title": "Video Editing",
-      "description": "Professional video editing and motion graphics"
-    },
+    
     "influencer": {
       "title": "Influencer Marketing",
       "description": "Strategic influencer partnerships and collaborations"
     },
     "seo": {
       "title": "SEO Optimization",
-      "description": "Search engine optimization for better visibility"
-    },
-    "planning": {
-      "title": "Strategic Planning",
-      "description": "Business strategy and planning consultation"
+      "description": "Comprehensive solutions that support businesses in enhancing efficiency"
+    }
+    ,
+       "businessServices": {
+      "title": "Business Services",
+      "description": ""
     }
   },
-  "whyChooseUs": {
+ "whyChooseUs": {
     "tag": "WHY MANAGEX",
     "title": "Why ManageEx",
     "description": "ManageEx is a leading provider of specialized business services, including digital marketing, creative design, accounting, and human resources. We offer flexible, tailor-made solutions designed to meet each client's operational and financial needs.",
@@ -224,10 +223,10 @@
     "tag": "OUR PROJECTS",
     "title": "Latest Work Showcase",
     "subtitle": "Discover our recent successful projects and client transformations.",
-    "ecommerce": {
-      "title": "E-Commerce Platform",
-      "category": "Web Development",
-      "description": "Modern e-commerce solution with advanced features"
+    "marketing": {
+      "title": "Marketing Service",
+      "category": "Ads Development",
+      "description": "Modern marketing solution with advanced visulazation"
     },
     "branding": {
       "title": "Brand Identity Design",
@@ -240,9 +239,9 @@
       "description": "Viral social media campaign that increased engagement by 300%"
     },
     "mobileApp": {
-      "title": "Mobile App Design",
+      "title": "Graphic Design",
       "category": "UI/UX Design",
-      "description": "User-friendly mobile app with intuitive design"
+      "description": "User-friendly intuitive designs"
     }
   },
   "blog": {

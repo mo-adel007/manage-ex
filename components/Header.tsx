@@ -57,6 +57,7 @@ export default function Header() {
     { href: '/', label: t('nav.home'), icon: 'fa-home' },
     { href: '/about', label: t('nav.about'), icon: 'fa-info-circle' },
     { href: '/services', label: t('nav.services'), icon: 'fa-cogs' },
+    { href: '/whyChooseUs', label: t('whyChooseUs.title'), icon: 'fa-star' },
     { href: '/contact', label: t('nav.contact'), icon: 'fa-envelope' },
     { href: '/careers', label: t('nav.careers'), icon: 'fa-briefcase' },
   ]

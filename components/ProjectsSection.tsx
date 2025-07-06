@@ -9,10 +9,10 @@ export default function ProjectsSection() {
 
   const projects = [
     {
-      title: t('projects.ecommerce.title'),
-      category: t('projects.ecommerce.category'),
+      title: t('projects.marketing.title'),
+      category: t('projects.marketing.category'),
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600',
-      description: t('projects.ecommerce.description')
+      description: t('projects.marketing.description')
     },
     {
       title: t('projects.branding.title'),

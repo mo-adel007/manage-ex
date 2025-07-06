@@ -13,7 +13,7 @@ export default function About() {
       <Hero />
       <ServicesGrid />
       <ProjectsSection />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <WhyChooseUs />
       <ContactSection />
     </>
