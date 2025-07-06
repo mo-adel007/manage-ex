@@ -89,47 +89,6 @@ export default function GlobalLightningBackground() {
           text-align: left !important;
         }
 
-        /* RTL Layout Specific Fixes - CRITICAL */
-        .rtl-layout {
-          position: fixed !important;
-          top: 0 !important;
-          left: 0 !important;
-          right: 0 !important;
-          bottom: 0 !important;
-          width: 100vw !important;
-          height: 100vh !important;
-          z-index: 0 !important;
-          direction: ltr !important;
-          transform: translateZ(0) !important;
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
-
-        .rtl-layout * {
-          direction: ltr !important;
-        }
-
-        .rtl-layout canvas {
-          position: absolute !important;
-          top: 0 !important;
-          left: 0 !important;
-          right: 0 !important;
-          bottom: 0 !important;
-          width: 100% !important;
-          height: 100% !important;
-          direction: ltr !important;
-          transform: translateZ(0) !important;
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
-
-        .ltr-layout {
-          direction: ltr;
-          transform: translateZ(0);
-        }
-
         /* Enhanced visibility for dark theme particles */
         [data-theme="dark"] .global-background-effect {
           opacity: 1.0 !important;
@@ -144,7 +103,7 @@ export default function GlobalLightningBackground() {
           filter: brightness(0.25) contrast(2.2) saturate(2.2);
         }
 
-        /* Arabic/RTL specific particle fixes - ENHANCED */
+        /* Arabic/RTL specific particle fixes - Same as English */
         [dir="rtl"] .global-background-effect {
           position: fixed !important;
           top: 0 !important;
@@ -180,7 +139,7 @@ export default function GlobalLightningBackground() {
           opacity: 1 !important;
         }
 
-        /* Arabic language specific fixes - ENHANCED */
+        /* Arabic language specific fixes - Same as English */
         html[lang="ar"] .global-background-effect {
           position: fixed !important;
           top: 0 !important;
@@ -216,7 +175,7 @@ export default function GlobalLightningBackground() {
           opacity: 1 !important;
         }
 
-        /* Enhanced Arabic visibility - CRITICAL */
+        /* Arabic visibility - Same as English */
         html[lang="ar"][data-theme="dark"] .global-background-effect {
           opacity: 1.0 !important;
           mix-blend-mode: screen;
@@ -257,7 +216,7 @@ export default function GlobalLightningBackground() {
             filter: brightness(0.2) contrast(2.0) saturate(2.0);
           }
 
-          /* RTL Mobile specific fixes - ENHANCED */
+          /* RTL Mobile specific fixes */
           [dir="rtl"] .global-background-effect {
             position: fixed !important;
             top: 0 !important;
@@ -294,7 +253,7 @@ export default function GlobalLightningBackground() {
             opacity: 1 !important;
           }
 
-          /* Arabic mobile specific fixes - ENHANCED */
+          /* Arabic mobile specific fixes */
           html[lang="ar"] .global-background-effect {
             position: fixed !important;
             top: 0 !important;
@@ -333,7 +292,7 @@ export default function GlobalLightningBackground() {
             opacity: 1 !important;
           }
 
-          /* Enhanced Arabic mobile visibility - CRITICAL */
+          /* Arabic mobile visibility - Same as English */
           html[lang="ar"][data-theme="dark"] .global-background-effect {
             opacity: 1.0 !important;
             filter: brightness(1.8) contrast(1.5) saturate(1.5);
@@ -369,72 +328,7 @@ export default function GlobalLightningBackground() {
             filter: brightness(0.15) contrast(1.8) saturate(1.8);
           }
 
-          /* Enhanced RTL mobile fixes */
-          [dir="rtl"] .global-background-effect {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            direction: ltr !important;
-            transform: translateZ(0) !important;
-            z-index: 0 !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
-          [dir="rtl"] .global-background-effect canvas {
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            direction: ltr !important;
-            transform: translateZ(0) !important;
-            backface-visibility: hidden !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
-          /* Arabic small mobile fixes */
-          html[lang="ar"] .global-background-effect {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            direction: ltr !important;
-            z-index: 0 !important;
-            transform: translateZ(0) !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
-          html[lang="ar"] .global-background-effect canvas {
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            direction: ltr !important;
-            transform: translateZ(0) !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
-          /* Enhanced Arabic small mobile visibility - CRITICAL */
+          /* Arabic small mobile visibility - Same as English */
           html[lang="ar"][data-theme="dark"] .global-background-effect {
             opacity: 1.0 !important;
             filter: brightness(1.6) contrast(1.4) saturate(1.4);
@@ -470,34 +364,7 @@ export default function GlobalLightningBackground() {
             filter: brightness(0.12) contrast(1.6) saturate(1.6);
           }
 
-          /* Extra small RTL fixes */
-          [dir="rtl"] .global-background-effect {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            direction: ltr !important;
-            z-index: 0 !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-          
-          html[lang="ar"] .global-background-effect {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            direction: ltr !important;
-            z-index: 0 !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
-          /* Enhanced Arabic extra small visibility */
+          /* Arabic extra small visibility - Same as English */
           html[lang="ar"][data-theme="dark"] .global-background-effect {
             opacity: 1.0 !important;
             filter: brightness(1.5) contrast(1.3) saturate(1.3);
@@ -542,7 +409,7 @@ export default function GlobalLightningBackground() {
                   drop-shadow(0 0 45px rgba(91, 67, 137, 0.5));
         }
 
-        /* Enhanced Arabic canvas glow */
+        /* Arabic canvas glow - Same as English */
         html[lang="ar"][data-theme="dark"] .global-background-effect :global(canvas) {
           filter: drop-shadow(0 0 25px rgba(139, 124, 200, 0.8)) 
                   drop-shadow(0 0 50px rgba(91, 67, 137, 0.6));
@@ -577,22 +444,7 @@ export default function GlobalLightningBackground() {
                     drop-shadow(0 0 40px rgba(91, 67, 137, 0.4));
           }
 
-          /* RTL Canvas glow fixes */
-          [dir="rtl"] .global-background-effect :global(canvas) {
-            filter: drop-shadow(0 0 20px rgba(139, 124, 200, 0.6)) 
-                    drop-shadow(0 0 40px rgba(91, 67, 137, 0.4));
-            direction: ltr !important;
-            transform: translateZ(0) !important;
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
+          /* Arabic mobile canvas - Same as English */
           html[lang="ar"] .global-background-effect :global(canvas) {
             filter: drop-shadow(0 0 22px rgba(139, 124, 200, 0.7)) 
                     drop-shadow(0 0 45px rgba(91, 67, 137, 0.5));
@@ -603,54 +455,6 @@ export default function GlobalLightningBackground() {
             left: 0 !important;
             width: 100% !important;
             height: 100% !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-        }
-
-        /* Performance optimization for low-end devices */
-        @media (max-width: 480px) and (max-height: 800px) {
-          .global-background-effect {
-            will-change: transform;
-            transform: translateZ(0);
-            backface-visibility: hidden;
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            z-index: 0 !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
-          [dir="rtl"] .global-background-effect {
-            will-change: transform !important;
-            transform: translateZ(0) !important;
-            backface-visibility: hidden !important;
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            z-index: 0 !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
-          html[lang="ar"] .global-background-effect {
-            will-change: transform !important;
-            transform: translateZ(0) !important;
-            backface-visibility: hidden !important;
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            z-index: 0 !important;
             display: block !important;
             visibility: visible !important;
             opacity: 1 !important;
@@ -676,27 +480,7 @@ export default function GlobalLightningBackground() {
             opacity: 1.0 !important;
           }
 
-          [dir="rtl"] .global-background-effect {
-            position: fixed !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            direction: ltr !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
-          html[lang="ar"] .global-background-effect {
-            position: fixed !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            direction: ltr !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
-          /* Enhanced Arabic landscape visibility */
+          /* Arabic landscape - Same as English */
           html[lang="ar"][data-theme="dark"] .global-background-effect {
             opacity: 1.0 !important;
             filter: brightness(1.8) contrast(1.5) saturate(1.5);
@@ -726,31 +510,13 @@ export default function GlobalLightningBackground() {
             filter: brightness(0.15) contrast(2.2) saturate(2.2);
           }
 
-          [dir="rtl"] .global-background-effect {
-            direction: ltr !important;
-            transform: translateZ(0) !important;
-            position: fixed !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
-          html[lang="ar"] .global-background-effect {
-            direction: ltr !important;
-            transform: translateZ(0) !important;
-            position: fixed !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
-          /* Enhanced Arabic high DPI visibility */
+          /* Arabic high DPI - Same as English */
           html[lang="ar"][data-theme="light"] .global-background-effect {
             filter: brightness(0.15) contrast(2.2) saturate(2.2);
           }
         }
 
-        /* Force LTR for particles in RTL layouts - CRITICAL */
+        /* Force LTR for particles in RTL layouts */
         [dir="rtl"] .global-background-effect,
         [dir="rtl"] .global-background-effect *,
         [dir="rtl"] .global-background-effect canvas {
@@ -761,7 +527,7 @@ export default function GlobalLightningBackground() {
           opacity: 1 !important;
         }
 
-        /* Arabic language specific fixes - CRITICAL */
+        /* Arabic language specific fixes */
         html[lang="ar"] .global-background-effect,
         html[lang="ar"] .global-background-effect *,
         html[lang="ar"] .global-background-effect canvas {
@@ -785,178 +551,6 @@ export default function GlobalLightningBackground() {
           display: block !important;
           visibility: visible !important;
           opacity: 1 !important;
-        }
-
-        /* Mobile Arabic specific fixes - CRITICAL */
-        @media (max-width: 768px) {
-          html[lang="ar"] .global-background-effect {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            direction: ltr !important;
-            z-index: 0 !important;
-            transform: translateZ(0) !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
-          html[lang="ar"] .global-background-effect canvas {
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            direction: ltr !important;
-            transform: translateZ(0) !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-        }
-
-        /* Force visibility for Arabic - CRITICAL OVERRIDE */
-        html[lang="ar"] .global-background-effect {
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
-
-        html[lang="ar"] .global-background-effect canvas {
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
-
-        /* ULTIMATE ARABIC MOBILE FIX - CRITICAL */
-        @media (max-width: 768px) {
-          html[lang="ar"] .global-background-effect,
-          html[lang="ar"] .global-background-effect *,
-          html[lang="ar"] .global-background-effect canvas {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            direction: ltr !important;
-            z-index: 0 !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            transform: translateZ(0) !important;
-            backface-visibility: hidden !important;
-          }
-        }
-
-        /* ULTIMATE SMALL MOBILE ARABIC FIX */
-        @media (max-width: 480px) {
-          html[lang="ar"] .global-background-effect,
-          html[lang="ar"] .global-background-effect *,
-          html[lang="ar"] .global-background-effect canvas {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            direction: ltr !important;
-            z-index: 0 !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            transform: translateZ(0) !important;
-          }
-        }
-
-        /* ULTIMATE EXTRA SMALL MOBILE ARABIC FIX */
-        @media (max-width: 360px) {
-          html[lang="ar"] .global-background-effect,
-          html[lang="ar"] .global-background-effect *,
-          html[lang="ar"] .global-background-effect canvas {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            direction: ltr !important;
-            z-index: 0 !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-        }
-
-        /* ULTIMATE FORCE VISIBILITY FOR ARABIC - NUCLEAR OPTION */
-        html[lang="ar"] .global-background-effect {
-          position: fixed !important;
-          top: 0 !important;
-          left: 0 !important;
-          right: 0 !important;
-          bottom: 0 !important;
-          width: 100vw !important;
-          height: 100vh !important;
-          z-index: 0 !important;
-          direction: ltr !important;
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          transform: translateZ(0) !important;
-          backface-visibility: hidden !important;
-          will-change: transform !important;
-        }
-
-        html[lang="ar"] .global-background-effect canvas {
-          position: absolute !important;
-          top: 0 !important;
-          left: 0 !important;
-          right: 0 !important;
-          bottom: 0 !important;
-          width: 100% !important;
-          height: 100% !important;
-          z-index: 0 !important;
-          direction: ltr !important;
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          transform: translateZ(0) !important;
-          backface-visibility: hidden !important;
-        }
-
-        /* FORCE ARABIC PARTICLES ON ALL SCREEN SIZES */
-        @media screen {
-          html[lang="ar"] .global-background-effect {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            z-index: 0 !important;
-            direction: ltr !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
-
-          html[lang="ar"] .global-background-effect canvas {
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            direction: ltr !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-          }
         }
       `}</style>
     </div>
