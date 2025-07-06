@@ -2,33 +2,36 @@
 
 import Image from 'next/image'
 import AnimatedElement from './AnimatedElement'
+import { useTranslation } from 'next-i18next'
 
 const serviceHighlights = [
   {
-    title: 'High Quality Services',
+    title: 'services.highlights.highQuality',
     icon: 'fas fa-award',
     image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
-    title: 'Skilled Developers',
+    title: 'services.highlights.skilledDevelopers',
     icon: 'fas fa-code',
     image: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
-    title: 'Perfect Web Solution',
+    title: 'services.highlights.perfectSolution',
     icon: 'fas fa-laptop-code',
     image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=400'
   }
 ]
 
 export default function ServicesHero() {
+  const { t } = useTranslation('common')
+
   return (
     <section className="services-hero">
       <div className="container">
         <AnimatedElement animation="text-focus">
           <div className="section-header">
-            <span className="section-tag">OUR SERVICES</span>
-            <h1 className="section-title">We Shape the Perfect Solution.</h1>
+            <span className="section-tag">{t('services.tag')}</span>
+            <h1 className="section-title">{t('services.title')}</h1>
           </div>
         </AnimatedElement>
 
@@ -43,7 +46,7 @@ export default function ServicesHero() {
                 <div className="highlight-image">
                   <Image
                     src={highlight.image}
-                    alt={highlight.title}
+                    alt={t(highlight.title)}
                     width={300}
                     height={200}
                   />
@@ -51,7 +54,7 @@ export default function ServicesHero() {
                     <i className={highlight.icon}></i>
                   </div>
                 </div>
-                <h3>{highlight.title}</h3>
+                <h3>{t(highlight.title)}</h3>
               </div>
             </AnimatedElement>
           ))}

@@ -49,20 +49,20 @@ export default function GlobalLightningBackground() {
     <div className={`global-background-effect ${isRTL ? 'rtl-layout' : 'ltr-layout'}`}>
       <Particles
         particleColors={colors}
-        particleCount={isRTL ? 1600 : (theme === 'dark' ? 1200 : 1000)}
-        particleSpread={isRTL ? 20 : (theme === 'dark' ? 16 : 14)}
-        speed={isRTL ? 0.18 : (theme === 'dark' ? 0.12 : 0.1)}
-        particleBaseSize={isRTL ? 220 : (theme === 'dark' ? 160 : 140)}
+        particleCount={isRTL ? 2000 : (theme === 'dark' ? 1200 : 1000)}
+        particleSpread={isRTL ? 25 : (theme === 'dark' ? 16 : 14)}
+        speed={isRTL ? 0.22 : (theme === 'dark' ? 0.12 : 0.1)}
+        particleBaseSize={isRTL ? 280 : (theme === 'dark' ? 160 : 140)}
         moveParticlesOnHover={true}
         alphaParticles={true}
-        sizeRandomness={isRTL ? 2.2 : (theme === 'dark' ? 1.6 : 1.4)}
-        cameraDistance={isRTL ? 35 : (theme === 'dark' ? 30 : 28)}
+        sizeRandomness={isRTL ? 2.8 : (theme === 'dark' ? 1.6 : 1.4)}
+        cameraDistance={isRTL ? 40 : (theme === 'dark' ? 30 : 28)}
         disableRotation={false}
-        particleHoverFactor={isRTL ? 1.6 : (theme === 'dark' ? 1.2 : 1.0)}
-        glowIntensity={isRTL ? 2.8 : (theme === 'dark' ? 1.8 : 2.0)}
-        brightnessMultiplier={isRTL ? 2.2 : (theme === 'dark' ? 1.4 : 1.6)}
-        contrastLevel={isRTL ? 2.0 : (theme === 'dark' ? 1.4 : 1.5)}
-        saturationLevel={isRTL ? 2.0 : (theme === 'dark' ? 1.4 : 1.5)}
+        particleHoverFactor={isRTL ? 2.0 : (theme === 'dark' ? 1.2 : 1.0)}
+        glowIntensity={isRTL ? 3.5 : (theme === 'dark' ? 1.8 : 2.0)}
+        brightnessMultiplier={isRTL ? 2.8 : (theme === 'dark' ? 1.4 : 1.6)}
+        contrastLevel={isRTL ? 2.5 : (theme === 'dark' ? 1.4 : 1.5)}
+        saturationLevel={isRTL ? 2.5 : (theme === 'dark' ? 1.4 : 1.5)}
       />
 
       <style jsx>{`
@@ -223,13 +223,13 @@ export default function GlobalLightningBackground() {
         html[lang="ar"][data-theme="dark"] .global-background-effect {
           opacity: 1.0 !important;
           mix-blend-mode: screen !important;
-          filter: brightness(2.2) contrast(1.8) saturate(1.8) !important;
+          filter: brightness(2.8) contrast(2.2) saturate(2.2) !important;
         }
 
         html[lang="ar"][data-theme="light"] .global-background-effect {
           opacity: 1.0 !important;
           mix-blend-mode: multiply !important;
-          filter: brightness(0.15) contrast(2.5) saturate(2.5) !important;
+          filter: brightness(0.08) contrast(3.0) saturate(3.0) !important;
         }
 
         /* Mobile optimizations with enhanced visibility */
@@ -339,13 +339,13 @@ export default function GlobalLightningBackground() {
           /* Enhanced Arabic mobile visibility - CRITICAL */
           html[lang="ar"][data-theme="dark"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(2.0) contrast(1.6) saturate(1.6) !important;
+            filter: brightness(2.5) contrast(2.0) saturate(2.0) !important;
             mix-blend-mode: screen !important;
           }
 
           html[lang="ar"][data-theme="light"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(0.1) contrast(2.2) saturate(2.2) !important;
+            filter: brightness(0.05) contrast(2.8) saturate(2.8) !important;
             mix-blend-mode: multiply !important;
           }
         }
@@ -442,13 +442,13 @@ export default function GlobalLightningBackground() {
           /* Enhanced Arabic small mobile visibility - CRITICAL */
           html[lang="ar"][data-theme="dark"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(1.8) contrast(1.5) saturate(1.5) !important;
+            filter: brightness(2.2) contrast(1.8) saturate(1.8) !important;
             mix-blend-mode: screen !important;
           }
 
           html[lang="ar"][data-theme="light"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(0.08) contrast(2.0) saturate(2.0) !important;
+            filter: brightness(0.03) contrast(2.5) saturate(2.5) !important;
             mix-blend-mode: multiply !important;
           }
         }
@@ -507,13 +507,13 @@ export default function GlobalLightningBackground() {
           /* Enhanced Arabic extra small visibility */
           html[lang="ar"][data-theme="dark"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(1.6) contrast(1.4) saturate(1.4) !important;
+            filter: brightness(2.0) contrast(1.6) saturate(1.6) !important;
             mix-blend-mode: screen !important;
           }
 
           html[lang="ar"][data-theme="light"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(0.05) contrast(1.8) saturate(1.8) !important;
+            filter: brightness(0.02) contrast(2.2) saturate(2.2) !important;
             mix-blend-mode: multiply !important;
           }
         }
@@ -553,13 +553,13 @@ export default function GlobalLightningBackground() {
 
         /* Enhanced Arabic canvas glow */
         html[lang="ar"][data-theme="dark"] .global-background-effect :global(canvas) {
-          filter: drop-shadow(0 0 30px rgba(139, 124, 200, 0.9)) 
-                  drop-shadow(0 0 60px rgba(91, 67, 137, 0.7)) !important;
+          filter: drop-shadow(0 0 35px rgba(139, 124, 200, 1.0)) 
+                  drop-shadow(0 0 70px rgba(91, 67, 137, 0.8)) !important;
         }
 
         html[lang="ar"][data-theme="light"] .global-background-effect :global(canvas) {
-          filter: drop-shadow(0 0 28px rgba(76, 29, 149, 0.8)) 
-                  drop-shadow(0 0 55px rgba(91, 67, 137, 0.6)) !important;
+          filter: drop-shadow(0 0 32px rgba(76, 29, 149, 0.9)) 
+                  drop-shadow(0 0 65px rgba(91, 67, 137, 0.7)) !important;
         }
 
         /* Mobile glow adjustments */
@@ -603,8 +603,8 @@ export default function GlobalLightningBackground() {
           }
 
           html[lang="ar"] .global-background-effect :global(canvas) {
-            filter: drop-shadow(0 0 25px rgba(139, 124, 200, 0.8)) 
-                    drop-shadow(0 0 50px rgba(91, 67, 137, 0.6)) !important;
+            filter: drop-shadow(0 0 30px rgba(139, 124, 200, 0.9)) 
+                    drop-shadow(0 0 60px rgba(91, 67, 137, 0.7)) !important;
             direction: ltr !important;
             transform: translateZ(0) !important;
             position: absolute !important;
@@ -708,12 +708,12 @@ export default function GlobalLightningBackground() {
           /* Enhanced Arabic landscape visibility */
           html[lang="ar"][data-theme="dark"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(1.8) contrast(1.4) saturate(1.4) !important;
+            filter: brightness(2.2) contrast(1.6) saturate(1.6) !important;
           }
 
           html[lang="ar"][data-theme="light"] .global-background-effect {
             opacity: 1.0 !important;
-            filter: brightness(0.1) contrast(1.8) saturate(1.8) !important;
+            filter: brightness(0.04) contrast(2.2) saturate(2.2) !important;
           }
         }
 
@@ -755,7 +755,7 @@ export default function GlobalLightningBackground() {
 
           /* Enhanced Arabic high DPI visibility */
           html[lang="ar"][data-theme="light"] .global-background-effect {
-            filter: brightness(0.08) contrast(2.5) saturate(2.5) !important;
+            filter: brightness(0.02) contrast(2.8) saturate(2.8) !important;
           }
         }
 
@@ -894,6 +894,74 @@ export default function GlobalLightningBackground() {
             height: 100vh !important;
             direction: ltr !important;
             z-index: 0 !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+          }
+        }
+
+        /* ULTIMATE FORCE VISIBILITY FOR ARABIC - NUCLEAR OPTION */
+        html[lang="ar"] .global-background-effect {
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          bottom: 0 !important;
+          width: 100vw !important;
+          height: 100vh !important;
+          z-index: 0 !important;
+          direction: ltr !important;
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          transform: translateZ(0) !important;
+          backface-visibility: hidden !important;
+          will-change: transform !important;
+        }
+
+        html[lang="ar"] .global-background-effect canvas {
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          bottom: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          z-index: 0 !important;
+          direction: ltr !important;
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          transform: translateZ(0) !important;
+          backface-visibility: hidden !important;
+        }
+
+        /* FORCE ARABIC PARTICLES ON ALL SCREEN SIZES */
+        @media screen {
+          html[lang="ar"] .global-background-effect {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: 0 !important;
+            direction: ltr !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+          }
+
+          html[lang="ar"] .global-background-effect canvas {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            direction: ltr !important;
             display: block !important;
             visibility: visible !important;
             opacity: 1 !important;

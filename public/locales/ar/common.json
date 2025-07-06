@@ -27,6 +27,26 @@
     "tag": "خدماتنا",
     "title": "نحن نصنع الحل المثالي.",
     "subtitle": "سمّه ونحن نصنعه.",
+    "youNameItTitle": "سمّه ونحن نصنعه",
+    "highlights": {
+      "highQuality": "خدمات عالية الجودة",
+      "skilledDevelopers": "مطورون مهرة",
+      "perfectSolution": "حل ويب مثالي"
+    },
+    "categories": {
+      "webDevelopment": "تطوير المواقع",
+      "graphicDesigning": "التصميم الجرافيكي",
+      "mediaBuying": "شراء الإعلانات",
+      "socialMediaManagement": "إدارة وسائل التواصل الاجتماعي",
+      "marketResearch": "أبحاث السوق",
+      "planningStrategies": "التخطيط والاستراتيجيات",
+      "seo": "تحسين محركات البحث",
+      "influencersCollaboration": "التعاون مع المؤثرين",
+      "moderation": "الإشراف",
+      "photographyVideo": "التصوير والفيديو",
+      "videographyEditing": "التصوير وتحرير الفيديو",
+      "mediaProduction": "إنتاج الوسائط"
+    },
     "webDevelopment": {
       "title": "تطوير المواقع",
       "description": "إنشاء مواقع ويب حديثة ومتجاوبة تحقق النتائج وتشرك جمهورك بفعالية."

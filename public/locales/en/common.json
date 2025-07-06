@@ -27,6 +27,26 @@
     "tag": "OUR SERVICES",
     "title": "We Shape the Perfect Solution.",
     "subtitle": "You Name IT We Make IT.",
+    "youNameItTitle": "You Name IT We Make IT",
+    "highlights": {
+      "highQuality": "High Quality Services",
+      "skilledDevelopers": "Skilled Developers",
+      "perfectSolution": "Perfect Web Solution"
+    },
+    "categories": {
+      "webDevelopment": "Web Development",
+      "graphicDesigning": "Graphic Designing",
+      "mediaBuying": "MEDIA BUYING",
+      "socialMediaManagement": "SOCIAL MEDIA MANAGEMENT",
+      "marketResearch": "Market Research",
+      "planningStrategies": "Planning & Strategies",
+      "seo": "Search engine optimization",
+      "influencersCollaboration": "Influencers Collaboration",
+      "moderation": "Moderation",
+      "photographyVideo": "PHOTOGRAPHY & Video",
+      "videographyEditing": "Videography & editing",
+      "mediaProduction": "Media Production"
+    },
     "webDevelopment": {
       "title": "Web Development",
       "description": "Creating responsive, modern websites that drive results and engage your audience effectively."
