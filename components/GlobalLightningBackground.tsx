@@ -3,12 +3,10 @@
 import { useEffect, useState } from 'react'
 import Particles from './Particles'
 import { useTheme } from './ThemeProvider'
-import { useRouter } from 'next/router'
 
 export default function GlobalLightningBackground() {
   const [mounted, setMounted] = useState(false)
   const { theme } = useTheme()
-  const router = useRouter()
 
   useEffect(() => {
     setMounted(true)
@@ -45,7 +43,7 @@ export default function GlobalLightningBackground() {
   const colors = theme === 'dark' ? darkThemeColors : lightThemeColors
 
   return (
-    <div className={`global-background-effect ${isRTL ? 'rtl-layout' : 'ltr-layout'}`}>
+    <div className="global-background-effect">
       <Particles
         particleColors={colors}
         particleCount={theme === 'dark' ? 1200 : 1000}
