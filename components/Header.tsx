@@ -227,6 +227,24 @@ export default function Header() {
           position: relative;
         }
 
+        /* RTL Header Fixes */
+        [dir="rtl"] .nav-wrapper {
+          flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .logo {
+          order: 1;
+        }
+
+        [dir="rtl"] .header-controls {
+          order: 2;
+          flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .desktop-nav {
+          order: 3;
+        }
+
         .logo {
           display: flex;
           align-items: center;
@@ -319,6 +337,11 @@ export default function Header() {
         .header-controls {
           display: flex;
           align-items: center;
+          gap: 20px;
+        }
+
+        [dir="rtl"] .header-controls {
+          flex-direction: row-reverse;
           gap: 20px;
         }
 
@@ -415,6 +438,19 @@ export default function Header() {
           border-left: 1px solid rgba(91, 67, 137, 0.1);
         }
 
+        /* RTL Mobile Navigation */
+        [dir="rtl"] .mobile-nav {
+          right: auto;
+          left: -100%;
+          box-shadow: 5px 0 25px rgba(91, 67, 137, 0.15);
+          border-left: none;
+          border-right: 1px solid rgba(91, 67, 137, 0.1);
+        }
+
+        [dir="rtl"] .mobile-nav.active {
+          left: 0;
+        }
+
         [data-theme="dark"] .mobile-nav {
           background: rgba(26, 26, 26, 0.98);
           box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
@@ -439,6 +475,10 @@ export default function Header() {
           padding: 20px;
           border-bottom: 2px solid rgba(91, 67, 137, 0.1);
           background: linear-gradient(135deg, rgba(91, 67, 137, 0.08) 0%, rgba(194, 151, 193, 0.05) 100%);
+        }
+
+        [dir="rtl"] .mobile-nav-header {
+          flex-direction: row-reverse;
         }
 
         .mobile-logo {
@@ -508,6 +548,11 @@ export default function Header() {
           letter-spacing: 0.5px;
         }
 
+        [dir="rtl"] .mobile-nav-link {
+          flex-direction: row-reverse;
+          text-align: right;
+        }
+
         .nav-icon {
           width: 20px;
           display: flex;
@@ -517,10 +562,20 @@ export default function Header() {
           transition: all 0.3s ease;
         }
 
+        [dir="rtl"] .nav-icon {
+          margin-left: 0;
+          margin-right: 15px;
+        }
+
         .mobile-nav-link:hover {
           background: linear-gradient(135deg, rgba(91, 67, 137, 0.1) 0%, rgba(194, 151, 193, 0.08) 100%);
           color: var(--secondary-color);
           padding-left: 30px;
+        }
+
+        [dir="rtl"] .mobile-nav-link:hover {
+          padding-right: 30px;
+          padding-left: 20px;
         }
 
         .mobile-nav-link:hover .nav-icon {
@@ -547,6 +602,11 @@ export default function Header() {
           bottom: 0;
           width: 4px;
           background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+
+        [dir="rtl"] .mobile-nav-link.active::before {
+          left: auto;
+          right: 0;
         }
 
         .mobile-nav-footer {
@@ -676,6 +736,21 @@ export default function Header() {
             display: none;
           }
 
+          [dir="rtl"] .nav-wrapper {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+          }
+
+          [dir="rtl"] .logo {
+            order: 2;
+          }
+
+          [dir="rtl"] .header-controls {
+            order: 1;
+            flex-direction: row-reverse;
+            gap: 12px;
+          }
+
           .mobile-menu-toggle {
             display: flex;
           }
@@ -706,6 +781,17 @@ export default function Header() {
           .mobile-nav {
             width: 85%;
             max-width: 350px;
+          }
+
+          [dir="rtl"] .mobile-nav {
+            left: -85%;
+            right: auto;
+            width: 85%;
+            max-width: 350px;
+          }
+
+          [dir="rtl"] .mobile-nav.active {
+            left: 0;
           }
         }
 
@@ -758,6 +844,12 @@ export default function Header() {
             max-width: 300px;
           }
 
+          [dir="rtl"] .mobile-nav {
+            left: -90%;
+            width: 90%;
+            max-width: 300px;
+          }
+
           .mobile-social-link {
             width: 40px;
             height: 40px;
@@ -787,6 +879,12 @@ export default function Header() {
           }
 
           .mobile-nav {
+            width: 95%;
+            max-width: 280px;
+          }
+
+          [dir="rtl"] .mobile-nav {
+            left: -95%;
             width: 95%;
             max-width: 280px;
           }
