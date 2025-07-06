@@ -27,13 +27,16 @@ const vertex = `
   uniform float uSpread;
   uniform float uBaseSize;
   uniform float uSizeRandomness;
+  uniform float uGlow;
   
   varying vec4 vRandom;
   varying vec3 vColor;
+  varying float vGlow;
   
   void main() {
     vRandom = random;
     vColor = color;
+    vGlow = uGlow;
     
     vec3 pos = position * uSpread;
     pos.z *= 10.0;
@@ -55,8 +58,10 @@ const fragment = `
   
   uniform float uTime;
   uniform float uAlphaParticles;
+  uniform float uGlow;
   varying vec4 vRandom;
   varying vec3 vColor;
+  varying float vGlow;
   
   void main() {
     vec2 uv = gl_PointCoord.xy;
@@ -66,10 +71,24 @@ const fragment = `
       if(d > 0.5) {
         discard;
       }
-      gl_FragColor = vec4(vColor + 0.2 * sin(uv.yxx + uTime + vRandom.y * 6.28), 1.0);
+      vec3 finalColor = vColor + 0.3 * sin(uv.yxx + uTime + vRandom.y * 6.28);
+      // Add glow effect for purple particles
+      finalColor += vGlow * 0.4 * (1.0 - d) * vColor;
+      gl_FragColor = vec4(finalColor, 1.0);
     } else {
-      float circle = smoothstep(0.5, 0.4, d) * 0.8;
-      gl_FragColor = vec4(vColor + 0.2 * sin(uv.yxx + uTime + vRandom.y * 6.28), circle);
+      float circle = smoothstep(0.5, 0.3, d);
+      vec3 finalColor = vColor + 0.3 * sin(uv.yxx + uTime + vRandom.y * 6.28);
+      
+      // Enhanced glow for alpha particles
+      float glow = vGlow * (1.0 - smoothstep(0.3, 0.7, d)) * 0.6;
+      finalColor += glow * vColor;
+      
+      // Add rim lighting effect
+      float rim = smoothstep(0.4, 0.5, d) * smoothstep(0.5, 0.4, d);
+      finalColor += rim * vGlow * 0.8 * vColor;
+      
+      float alpha = circle * (0.7 + glow * 0.3);
+      gl_FragColor = vec4(finalColor, alpha);
     }
   }
 `;
@@ -86,6 +105,7 @@ interface ParticlesProps {
   sizeRandomness?: number;
   cameraDistance?: number;
   disableRotation?: boolean;
+  glowIntensity?: number;
   className?: string;
 }
 
@@ -101,6 +121,7 @@ const Particles = ({
   sizeRandomness = 1,
   cameraDistance = 20,
   disableRotation = false,
+  glowIntensity = 1.0,
   className = '',
 }: ParticlesProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -174,6 +195,7 @@ const Particles = ({
         uBaseSize: { value: particleBaseSize },
         uSizeRandomness: { value: sizeRandomness },
         uAlphaParticles: { value: alphaParticles ? 1 : 0 },
+        uGlow: { value: glowIntensity },
       },
       transparent: true,
       depthTest: false,
@@ -234,6 +256,7 @@ const Particles = ({
     sizeRandomness,
     cameraDistance,
     disableRotation,
+    glowIntensity,
   ]);
 
   return (
