@@ -55,6 +55,7 @@ export default function LanguageSwitcher() {
       <style jsx>{`
         .language-switcher {
           position: relative;
+          z-index: 1002;
         }
 
         .language-dropdown {
@@ -75,6 +76,7 @@ export default function LanguageSwitcher() {
           font-size: 14px;
           font-weight: 600;
           min-width: 80px;
+          white-space: nowrap;
         }
 
         .current-language:hover {
@@ -116,6 +118,7 @@ export default function LanguageSwitcher() {
           z-index: 1000;
           min-width: 140px;
           margin-top: 5px;
+          backdrop-filter: blur(10px);
         }
 
         .language-dropdown:hover .language-options {
@@ -161,6 +164,16 @@ export default function LanguageSwitcher() {
           font-weight: 500;
         }
 
+        /* RTL Language Switcher Fixes */
+        [dir="rtl"] .language-switcher {
+          direction: ltr;
+        }
+
+        [dir="rtl"] .language-options {
+          right: auto;
+          left: 0;
+        }
+
         @media (max-width: 768px) {
           .current-language {
             padding: 6px 10px;
@@ -178,6 +191,32 @@ export default function LanguageSwitcher() {
           .language-option {
             padding: 10px 12px;
             font-size: 13px;
+          }
+          
+          [dir="rtl"] .language-options {
+            left: 0;
+            right: auto;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .current-language {
+            padding: 5px 8px;
+            min-width: 65px;
+            font-size: 12px;
+          }
+
+          .language-code {
+            font-size: 10px;
+          }
+
+          .language-options {
+            min-width: 110px;
+          }
+
+          .language-option {
+            padding: 8px 10px;
+            font-size: 12px;
           }
         }
       `}</style>
