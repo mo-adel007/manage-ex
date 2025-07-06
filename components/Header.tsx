@@ -5,12 +5,15 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useTheme } from './ThemeProvider'
+import LanguageSwitcher from './LanguageSwitcher'
+import { useTranslation } from 'next-i18next'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
   const { theme, toggleTheme } = useTheme()
+  const { t } = useTranslation('common')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,11 +54,11 @@ export default function Header() {
   }, [isMenuOpen])
 
   const navLinks = [
-    { href: '/', label: 'Home', icon: 'fa-home' },
-    { href: '/about', label: 'About', icon: 'fa-info-circle' },
-    { href: '/services', label: 'Services', icon: 'fa-cogs' },
-    { href: '/contact', label: 'Contact', icon: 'fa-envelope' },
-    { href: '/careers', label: 'Careers', icon: 'fa-briefcase' },
+    { href: '/', label: t('nav.home'), icon: 'fa-home' },
+    { href: '/about', label: t('nav.about'), icon: 'fa-info-circle' },
+    { href: '/services', label: t('nav.services'), icon: 'fa-cogs' },
+    { href: '/contact', label: t('nav.contact'), icon: 'fa-envelope' },
+    { href: '/careers', label: t('nav.careers'), icon: 'fa-briefcase' },
   ]
 
   const handleLinkClick = () => {
@@ -103,6 +106,8 @@ export default function Header() {
               <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
                 <i className={`fas ${theme === 'dark' ? 'fa-sun' : 'fa-moon'}`}></i>
               </button>
+              
+              <LanguageSwitcher />
               
               <div className="social-links desktop-only">
                 <Link href="#" className="social-link" aria-label="Facebook"><i className="fab fa-facebook-f"></i></Link>

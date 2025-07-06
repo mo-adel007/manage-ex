@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "careers": "Careers"
+  },
+  "hero": {
+    "title": {
+      "line1": "PROFESSIONAL",
+      "line2": "BUSINESS",
+      "line3": "MANAGEMENT",
+      "line4": "SOLUTIONS",
+      "line5": "THAT",
+      "line6": "TRANSFORM"
+    },
+    "description": "Streamline your operations to a new level of efficiency with our innovative approach to business management.",
+    "getStarted": "Get Started",
+    "ourServices": "Our Services",
+    "stats": {
+      "projects": "Projects",
+      "successRate": "Success Rate"
+    }
+  },
+  "services": {
+    "tag": "OUR SERVICES",
+    "title": "We Shape the Perfect Solution.",
+    "subtitle": "You Name IT We Make IT.",
+    "webDevelopment": {
+      "title": "Web Development",
+      "description": "Creating responsive, modern websites that drive results and engage your audience effectively."
+    },
+    "graphicDesign": {
+      "title": "Graphic Design",
+      "description": "Stunning visual designs that capture your brand essence and communicate your message powerfully."
+    },
+    "brandIdentity": {
+      "title": "Brand Identity",
+      "description": "Complete brand identity solutions that make your business memorable and distinctive in the market."
+    },
+    "socialMedia": {
+      "title": "Social Media Management",
+      "description": "Strategic social media management that builds communities and drives engagement across all platforms."
+    },
+    "videoEditing": {
+      "title": "Video Editing",
+      "description": "Professional video editing services that tell your story and captivate your audience with compelling visuals."
+    },
+    "planning": {
+      "title": "Planning & Strategy",
+      "description": "Comprehensive marketing strategies that align with your business goals and drive measurable results."
+    },
+    "seo": {
+      "title": "Search Engine Optimization",
+      "description": "Advanced SEO strategies that improve your search rankings and drive organic traffic to your website."
+    },
+    "influencer": {
+      "title": "Influencer Marketing",
+      "description": "Strategic influencer partnerships that amplify your brand reach and connect with your target audience authentically."
+    }
+  },
+  "projects": {
+    "tag": "OUR PROJECTS",
+    "title": "Latest Work Showcase",
+    "subtitle": "Discover our recent successful projects and client transformations."
+  },
+  "blog": {
+    "tag": "OUR BLOG",
+    "title": "Latest Insights & Tips",
+    "subtitle": "Stay updated with the latest digital marketing insights and industry trends."
+  },
+  "whyChooseUs": {
+    "tag": "WHY CHOOSE US",
+    "title": "Easy & Fastest Build your Business.",
+    "latestTechnology": {
+      "title": "Latest Technology",
+      "description": "We use cutting-edge technology and tools to deliver exceptional results that keep you ahead of the competition."
+    },
+    "certifiedExperts": {
+      "title": "Certified Experts",
+      "description": "Our team consists of certified professionals with years of experience in business management and development."
+    },
+    "reasonablePrice": {
+      "title": "Get Reasonable Price",
+      "description": "Quality services at competitive prices. We believe in providing value without compromising on excellence."
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Round-the-clock support to ensure your business never stops growing. We're here when you need us."
+    }
+  },
+  "contact": {
+    "tag": "CONTACT US",
+    "title": "Let's Start a New Step For Your Business",
+    "description": "Ready to transform your business? Get in touch with us today and let's build an exceptional website together.",
+    "discussBusiness": "Let's Discuss How to Make your Business Better.",
+    "discoverMore": "DISCOVER MORE",
+    "address": "Address",
+    "email": "Email & Phone",
+    "workingHours": "Working Hours",
+    "workingTime": "Sun - Thu: 10 AM to 7 PM"
+  },
+  "careers": {
+    "tag": "Join Our Team",
+    "title": "Start Your Career Journey",
+    "description": "Ready to be part of something amazing? Let's discuss your future with us.",
+    "form": {
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "message": "Tell Us About Yourself",
+      "messagePlaceholder": "Share your experience, skills, and why you want to join our team...",
+      "submit": "Submit Application",
+      "sending": "Sending..."
+    },
+    "whyJoinUs": "Why Join Us?",
+    "benefits": {
+      "salary": "Competitive salary packages",
+      "growth": "Professional growth opportunities",
+      "flexible": "Flexible working environment",
+      "projects": "Creative and innovative projects"
+    },
+    "getInTouch": "Get In Touch"
+  },
+  "footer": {
+    "copyright": "© 2024 ManageEx. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try Again"
+  }
+}

@@ -3,8 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedElement from "./AnimatedElement";
+import { useTranslation } from 'next-i18next'
 
 export default function ContactSection() {
+  const { t } = useTranslation('common')
+
   return (
     <section className="contact-section">
       <div className="container">
@@ -22,10 +25,8 @@ export default function ContactSection() {
                   />
                 </div>
               </div>
-              <h2>Let's Discuss How to Make your Business Better.</h2>
-              <Link href="/contact" className="btn-golden">
-                DISCOVER MORE
-              </Link>
+              <h2>{t('contact.discussBusiness')}</h2>
+              <Link href="/contact" className="btn-golden">{t('contact.discoverMore')}</Link>
             </div>
           </AnimatedElement>
 
@@ -37,7 +38,7 @@ export default function ContactSection() {
                     <i className="fas fa-map-marker-alt"></i>
                   </div>
                   <div className="info-content">
-                    <h4>Address</h4>
+                    <h4>{t('contact.address')}</h4>
                     <p>
                       Zahraa Al Maadi 50 St, Saint Anthony Church Square, Cairo,
                       Egypt
@@ -50,7 +51,7 @@ export default function ContactSection() {
                     <i className="fas fa-envelope"></i>
                   </div>
                   <div className="info-content">
-                    <h4>Email</h4>
+                    <h4>{t('contact.email')}</h4>
                     <p>
                       info@manageex.com
                       <br />
@@ -64,8 +65,8 @@ export default function ContactSection() {
                     <i className="fas fa-clock"></i>
                   </div>
                   <div className="info-content">
-                    <h4>Working Hours</h4>
-                    <p>Sun - Thu: 10 AM to 7 PM</p>
+                    <h4>{t('contact.workingHours')}</h4>
+                    <p>{t('contact.workingTime')}</p>
                   </div>
                 </div>
               </div>

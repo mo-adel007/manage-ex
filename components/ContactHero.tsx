@@ -1,17 +1,20 @@
 'use client'
 
 import AnimatedElement from './AnimatedElement'
+import { useTranslation } from 'next-i18next'
 
 export default function ContactHero() {
+  const { t } = useTranslation('common')
+
   return (
     <section className="contact-hero">
       <div className="container">
         <AnimatedElement animation="text-focus">
           <div className="hero-content">
-            <span className="section-tag">CONTACT US</span>
-            <h1 className="hero-title">Let's Start a New Step For Your Business</h1>
+            <span className="section-tag">{t('contact.tag')}</span>
+            <h1 className="hero-title">{t('contact.title')}</h1>
             <p className="hero-description">
-              Ready to transform your business? Get in touch with us today and let's build an exceptional website together.
+              {t('contact.description')}
             </p>
           </div>
         </AnimatedElement>

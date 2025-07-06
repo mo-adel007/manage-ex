@@ -3,52 +3,54 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import AnimatedElement from './AnimatedElement'
-
-const services = [
-  {
-    title: 'Web Development',
-    description: 'Creating responsive, modern websites that drive results and engage your audience effectively.',
-    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=400'
-  },
-  {
-    title: 'Graphic Design',
-    description: 'Stunning visual designs that capture your brand essence and communicate your message powerfully.',
-    image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400'
-  },
-  {
-    title: 'Brand Identity',
-    description: 'Complete brand identity solutions that make your business memorable and distinctive in the market.',
-    image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=400'
-  },
-  {
-    title: 'Social Media Management',
-    description: 'Strategic social media management that builds communities and drives engagement across all platforms.',
-    image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400'
-  },
-  {
-    title: 'Video Editing',
-    description: 'Professional video editing services that tell your story and captivate your audience with compelling visuals.',
-    image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpg?auto=compress&cs=tinysrgb&w=400'
-  },
-  {
-    title: 'Planning & Strategy',
-    description: 'Comprehensive marketing strategies that align with your business goals and drive measurable results.',
-    image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400'
-  },
-  {
-    title: 'Search Engine Optimization',
-    description: 'Advanced SEO strategies that improve your search rankings and drive organic traffic to your website.',
-    image: 'https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=400'
-  },
-  {
-    title: 'Influencer Marketing',
-    description: 'Strategic influencer partnerships that amplify your brand reach and connect with your target audience authentically.',
-    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400'
-  }
-]
+import { useTranslation } from 'next-i18next'
 
 export default function ServicesGrid() {
   const [flippedCards, setFlippedCards] = useState<number[]>([])
+  const { t } = useTranslation('common')
+
+  const services = [
+    {
+      title: t('services.webDevelopment.title'),
+      description: t('services.webDevelopment.description'),
+      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+      title: t('services.graphicDesign.title'),
+      description: t('services.graphicDesign.description'),
+      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+      title: t('services.brandIdentity.title'),
+      description: t('services.brandIdentity.description'),
+      image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+      title: t('services.socialMedia.title'),
+      description: t('services.socialMedia.description'),
+      image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+      title: t('services.videoEditing.title'),
+      description: t('services.videoEditing.description'),
+      image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+      title: t('services.planning.title'),
+      description: t('services.planning.description'),
+      image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+      title: t('services.seo.title'),
+      description: t('services.seo.description'),
+      image: 'https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+      title: t('services.influencer.title'),
+      description: t('services.influencer.description'),
+      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400'
+    }
+  ]
 
   const handleCardClick = (index: number) => {
     if (window.innerWidth <= 768) {
@@ -65,9 +67,9 @@ export default function ServicesGrid() {
       <div className="container">
         <AnimatedElement animation="roll-in-top">
           <div className="section-header">
-            <span className="section-tag">OUR SERVICES</span>
-            <h2 className="section-title">We Shape the Perfect Solution.</h2>
-            <p className="section-subtitle">You Name IT We Make IT.</p>
+            <span className="section-tag">{t('services.tag')}</span>
+            <h2 className="section-title">{t('services.title')}</h2>
+            <p className="section-subtitle">{t('services.subtitle')}</p>
           </div>
         </AnimatedElement>
         
