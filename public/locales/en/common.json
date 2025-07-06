@@ -57,12 +57,18 @@
       "perfectSolution": "Perfect Web Solution"
     },
     "categories": {
-      "accountingSolutions": "Accounting Solutions",
-      "hrSolutions": "HR Solutions",
-      "marketingServices": "Marketing Services",
-      "designServices": "Design Services",
       "webDevelopment": "Web Development",
-      "businessServices": "Business Services"
+      "graphicDesigning": "Graphic Designing",
+      "mediaBuying": "MEDIA BUYING",
+      "socialMediaManagement": "SOCIAL MEDIA MANAGEMENT",
+      "marketResearch": "Market Research",
+      "planningStrategies": "Planning & Strategies",
+      "seo": "Search engine optimization",
+      "influencersCollaboration": "Influencers Collaboration",
+      "moderation": "Moderation",
+      "photographyVideo": "PHOTOGRAPHY & Video",
+      "videographyEditing": "Videography & editing",
+      "mediaProduction": "Media Production"
     },
     "accounting": {
       "title": "Accounting Solutions",
@@ -120,30 +126,10 @@
         "integration": "Integrated with social media and marketing tools"
       }
     },
-    "accountingSolutions": {
-      "title": "Accounting Solutions",
-      "description": "Comprehensive accounting solutions to help businesses manage their finances and ensure compliance with legal and accounting standards."
-    },
-    "hrSolutions": {
-      "title": "HR Solutions",
-      "description": "Integrated, modern HR solutions that empower companies to build strong teams and achieve optimal operational efficiency."
-    },
-    "marketingServices": {
-      "title": "Marketing Services",
-      "description": "Comprehensive marketing solutions to help businesses strengthen their online presence and engage effectively with customers."
-    },
-    "designServices": {
-      "title": "Design Services",
-      "description": "Professional design solutions that reflect your brand identity and strengthen your market presence."
-    },
-    "webDevelopment": {
-      "title": "Web Development",
-      "description": "Comprehensive website design services that deliver a seamless digital experience from concept to launch."
-    },
-    "businessServices": {
+    "business": {
       "title": "Business Services",
       "subtitle": "Customized services, just for you",
-      "description": "Integrated solutions designed to empower companies, drive sustainable growth, and enhance operational efficiency.",
+      "description": "At ManageEx, we understand that entrepreneurs need more than just strong ideas — they need a solid administrative foundation that supports their journey. That's why our Business Services offer integrated solutions designed to empower companies, drive sustainable growth, and enhance operational efficiency — all while keeping full focus on core objectives.",
       "form": {
         "name": "Name",
         "contact": "Contact Number",
@@ -151,6 +137,34 @@
         "needs": "Let us know your needs — we'll build your perfect package."
       }
     },
+    "socialMedia": {
+      "title": "Social Media Management",
+      "description": "Comprehensive social media strategy and management"
+    },
+    "brandIdentity": {
+      "title": "Brand Identity Design",
+      "description": "Professional brand identity and visual design solutions"
+    },
+    "graphicDesign": {
+      "title": "Graphic Design",
+      "description": "Creative graphic design for all your business needs"
+    },
+    "videoEditing": {
+      "title": "Video Editing",
+      "description": "Professional video editing and motion graphics"
+    },
+    "influencer": {
+      "title": "Influencer Marketing",
+      "description": "Strategic influencer partnerships and collaborations"
+    },
+    "seo": {
+      "title": "SEO Optimization",
+      "description": "Search engine optimization for better visibility"
+    },
+    "planning": {
+      "title": "Strategic Planning",
+      "description": "Business strategy and planning consultation"
+    }
   },
   "whyChooseUs": {
     "tag": "WHY MANAGEX",

@@ -6,17 +6,17 @@ import { useTranslation } from 'next-i18next'
 
 const serviceHighlights = [
   {
-    title: 'services.categories.accountingSolutions',
+    title: 'services.highlights.highQuality',
     icon: 'fas fa-award',
     image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
-    title: 'services.categories.hrSolutions',
+    title: 'services.highlights.skilledDevelopers',
     icon: 'fas fa-code',
     image: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
-    title: 'services.categories.marketingServices',
+    title: 'services.highlights.perfectSolution',
     icon: 'fas fa-laptop-code',
     image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=400'
   }
