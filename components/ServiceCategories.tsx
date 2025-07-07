@@ -21,38 +21,19 @@ const serviceCategories = [
     title: 'services.categories.socialMediaManagement',
     image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=500'
   },
-  {
-    title: 'services.categories.marketResearch',
-    image: 'https://images.pexels.com/photos/590016/pexels-photo-590016.jpg?auto=compress&cs=tinysrgb&w=500'
-  },
-  {
-    title: 'services.categories.planningStrategies',
-    image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=500'
-  },
+
   {
     title: 'services.categories.seo',
     image: 'https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=500'
   },
-  {
-    title: 'services.categories.influencersCollaboration',
-    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=500'
-  },
-  {
-    title: 'services.categories.moderation',
-    image: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=500'
-  },
-  {
-    title: 'services.categories.photographyVideo',
-    image: 'https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=500'
-  },
+
+ 
+ 
   {
     title: 'services.categories.videographyEditing',
     image: 'https://images.pexels.com/photos/3945313/pexels-photo-3945313.jpeg?auto=compress&cs=tinysrgb&w=500'
   },
-  {
-    title: 'services.categories.mediaProduction',
-    image: 'https://images.pexels.com/photos/3945317/pexels-photo-3945317.jpeg?auto=compress&cs=tinysrgb&w=500'
-  }
+
 ]
 
 export default function ServiceCategories() {
