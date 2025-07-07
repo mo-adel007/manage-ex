@@ -65,24 +65,7 @@ export default function WhyChooseUsSuccess() {
           ))}
         </div>
 
-        <AnimatedElement animation="slide-fwd" delay={0.6}>
-          <div className="partners-section">
-            <h3 className="partners-title">{t('whyChooseUs.partners')}</h3>
-            <div className="partners-grid">
-              {partnerLogos.map((partner, index) => (
-                <AnimatedElement 
-                  key={partner.name}
-                  animation="flip-in"
-                  delay={0.8 + (index * 0.1)}
-                >
-                  <div className="partner-logo">
-                    <span>{partner.logo}</span>
-                  </div>
-                </AnimatedElement>
-              ))}
-            </div>
-          </div>
-        </AnimatedElement>
+       
 
         <AnimatedElement animation="bounce-in" delay={1.2}>
           <div className="cta-section">
