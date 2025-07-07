@@ -241,34 +241,39 @@ export default function Footer() {
           display: flex;
           justify-content: center;
           align-items: start;
-          padding-top: 10px;
+          padding-top: 5px;
         }
 
         .social-links {
           display: flex;
-          flex-direction: column;
-          gap: 12px;
+          flex-direction: row;
+          gap: 10px;
           align-items: center;
+          flex-wrap: wrap;
+          justify-content: center;
         }
 
         .social-link {
           color: var(--current-text-primary);
-          font-size: 16px;
+          font-size: 14px;
           transition: all 0.3s ease;
-          width: 40px;
-          height: 40px;
+          width: 36px;
+          height: 36px;
           display: flex;
           align-items: center;
           justify-content: center;
-          border-radius: 50%;
-          background: rgba(91, 67, 137, 0.1);
+          border-radius: 8px;
+          background: rgba(91, 67, 137, 0.08);
           text-decoration: none;
+          border: 1px solid rgba(91, 67, 137, 0.15);
         }
 
         .social-link:hover {
           color: var(--accent-white);
           background: var(--primary-color);
-          transform: translateY(-2px);
+          transform: translateY(-1px);
+          border-color: var(--primary-color);
+          box-shadow: 0 4px 12px rgba(91, 67, 137, 0.3);
         }
 
         /* Footer Bottom */
@@ -310,7 +315,7 @@ export default function Footer() {
         /* Responsive Design */
         @media (max-width: 1200px) {
           .footer-content {
-            grid-template-columns: 180px 1fr 70px;
+            grid-template-columns: 180px 1fr 120px;
             gap: 30px;
           }
 
@@ -340,9 +345,8 @@ export default function Footer() {
           }
 
           .social-links {
-            flex-direction: row;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
           }
         }
 
@@ -423,13 +427,13 @@ export default function Footer() {
           }
 
           .social-links {
-            gap: 12px;
+            gap: 10px;
           }
 
           .social-link {
-            width: 35px;
-            height: 35px;
-            font-size: 14px;
+            width: 32px;
+            height: 32px;
+            font-size: 13px;
           }
         }
       `}</style>
