@@ -321,7 +321,15 @@
   "footer": {
     "copyright": "© 2024 ManageEx. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service"
+    "termsOfService": "Terms of Service",
+    "contactUs": "Contact Us",
+    "saudiArabia": "Saudi Arabia",
+    "egypt": "Egypt",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "location": "Location",
+    "commercialReg": "Commercial Registration",
+    "taxNumber": "Tax Number"
   },
   "common": {
     "readMore": "Read More",
