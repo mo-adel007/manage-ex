@@ -1,12 +1,19 @@
 "use client";
 import React, { useState } from 'react';
-import { User, Mail, MessageSquare, PlaneIcon as PaperPlaneIcon, Briefcase, Check, Phone, MapPin } from 'lucide-react';
+import { User, Mail, MessageSquare, PlaneIcon as PaperPlaneIcon, Briefcase, Check, Phone, MapPin, Upload, X } from 'lucide-react';
 import AnimatedElement from './AnimatedElement';
 import { useTranslation } from 'next-i18next';
 
 export default function CareersForm() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ 
+    name: '', 
+    email: '', 
+    phone: '', 
+    message: '',
+    cv: null as File | null
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [dragActive, setDragActive] = useState(false);
   const { t } = useTranslation('common');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -14,14 +21,62 @@ export default function CareersForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Check file type (PDF, DOC, DOCX)
+      const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      if (allowedTypes.includes(file.type)) {
+        setFormData((prev) => ({ ...prev, cv: file }));
+      } else {
+        alert('Please upload a PDF, DOC, or DOCX file');
+      }
+    }
+  };
+
+  const handleDrag = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === "dragenter" || e.type === "dragover") {
+      setDragActive(true);
+    } else if (e.type === "dragleave") {
+      setDragActive(false);
+    }
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+    
+    const file = e.dataTransfer.files?.[0];
+    if (file) {
+      const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      if (allowedTypes.includes(file.type)) {
+        setFormData((prev) => ({ ...prev, cv: file }));
+      } else {
+        alert('Please upload a PDF, DOC, or DOCX file');
+      }
+    }
+  };
+
+  const removeFile = () => {
+    setFormData((prev) => ({ ...prev, cv: null }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const mailtoLink = `mailto:Hi@ManageEx.com?subject=Career Inquiry&body=${encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`
-      )}`;
+      // Create email body with form data
+      let emailBody = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}`;
+      
+      if (formData.cv) {
+        emailBody += `\n\nCV attached: ${formData.cv.name}`;
+      }
+
+      const mailtoLink = `mailto:Hi@ManageEx.com?subject=Career Application - ${formData.name}&body=${encodeURIComponent(emailBody)}`;
       window.location.href = mailtoLink;
     } catch (error) {
       console.error('Error sending email:', error);
@@ -91,6 +146,25 @@ export default function CareersForm() {
                     </div>
                   </AnimatedElement>
 
+                  <AnimatedElement animation="flip-in" delay={0.65}>
+                    <div className="form-group">
+                      <label htmlFor="phone" className="form-label">
+                        <Phone className="label-icon" />
+                        {t('careers.form.phone')}
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder={t('careers.form.phone')}
+                        required
+                        className="form-input"
+                      />
+                    </div>
+                  </AnimatedElement>
+
                   <AnimatedElement animation="flip-in" delay={0.7}>
                     <div className="form-group">
                       <label htmlFor="message" className="form-label">
@@ -107,6 +181,51 @@ export default function CareersForm() {
                         rows={6}
                         className="form-textarea"
                       />
+                    </div>
+                  </AnimatedElement>
+
+                  <AnimatedElement animation="flip-in" delay={0.75}>
+                    <div className="form-group">
+                      <label className="form-label">
+                        <Upload className="label-icon" />
+                        {t('careers.form.cv')}
+                      </label>
+                      <div 
+                        className={`file-upload-area ${dragActive ? 'drag-active' : ''} ${formData.cv ? 'has-file' : ''}`}
+                        onDragEnter={handleDrag}
+                        onDragLeave={handleDrag}
+                        onDragOver={handleDrag}
+                        onDrop={handleDrop}
+                      >
+                        {formData.cv ? (
+                          <div className="file-preview">
+                            <div className="file-info">
+                              <i className="fas fa-file-pdf file-icon"></i>
+                              <div className="file-details">
+                                <span className="file-name">{formData.cv.name}</span>
+                                <span className="file-size">{(formData.cv.size / 1024 / 1024).toFixed(2)} MB</span>
+                              </div>
+                            </div>
+                            <button type="button" onClick={removeFile} className="remove-file">
+                              <X size={16} />
+                            </button>
+                          </div>
+                        ) : (
+                          <div className="upload-content">
+                            <Upload className="upload-icon" />
+                            <p className="upload-text">
+                              Drag & drop your CV here or <span className="upload-link">browse files</span>
+                            </p>
+                            <p className="upload-hint">PDF, DOC, DOCX (Max 10MB)</p>
+                          </div>
+                        )}
+                        <input
+                          type="file"
+                          accept=".pdf,.doc,.docx"
+                          onChange={handleFileChange}
+                          className="file-input"
+                        />
+                      </div>
                     </div>
                   </AnimatedElement>
 
@@ -169,7 +288,6 @@ export default function CareersForm() {
                           <Phone className="icon" />
                         </div>
                         <div className="contact-details">
-                          <p className="contact-label">Phone</p>
                           <p className="contact-label">{t('careers.form.phone')}</p>
                           <p className="contact-value">{t('contact.info.phone')}</p>
                         </div>
@@ -180,7 +298,6 @@ export default function CareersForm() {
                         </div>
                         <div className="contact-details">
                           <p className="contact-label">Location</p>
-                          <p className="contact-label">{t('contact.address')}</p>
                           <p className="contact-value">{t('contact.info.saudi.address')}</p>
                         </div>
                       </div>
@@ -238,7 +355,7 @@ export default function CareersForm() {
         }
 
         .careers-section {
-        margin-top: 50px;
+          margin-top: 50px;
           padding: 96px 0;
           min-height: 100vh;
         }
@@ -377,11 +494,119 @@ export default function CareersForm() {
           transform: translateY(-4px);
         }
 
-        @media (prefers-color-scheme: dark) {
-          .form-input:focus,
-          .form-textarea:focus {
-            box-shadow: 0 0 0 4px rgba(91, 67, 137, 0.3);
-          }
+        .file-upload-area {
+          position: relative;
+          border: 2px dashed var(--current-bg-tertiary);
+          border-radius: 12px;
+          padding: 40px 20px;
+          text-align: center;
+          background: var(--current-bg-secondary);
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+
+        .file-upload-area:hover,
+        .file-upload-area.drag-active {
+          border-color: var(--primary-color);
+          background: rgba(91, 67, 137, 0.05);
+        }
+
+        .file-upload-area.has-file {
+          border-style: solid;
+          border-color: var(--golden-accent);
+          background: rgba(139, 124, 200, 0.05);
+        }
+
+        .file-input {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          cursor: pointer;
+        }
+
+        .upload-content {
+          pointer-events: none;
+        }
+
+        .upload-icon {
+          width: 48px;
+          height: 48px;
+          color: var(--primary-color);
+          margin: 0 auto 16px;
+        }
+
+        .upload-text {
+          font-size: 16px;
+          color: var(--current-text-secondary);
+          margin-bottom: 8px;
+        }
+
+        .upload-link {
+          color: var(--primary-color);
+          font-weight: 600;
+        }
+
+        .upload-hint {
+          font-size: 14px;
+          color: var(--current-text-muted);
+        }
+
+        .file-preview {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 16px;
+          background: var(--current-bg-primary);
+          border-radius: 8px;
+        }
+
+        .file-info {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .file-icon {
+          font-size: 24px;
+          color: var(--primary-color);
+        }
+
+        .file-details {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .file-name {
+          font-weight: 600;
+          color: var(--current-text-primary);
+          font-size: 14px;
+        }
+
+        .file-size {
+          font-size: 12px;
+          color: var(--current-text-muted);
+        }
+
+        .remove-file {
+          background: rgba(239, 68, 68, 0.1);
+          border: none;
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ef4444;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .remove-file:hover {
+          background: rgba(239, 68, 68, 0.2);
+          transform: scale(1.1);
         }
 
         .submit-button {
@@ -583,6 +808,15 @@ export default function CareersForm() {
           .sidebar-card,
           .contact-card {
             padding: 24px;
+          }
+
+          .file-upload-area {
+            padding: 30px 15px;
+          }
+
+          .upload-icon {
+            width: 40px;
+            height: 40px;
           }
         }
       `}</style>
