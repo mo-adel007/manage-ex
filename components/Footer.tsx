@@ -9,122 +9,102 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
+          {/* Logo Section */}
           <div className="footer-logo">
-            <div className="logo-icon">
-              <div className="logo-image">
-                <Image
-                  src="/logo.png"
-                  alt="ManageEx Logo"
-                  width={60}
-                  height={36}
-                  className="logo-img"
-                />
-              </div>
+            <div className="logo-image">
+              <Image
+                src="/logo.png"
+                alt="ManageEx Logo"
+                width={120}
+                height={72}
+                className="logo-img"
+              />
             </div>
           </div>
           
+          {/* Contact Information */}
           <div className="footer-contact">
             <h3 className="contact-title">{t('footer.contactUs')}</h3>
             
-            <div className="contact-sections">
-              {/* Saudi Arabia Section */}
-              <div className="contact-section saudi-section">
-                <h4 className="section-title">{t('footer.saudiArabia')}</h4>
-                <div className="contact-items">
-                  <div className="contact-item">
+            <div className="contact-grid">
+              {/* Saudi Arabia */}
+              <div className="contact-column">
+                <h4 className="column-title">{t('footer.saudiArabia')}</h4>
+                <div className="contact-list">
+                  <div className="contact-row">
                     <i className="fas fa-phone"></i>
-                    <div className="contact-details">
-                      <span className="contact-label">{t('footer.call')}</span>
-                      <span className="contact-value">+966 53 094 2000</span>
-                    </div>
+                    <span>+966 53 094 2000</span>
                   </div>
-                  <div className="contact-item">
+                  <div className="contact-row">
                     <i className="fab fa-whatsapp"></i>
-                    <div className="contact-details">
-                      <span className="contact-label">{t('footer.whatsapp')}</span>
-                      <span className="contact-value">+966 53 240 2275</span>
-                    </div>
+                    <span>+966 53 240 2275</span>
                   </div>
-                  <div className="contact-item">
+                  <div className="contact-row">
                     <i className="fab fa-whatsapp"></i>
-                    <div className="contact-details">
-                      <span className="contact-label">{t('footer.whatsapp')}</span>
-                      <span className="contact-value">+966 50 515 4013</span>
-                    </div>
+                    <span>+966 50 515 4013</span>
                   </div>
-                  <div className="contact-item">
-                    <i className="fas fa-map-marker-alt"></i>
-                    <div className="contact-details">
-                      <span className="contact-value">{t('contact.info.saudi.address')}</span>
-                    </div>
-                  </div>
-                  <div className="contact-item">
+                  <div className="contact-row">
                     <i className="fas fa-envelope"></i>
-                    <div className="contact-details">
-                      <span className="contact-value">Hi@ManageEx.com</span>
-                    </div>
+                    <span>Hi@ManageEx.com</span>
                   </div>
-                  <div className="contact-item">
-                    <i className="fas fa-file-alt"></i>
-                    <div className="contact-details">
-                      <span className="contact-label">{t('footer.commercialReg')}</span>
-                      <span className="contact-value">1009077936</span>
-                    </div>
-                  </div>
-                  <div className="contact-item">
-                    <i className="fas fa-receipt"></i>
-                    <div className="contact-details">
-                      <span className="contact-label">{t('footer.taxNumber')}</span>
-                      <span className="contact-value">311888007800003</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Egypt Section */}
-              <div className="contact-section egypt-section">
-                <h4 className="section-title">{t('footer.egypt')}</h4>
-                <div className="contact-items">
-                  <div className="contact-item">
-                    <i className="fas fa-phone"></i>
-                    <div className="contact-details">
-                      <span className="contact-value">(+02)1150038400</span>
-                    </div>
-                  </div>
-                  <div className="contact-item">
+                  <div className="contact-row">
                     <i className="fas fa-map-marker-alt"></i>
-                    <div className="contact-details">
-                      <span className="contact-value">{t('contact.info.egypt.address')}</span>
-                    </div>
+                    <span>{t('contact.info.saudi.address')}</span>
+                  </div>
+                  <div className="contact-row">
+                    <i className="fas fa-file-alt"></i>
+                    <span>{t('footer.commercialReg')}: 1009077936</span>
+                  </div>
+                  <div className="contact-row">
+                    <i className="fas fa-receipt"></i>
+                    <span>{t('footer.taxNumber')}: 311888007800003</span>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Map Section */}
-            <div className="map-section">
-              <h4 className="section-title">{t('footer.location')}</h4>
-              <div className="map-container">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.123456789!2d46.761707760745026!3d24.586786583006752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDM1JzEyLjQiTiA0NsKwNDUnNDIuMSJF!5e0!3m2!1sen!2ssa!4v1234567890123"
-                  width="100%"
-                  height="200"
-                  style={{ border: 0, borderRadius: '10px' }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="ManageEx Location"
-                ></iframe>
+              {/* Egypt */}
+              <div className="contact-column">
+                <h4 className="column-title">{t('footer.egypt')}</h4>
+                <div className="contact-list">
+                  <div className="contact-row">
+                    <i className="fas fa-phone"></i>
+                    <span>(+02)1150038400</span>
+                  </div>
+                  <div className="contact-row">
+                    <i className="fas fa-map-marker-alt"></i>
+                    <span>{t('contact.info.egypt.address')}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Map */}
+              <div className="contact-column map-column">
+                <h4 className="column-title">{t('footer.location')}</h4>
+                <div className="map-container">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.123456789!2d46.761707760745026!3d24.586786583006752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDM1JzEyLjQiTiA0NsKwNDUnNDIuMSJF!5e0!3m2!1sen!2ssa!4v1234567890123"
+                    width="100%"
+                    height="180"
+                    style={{ border: 0, borderRadius: '8px' }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="ManageEx Location"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>
           
+          {/* Social Links */}
           <div className="footer-social">
-            <a href="#" className="social-link"><i className="fab fa-facebook-f"></i></a>
-            <a href="#" className="social-link"><i className="fab fa-instagram"></i></a>
-            <a href="#" className="social-link"><i className="fab fa-whatsapp"></i></a>
-            <a href="#" className="social-link"><i className="fab fa-tiktok"></i></a>
-            <a href="#" className="social-link"><i className="fab fa-linkedin-in"></i></a>
+            <div className="social-links">
+              <a href="#" className="social-link"><i className="fab fa-facebook-f"></i></a>
+              <a href="#" className="social-link"><i className="fab fa-instagram"></i></a>
+              <a href="#" className="social-link"><i className="fab fa-whatsapp"></i></a>
+              <a href="#" className="social-link"><i className="fab fa-tiktok"></i></a>
+              <a href="#" className="social-link"><i className="fab fa-linkedin-in"></i></a>
+            </div>
           </div>
         </div>
         
@@ -140,34 +120,34 @@ export default function Footer() {
       <style>{`
         .footer {
           background: var(--current-bg-tertiary);
-          padding: 60px 0 30px;
+          padding: 50px 0 30px;
           border-top: 1px solid rgba(91, 67, 137, 0.2);
         }
 
         .footer-content {
           display: grid;
-          grid-template-columns: auto 1fr auto;
-          gap: 60px;
+          grid-template-columns: 200px 1fr 80px;
+          gap: 40px;
           align-items: start;
           margin-bottom: 40px;
         }
 
-        .footer-logo .logo-icon {
+        /* Logo Section */
+        .footer-logo {
           display: flex;
-          align-items: center;
-          gap: 12px;
+          justify-content: center;
         }
 
         .logo-image {
           position: relative;
-          width: 160px;
-          height: 136px;
+          width: 140px;
+          height: 120px;
           cursor: pointer;
           transition: all 0.3s ease;
         }
 
         .logo-image:hover {
-          transform: scale(1.08);
+          transform: scale(1.05);
           filter: drop-shadow(0 8px 20px rgba(91, 67, 137, 0.5));
         }
 
@@ -176,29 +156,18 @@ export default function Footer() {
           height: 100%;
           object-fit: contain;
           transition: all 0.3s ease;
-          animation: logo-breathe 3s ease-in-out infinite;
         }
 
-        @keyframes logo-breathe {
-          0%, 100% {
-            transform: scale(1);
-            filter: drop-shadow(0 3px 10px rgba(91, 67, 137, 0.4));
-          }
-          50% {
-            transform: scale(1.03);
-            filter: drop-shadow(0 5px 15px rgba(91, 67, 137, 0.6));
-          }
-        }
-
+        /* Contact Section */
         .footer-contact {
-          max-width: 800px;
+          width: 100%;
         }
 
         .contact-title {
-          font-size: 24px;
+          font-size: 22px;
           font-weight: 700;
           color: var(--primary-color);
-          margin-bottom: 30px;
+          margin-bottom: 25px;
           text-align: center;
           background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
           -webkit-background-clip: text;
@@ -206,84 +175,79 @@ export default function Footer() {
           background-clip: text;
         }
 
-        .contact-sections {
+        .contact-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 40px;
-          margin-bottom: 30px;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 30px;
         }
 
-        .contact-section {
+        .contact-column {
           background: var(--current-bg-primary);
-          padding: 25px;
-          border-radius: 15px;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          border-radius: 12px;
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .section-title {
-          font-size: 18px;
+        .map-column {
+          min-height: 220px;
+        }
+
+        .column-title {
+          font-size: 16px;
           font-weight: 700;
           color: var(--golden-accent);
-          margin-bottom: 20px;
+          margin-bottom: 15px;
           text-align: center;
-          padding-bottom: 10px;
+          padding-bottom: 8px;
           border-bottom: 2px solid rgba(139, 124, 200, 0.2);
         }
 
-        .contact-items {
+        .contact-list {
           display: flex;
           flex-direction: column;
-          gap: 15px;
+          gap: 10px;
         }
 
-        .contact-item {
+        .contact-row {
           display: flex;
           align-items: center;
-          gap: 12px;
-          padding: 8px 0;
+          gap: 10px;
+          padding: 6px 0;
+          font-size: 13px;
         }
 
-        .contact-item i {
+        .contact-row i {
           color: var(--primary-color);
-          font-size: 16px;
-          width: 20px;
+          font-size: 14px;
+          width: 16px;
           text-align: center;
           flex-shrink: 0;
         }
 
-        .contact-details {
-          display: flex;
-          flex-direction: column;
-          gap: 2px;
-        }
-
-        .contact-label {
-          font-size: 12px;
-          color: var(--current-text-muted);
-          font-weight: 500;
-        }
-
-        .contact-value {
+        .contact-row span {
           color: var(--current-text-secondary);
-          font-size: 14px;
           font-weight: 500;
-        }
-
-        .map-section {
-          background: var(--current-bg-primary);
-          padding: 25px;
-          border-radius: 15px;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          line-height: 1.4;
         }
 
         .map-container {
-          margin-top: 15px;
+          margin-top: 10px;
+          border-radius: 8px;
+          overflow: hidden;
         }
 
+        /* Social Links */
         .footer-social {
           display: flex;
+          justify-content: center;
+          align-items: start;
+          padding-top: 10px;
+        }
+
+        .social-links {
+          display: flex;
           flex-direction: column;
-          gap: 15px;
+          gap: 12px;
           align-items: center;
         }
 
@@ -291,8 +255,8 @@ export default function Footer() {
           color: var(--current-text-primary);
           font-size: 16px;
           transition: all 0.3s ease;
-          width: 35px;
-          height: 35px;
+          width: 40px;
+          height: 40px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -307,11 +271,12 @@ export default function Footer() {
           transform: translateY(-2px);
         }
 
+        /* Footer Bottom */
         .footer-bottom {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding-top: 30px;
+          padding-top: 25px;
           border-top: 1px solid rgba(91, 67, 137, 0.2);
           color: var(--current-text-muted);
           font-size: 14px;
@@ -319,7 +284,7 @@ export default function Footer() {
 
         .footer-links {
           display: flex;
-          gap: 30px;
+          gap: 25px;
         }
 
         .footer-links a {
@@ -333,88 +298,138 @@ export default function Footer() {
         }
 
         /* RTL Support */
-        [dir="rtl"] .contact-sections {
-          direction: rtl;
-        }
-
-        [dir="rtl"] .contact-item {
+        [dir="rtl"] .contact-row {
           flex-direction: row-reverse;
           text-align: right;
         }
 
-        [dir="rtl"] .contact-item i {
-          margin-left: 12px;
-          margin-right: 0;
+        [dir="rtl"] .contact-row span {
+          text-align: right;
         }
 
-        [dir="rtl"] .contact-details {
-          text-align: right;
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+          .footer-content {
+            grid-template-columns: 180px 1fr 70px;
+            gap: 30px;
+          }
+
+          .contact-grid {
+            gap: 20px;
+          }
+
+          .contact-column {
+            padding: 18px;
+          }
         }
 
         @media (max-width: 1024px) {
           .footer-content {
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 30px;
             text-align: center;
           }
 
-          .contact-sections {
-            grid-template-columns: 1fr;
-            gap: 25px;
+          .contact-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
           }
 
-          .footer-social {
+          .map-column {
+            grid-column: 1 / -1;
+          }
+
+          .social-links {
             flex-direction: row;
             justify-content: center;
+            gap: 15px;
           }
         }
 
         @media (max-width: 768px) {
-          .footer-content {
-            gap: 30px;
-          }
-          
-          .footer-bottom {
-            flex-direction: column;
-            gap: 20px;
-            text-align: center;
+          .footer {
+            padding: 40px 0 25px;
           }
 
-          .logo-image {
-            width: 150px;
-            height: 130px;
-            margin: 0 auto;
+          .footer-content {
+            gap: 25px;
+          }
+
+          .contact-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+          }
+
+          .contact-column {
+            padding: 15px;
           }
 
           .contact-title {
             font-size: 20px;
+            margin-bottom: 20px;
           }
 
-          .section-title {
-            font-size: 16px;
+          .column-title {
+            font-size: 15px;
           }
 
-          .contact-item {
-            flex-direction: column;
-            text-align: center;
+          .contact-row {
+            font-size: 12px;
             gap: 8px;
           }
 
-          .contact-item i {
-            margin: 0;
+          .logo-image {
+            width: 120px;
+            height: 100px;
           }
 
-          .contact-details {
+          .footer-bottom {
+            flex-direction: column;
+            gap: 15px;
             text-align: center;
           }
 
-          [dir="rtl"] .contact-item {
+          .footer-links {
+            gap: 20px;
+          }
+
+          .map-container iframe {
+            height: 150px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .contact-row {
+            flex-direction: column;
+            text-align: center;
+            gap: 5px;
+          }
+
+          .contact-row i {
+            margin: 0;
+          }
+
+          .contact-row span {
+            text-align: center;
+          }
+
+          [dir="rtl"] .contact-row {
             flex-direction: column;
             text-align: center;
           }
 
-          [dir="rtl"] .contact-details {
+          [dir="rtl"] .contact-row span {
             text-align: center;
+          }
+
+          .social-links {
+            gap: 12px;
+          }
+
+          .social-link {
+            width: 35px;
+            height: 35px;
+            font-size: 14px;
           }
         }
       `}</style>
