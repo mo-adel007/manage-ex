@@ -96,7 +96,7 @@
     },
     "marketing": {
       "title": "Marketing Services",
-      "description": "ManageEx offers comprehensive marketing solutions to help businesses strengthen their online presence, engage effectively with customers, and achieve sustainable growth. We design and implement tailored marketing strategies using compelling content, well-planned advertising campaigns, and performance analytics to ensure optimal results.",
+      "description": "ManageEx offers comprehensive marketing solutions to help businesses strengthen their online presence, .",
       "services": {
         "social": "Social Media Management - Managing multiple accounts on social media platforms, monthly content plan that reflects the project's identity and supports its activities to achieve its strategic objectives",
         "content": "Content Creation - Writing compelling marketing content that reflects your brand and builds trust, producing high-quality short videos (Reels) for effective promotion",
@@ -162,7 +162,7 @@
     ,
        "businessServices": {
       "title": "Business Services",
-      "description": ""
+      "description": "At ManageEx, we understand that entrepreneurs need more than just strong ideas — they need a solid administrative foundation that supports their journey. "
     }
   },
  "whyChooseUs": {
@@ -321,15 +321,7 @@
   "footer": {
     "copyright": "© 2024 ManageEx. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service",
-    "contactUs": "Contact Us",
-    "saudiArabia": "Saudi Arabia",
-    "egypt": "Egypt",
-    "call": "Call",
-    "whatsapp": "WhatsApp",
-    "location": "Location",
-    "commercialReg": "Commercial Registration",
-    "taxNumber": "Tax Number"
+    "termsOfService": "Terms of Service"
   },
   "common": {
     "readMore": "Read More",
