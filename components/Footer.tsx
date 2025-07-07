@@ -185,7 +185,7 @@ export default function Footer() {
 
       <style jsx>{`
         .footer {
-          background: var(--current-bg-tertiary);
+          background:rgba(133, 123, 149, 0.2);
           padding: 80px 0 30px;
           border-top: 1px solid rgba(91, 67, 137, 0.2);
         }
