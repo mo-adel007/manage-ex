@@ -1,0 +1,462 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "services": "Services",
+    "whyChooseUs": "Why ManageEx",
+    "contact": "Contact Us",
+    "careers": "Careers"
+  },
+  "hero": {
+    "title": {
+      "line1": "TRUSTED",
+      "line2": "MANAGEMENT,",
+      "line3": "SUSTAINABLE",
+      "line4": "",
+      "line5": "",
+      "line6": "GROWTH"
+    },
+    "description": "Managex offers tailored business services in marketing, design, accounting, and HR — powered by smart systems and deep market insight.",
+    "getStarted": "Get Started",
+    "ourServices": "Our Services",
+    "stats": {
+      "projects": "Projects",
+      "successRate": "Success Rate"
+    }
+  },
+  "about": {
+    "tag": "ABOUT US",
+    "title": "About Us",
+    "description": "Ghaymah Al-Etihrafiyah is a Saudi commercial establishment (branded as ManageEx) is your strategic partner in delivering integrated business solutions that drive growth and operational efficiency. Our service portfolio spans marketing and branding, design, advanced accounting systems, and human resources management.",
+    "commitment": "We are committed to empowering entrepreneurs and business owners by offering high-quality, cost-effective services designed to optimize resources, streamline operations, and enable you to focus on scaling your core business activities.",
+    "vision": {
+      "title": "Our Vision",
+      "description": "We strive for excellence and leadership in delivering administrative solutions to businesses, with a strong commitment to precision, cost efficiency, and adherence to the highest quality standards. Our approach is rooted in simplicity and transparency, ensuring a seamless and distinguished client experience."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "At ManageEx, we provide comprehensive solutions that support businesses in enhancing efficiency, reducing costs, and streamlining operations. With our professional team and innovative technologies, we empower our clients to achieve their strategic goals and strengthen their market impact, while ensuring the delivery of integrated services that elevate their operations to new levels of excellence and leadership."
+    },
+    "strategy": {
+      "title": "Our Strategy",
+      "quality": "Quality: Leveraging technology and continuous team training to achieve the highest quality standards.",
+      "cost": "Cost: Reducing human resources costs by 50% through a professional team and optimized execution time.",
+      "time": "Time: Continuously improving processes to ensure efficiency and effectiveness.",
+      "simplicity": "Simplicity: Streamlining operations to deliver fast and efficient service.",
+      "control": "Control: Implementing a rigorous review system to ensure service quality."
+    }
+  },
+  "services": {
+    "tag": "OUR SERVICES",
+    "title": "We offer services tailored specifically to meet your needs",
+    "subtitle": "You Name IT We Make IT.",
+    "youNameItTitle": "You Name IT We Make IT",
+    "highlights": {
+      "highQuality": "High Quality Services",
+      "skilledDevelopers": "Skilled Designers",
+      "perfectSolution": "Perfect Web Solution"
+    },
+    "categories": {
+      "webDevelopment": "Web Development",
+      "graphicDesigning": "Graphic Designing",
+      "mediaBuying": "MEDIA BUYING",
+      "socialMediaManagement": "SOCIAL MEDIA MANAGEMENT",
+      "marketResearch": "Market Research",
+      "planningStrategies": "Planning & Strategies",
+      "seo": "Search engine optimization",
+      "influencersCollaboration": "Influencers Collaboration",
+      "moderation": "Moderation",
+      "photographyVideo": "PHOTOGRAPHY & Video",
+      "videographyEditing": "Videography & editing",
+      "mediaProduction": "Media Production"
+    },
+    "accounting": {
+      "title": "Accounting Solutions",
+      "description": "ManageEX provides comprehensive accounting solutions to help businesses manage their finances and ensure compliance with legal and accounting standards. Our goal is to deliver accurate, professional services that enhance financial performance and support business growth.",
+      "services": {
+        "financial": {
+          "title": "Financial Solutions",
+          "items": [
+            "Balance Sheet preparation",
+            "Income Statement preparation",
+            "Cash Flow Statement preparation"
+          ]
+        },
+        "bookkeeping": {
+          "title": "Bookkeeping",
+          "items": [
+            "Recording and organizing financial transactions",
+            "Tracking revenues and expenses",
+            "Preparing periodic reports to monitor financial performance"
+          ]
+        },
+        "tax": {
+          "title": "Tax Management & Filing",
+          "items": [
+            "Preparing and submitting tax returns",
+            "Tax planning to minimize legal liabilities",
+            "Managing VAT and tax invoicing"
+          ]
+        },
+        "payroll": {
+          "title": "Payroll & Compensation Management",
+          "items": [
+            "Calculating salaries and preparing payroll sheets",
+            "Handling tax and social insurance deductions",
+            "Issuing and managing payment receipts"
+          ]
+        },
+        "auditing": {
+          "title": "Financial Auditing & Review",
+          "items": [
+            "Auditing accounting operations to ensure accuracy and integrity",
+            "Analyzing financial data and providing comprehensive reports",
+            "Assessing financial risks and recommending improvements"
+          ]
+        },
+        "analysis": {
+          "title": "Financial Analysis & Planning",
+          "items": [
+            "Delivering in-depth financial analysis to support decision-making",
+            "Developing sustainable financial strategies",
+            "Providing business development financial consulting"
+          ]
+        }
+      }
+    },
+    "hr": {
+      "title": "HR Solutions",
+      "description": "ManageEX offers integrated, modern HR solutions that empower companies to build strong teams and achieve optimal operational efficiency. We support our clients in managing their human resources professionally while ensuring compliance with internal policies and labor regulations.",
+      "services": {
+        "recruitment": "Recruitment & Talent Acquisition - Identifying suitable candidates based on job requirements, screening applicants and conducting initial interviews to ensure the best fit, offering recruitment consulting, including designing the full recruitment process for a professional experience",
+        "management": "Employee Affairs Management - Preparing employment contracts and managing employee files in compliance with current legal frameworks, tracking attendance, leaves, and shifts to maintain workflow organization",
+        "training": "Training & Development - Creating and delivering customized training programs based on staff needs and company goals, enhancing leadership and management skills to boost operational efficiency",
+        "performance": "Performance Management & Competency Evaluation - Setting performance metrics aligned with business goals and strategic vision, conducting periodic reviews and offering recommendations to optimize efficiency",
+        "consulting": "HR Consulting - Offering solutions to improve workplace culture and increase employee loyalty, developing compliant HR policies, designing performance-based reward systems to boost productivity"
+      }
+    },
+    "marketing": {
+      "title": "Marketing Services",
+      "description": "ManageEx offers comprehensive marketing solutions to help businesses strengthen their online presence, engage effectively with customers, and achieve sustainable growth. We design and implement tailored marketing strategies using compelling content, well-planned advertising campaigns, and performance analytics to ensure optimal results.",
+      "services": {
+        "social": {
+          "title": "Social Media Management",
+          "items": [
+            "Managing multiple accounts on social media platforms",
+            "Monthly content plan that reflects the project's identity and supports its activities to achieve its strategic objectives",
+            "Scheduling posts and daily account supervision to maintain digital presence",
+            "Setting up automated responses to improve customer interaction"
+          ]
+        },
+        "content": {
+          "title": "Content Creation",
+          "items": [
+            "Writing compelling marketing content that reflects your brand and builds trust",
+            "Producing high-quality short videos (Reels) for effective promotion",
+            "Developing storytelling campaigns to highlight your project's core message",
+            "Crafting monthly SEO-friendly blog posts for better search visibility"
+          ]
+        },
+        "advertising": {
+          "title": "Paid Advertising Campaigns",
+          "items": [
+            "Designing and managing targeted ad campaigns across various platforms",
+            "Precise audience targeting based on user behavior",
+            "Detailed reports on campaign results and audience behavior analysis"
+          ]
+        },
+        "seo": {
+          "title": "Search Engine Optimization (SEO)",
+          "items": [
+            "Comprehensive analysis of keywords related to the target field",
+            "Optimizing website structure and content to increase visibility in search engine results",
+            "Writing monthly articles and blog posts aligned with SEO standards",
+            "Providing monthly reports showing improvements in ranking and traffic"
+          ]
+        }
+      },
+      "cta": "Ready to boost your digital presence? Let's discuss how our marketing solutions can help your business grow and engage with customers effectively."
+    },
+    "design": {
+      "title": "Design Services",
+      "description": "ManageEx offers professional design solutions that reflect your brand identity and strengthen your market presence. From logos to marketing visuals, we develop cohesive visual elements that inspire trust and attract attention — helping you build a strong, reliable brand image.",
+      "services": {
+        "identity": {
+          "title": "Brand Identity Design",
+          "items": [
+            "Custom logo design that accurately reflects your brand essence",
+            "Brand guidelines including color schemes, typography, and usage rules",
+            "Business cards, letterheads, stickers, and brand-supporting tools"
+          ]
+        },
+        "profiles": {
+          "title": "Company Profiles & Presentations",
+          "items": [
+            "Visually appealing and professionally written company profiles",
+            "Innovative and ready-to-use presentation designs (PPTs/Slides)"
+          ]
+        },
+        "visualContent": {
+          "title": "Social Media Visual Content",
+          "items": [
+            "Interactive and consistent post designs aligned with your brand identity",
+            "Editable templates for regular and unified content publishing",
+            "Covers, flyers, and promotional posters tailored to your products/services"
+          ]
+        },
+        "packaging": {
+          "title": "Packaging & Print Materials",
+          "items": [
+            "Design menus, packaging, and bags that reflect brand quality and enhance the customer experience",
+            "High-quality brochures and promotional prints",
+            "Print-ready designs customized with precision"
+          ]
+        },
+        "motion": {
+          "title": "Motion Graphics & Video Production",
+          "items": [
+            "Engaging animated videos that deliver your message with clarity",
+            "Script writing and scene animation aligned with your campaign goals",
+            "Option to include professional voice-over if needed"
+          ]
+        }
+      },
+      "cta": "Ready to boost your digital presence? Let's discuss how our marketing solutions can help your business grow and engage with customers effectively."
+    },
+    "webDevelopment": {
+      "title": "Web Development",
+      "description": "At ManageEx, we offer comprehensive website design services that deliver a seamless digital experience—from concept to the launch of a professional website that accurately reflects your brand identity. We focus on crafting visually appealing, user-friendly interfaces while ensuring high performance and full compatibility across all devices.",
+      "features": {
+        "custom": "Custom design that reflects your business identity",
+        "responsive": "Fully responsive across all devices",
+        "seo": "Search engine optimization (SEO) ready",
+        "performance": "High loading speed and optimized performance",
+        "cms": "Easy-to-use content management dashboard",
+        "integration": "Integrated with social media and marketing tools"
+      }
+    },
+    "business": {
+      "title": "Business Services",
+      "subtitle": "Customized services, just for you",
+      "description": "At ManageEx, we understand that entrepreneurs need more than just strong ideas — they need a solid administrative foundation that supports their journey. That's why our Business Services offer integrated solutions designed to empower companies, drive sustainable growth, and enhance operational efficiency — all while keeping full focus on core objectives.",
+      "form": {
+        "name": "Name",
+        "contact": "Contact Number",
+        "email": "E-mail",
+        "needs": "Let us know your needs — we'll build your perfect package."
+      }
+    },
+    "hrSolutions": {
+      "title": "HR Solutions",
+      "description": "Comprehensive strategy and management"
+    },
+    "accountingSolutions": {
+      "title": "Accounting Solutions",
+      "description": "Professional Accounting and visual design solutions"
+    },
+    "designServices": {
+      "title": "Design Services",
+      "description": "Creative graphic design for all your business needs"
+    },
+    "influencerHR": {
+      "title": "HR Solutions",
+      "description": "Strategic HR partnerships and collaborations"
+    },
+    "web": {
+      "title": "Web Development",
+      "description": "Comprehensive web applications that support businesses in enhancing efficiency"
+    },
+    "businessServices": {
+      "title": "Business Services",
+      "description": "At ManageEx, we understand that entrepreneurs need more than just strong ideas — they need a solid administrative foundation that supports their journey."
+    }
+  },
+  "whyChooseUs": {
+    "tag": "WHY MANAGEX",
+    "title": "Why ManageEx",
+    "description": "ManageEx is a leading provider of specialized business services, including digital marketing, creative design, accounting, and human resources. We offer flexible, tailor-made solutions designed to meet each client's operational and financial needs. Our goal is to help businesses grow and improve efficiency through smart administrative systems and professional services built on deep market and client insight.",
+    "challenges": "We help companies overcome the challenges caused by administrative energy drain and high human resource costs through:",
+    "solutions": {
+      "management": "Full or partial management of companies",
+      "cost": "Cost reduction thanks to a trained and specialized team",
+      "efficiency": "Enhanced operational efficiency and simplified administrative procedures for effective performance",
+      "training": "A high-level training system to boost team capabilities",
+      "followup": "A dedicated follow-up department to ensure quality"
+    },
+    "whatSetsUsApart": {
+      "title": "What Sets Us Apart",
+      "cost": "Cost reduction",
+      "efficiency": "Increased efficiency",
+      "processes": "Streamlined administrative processes"
+    },
+    "measuring": {
+      "title": "Measuring Success",
+      "description": "Our clients can measure success through reduced costs and a smoother workflow experience."
+    },
+    "team": {
+      "title": "Our Team",
+      "training": "Rigorous training",
+      "precision": "High precision",
+      "delivery": "Fast delivery"
+    },
+    "consulting": {
+      "title": "Consulting Services",
+      "description": "We provide expert consulting services in management and organizational structuring."
+    },
+    "success": {
+      "title": "Success Stories",
+      "description": "Some of our clients have reduced their HR costs by up to 60% and achieved remarkable success thanks to our services."
+    },
+    "partners": "Partners in Success",
+    "latestTechnology": {
+      "title": "Latest Technology",
+      "description": "We use cutting-edge technology and innovative solutions to deliver exceptional results"
+    },
+    "certifiedExperts": {
+      "title": "Certified Experts",
+      "description": "Our team consists of certified professionals with extensive experience in their respective fields"
+    },
+    "reasonablePrice": {
+      "title": "Competitive Pricing",
+      "description": "We offer high-quality services at competitive prices that provide excellent value for your investment"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Round-the-clock support to ensure your business operations run smoothly without interruption"
+    }
+  },
+  "projects": {
+    "tag": "OUR PROJECTS",
+    "title": "Latest Work Showcase",
+    "subtitle": "Discover our recent successful projects and client transformations.",
+    "marketing": {
+      "title": "Marketing Service",
+      "category": "Ads Development",
+      "description": "Modern marketing solution with advanced visualization"
+    },
+    "branding": {
+      "title": "Brand Identity Design",
+      "category": "Graphic Design",
+      "description": "Complete brand identity for tech startup"
+    },
+    "socialCampaign": {
+      "title": "Social Media Campaign",
+      "category": "Social Media",
+      "description": "Viral social media campaign that increased engagement by 300%"
+    },
+    "mobileApp": {
+      "title": "Graphic Design",
+      "category": "UI/UX Design",
+      "description": "User-friendly intuitive designs"
+    }
+  },
+  "blog": {
+    "tag": "OUR BLOG",
+    "title": "Latest Insights & Tips",
+    "subtitle": "Stay updated with the latest digital marketing insights and industry trends.",
+    "posts": {
+      "digitalTrends": {
+        "title": "10 Digital Marketing Trends for 2024",
+        "excerpt": "Stay ahead of the curve with these emerging digital marketing trends that will shape the industry.",
+        "date": "Dec 15, 2023",
+        "readTime": "5 min read"
+      },
+      "brandStorytelling": {
+        "title": "The Power of Brand Storytelling",
+        "excerpt": "Learn how compelling brand stories can transform your marketing strategy and connect with audiences.",
+        "date": "Dec 10, 2023",
+        "readTime": "7 min read"
+      },
+      "seoBest": {
+        "title": "SEO Best Practices That Actually Work",
+        "excerpt": "Discover proven SEO strategies that will boost your search rankings and drive organic traffic.",
+        "date": "Dec 5, 2023",
+        "readTime": "6 min read"
+      }
+    }
+  },
+  "contact": {
+    "tag": "CONTACT US",
+    "title": "Let's Start a New Step For Your Business",
+    "description": "Ready to transform your business? Get in touch with us today and let's build an exceptional website together.",
+    "discussBusiness": "Let's Discuss How to Make your Business Better.",
+    "discoverMore": "DISCOVER MORE",
+    "address": "Address",
+    "email": "Email & Phone",
+    "workingHours": "Working Hours",
+    "workingTime": "Sun - Thu: 8 AM to 5 PM",
+    "info": {
+      "phone": "+966 53 094 2000",
+      "whatsapp1": "+966 53 240 2275",
+      "whatsapp2": "+966 50 515 4013",
+      "email": "Hi@ManageEx.com",
+      "egypt": {
+        "phone": "(+02)1150038400",
+        "address": "Cairo Capital Center, Banks Complex 90th street - 5th Settlement"
+      },
+      "saudi": {
+        "address": "Saudi Arabia - Riyadh - Al Aziziyah District",
+        "commercial": "Commercial Registration: 1009077936",
+        "tax": "Tax Number: 311888007800003"
+      }
+    }
+  },
+  "careers": {
+    "tag": "Join Our Team",
+    "title": "Start Your Career Journey",
+    "description": "Ready to be part of something amazing? Let's discuss your future with us.",
+    "form": {
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "message": "Tell Us About Yourself",
+      "messagePlaceholder": "Share your experience, skills, and why you want to join our team...",
+      "submit": "Submit Application",
+      "sending": "Sending...",
+      "cv": "Attach CV",
+      "phone": "Phone"
+    },
+    "whyJoinUs": "Why Join Us?",
+    "benefits": {
+      "salary": "Competitive salary packages",
+      "growth": "Professional growth opportunities",
+      "flexible": "Flexible working environment",
+      "projects": "Creative and innovative projects"
+    },
+    "getInTouch": "Get In Touch"
+  },
+  "footer": {
+    "copyright": "© 2024 ManageEx. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contactUs": "Contact Us",
+    "saudiArabia": "Saudi Arabia",
+    "egypt": "Egypt",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "location": "Location",
+    "commercialReg": "Commercial Registration",
+    "taxNumber": "Tax Number"
+  },
+  "common": {
+    "readMore": "Read More",
+    "readMoreArrow": "Read More →",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "backToServices": "Back to Services",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try Again"
+  },
+  "servicesSec": {
+    "viewAllServices": "View All Services",
+    "accounting": {
+      "cta": "Ready to streamline your financial operations? Let's discuss how our accounting solutions can help your business grow."
+    },
+    "design": {
+      "cta": "Ready to elevate your brand identity? Let's discuss how our design solutions can help your business stand out."
+    },
+    "marketing": {
+      "cta": "Ready to boost your digital presence? Let's discuss how our marketing solutions can help your business grow and engage with customers effectively."
+    }
+  }
+}
