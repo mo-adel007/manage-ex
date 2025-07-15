@@ -10,17 +10,17 @@ export default function WhyChooseUsTeam() {
     {
       icon: 'fas fa-graduation-cap',
       title: t('whyChooseUs.team.training'),
-      description: 'Continuous professional development and skill enhancement'
+      description: t('whyChooseUs.team.trainingDesc')
     },
     {
       icon: 'fas fa-bullseye',
       title: t('whyChooseUs.team.precision'),
-      description: 'Attention to detail in every project and task'
+      description: t('whyChooseUs.team.precisionDesc')
     },
     {
       icon: 'fas fa-rocket',
       title: t('whyChooseUs.team.delivery'),
-      description: 'Quick turnaround times without compromising quality'
+      description: t('whyChooseUs.team.deliveryDesc')
     }
   ]
 
@@ -31,7 +31,7 @@ export default function WhyChooseUsTeam() {
           <div className="section-header">
             <h2 className="section-title">{t('whyChooseUs.team.title')}</h2>
             <p className="section-subtitle">
-              Our dedicated team is the backbone of our success, bringing expertise, dedication, and innovation to every project.
+              {t('whyChooseUs.team.description')}
             </p>
           </div>
         </AnimatedElement>
