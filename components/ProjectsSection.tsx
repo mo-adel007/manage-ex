@@ -27,43 +27,42 @@ export default function ProjectsSection() {
     return () => observer.disconnect()
   }, [])
   // Partner logos array - using the actual logo files from your public/logos folder
-   const partnerLogos = [
-  { name: "ALELYANI", logo: "/logos/ALELYANI.svg" },
-  { name: "ALGAWDA", logo: "/logos/ALGAWDA.svg" },
-  { name: "ALMOKHTS", logo: "/logos/ALMOKHTS.svg" },
-  { name: "ALMSALYA", logo: "/logos/ALMSALYA.svg" },
-  { name: "ALNAGHAM", logo: "/logos/ALNAGHAM.svg" },
-  { name: "ALSAFWA", logo: "/logos/ALSAFWA.svg" },
-  { name: "ALSHARQ", logo: "/logos/ALSHARQ.svg" },
-  { name: "ALSHATRY", logo: "/logos/ALSHATRY.svg" },
-  { name: "ALWATANIYA", logo: "/logos/ALWATANIYA.svg" },
-  { name: "AMAAN", logo: "/logos/AMAAN.svg" },
-  { name: "AMAN", logo: "/logos/AMAN.svg" },
-  { name: "AMLAK", logo: "/logos/AMLAK.svg" },
-  { name: "DELTA", logo: "/logos/DELTA.svg" },
-  { name: "ELKHESHY", logo: "/logos/ELKHESHY.svg" },
-  { name: "ERADA", logo: "/logos/ERADA.svg" },
+ const partnerLogos = [
+  { name: "advancedpet", logo: "/logos/advancedpet.svg" },
+  { name: "advncedpet", logo: "/logos/advncedpet.svg" },
+  { name: "aman", logo: "/logos/aman.svg" },
+  { name: "amanex", logo: "/logos/amanex.svg" },
+  { name: "amk", logo: "/logos/amk.svg" },
+  { name: "delta", logo: "/logos/delta.svg" },
+  { name: "elkheshy", logo: "/logos/elkheshy.svg" },
+  { name: "elmokhtas", logo: "/logos/elmokhtas.svg" },
+  { name: "elyani", logo: "/logos/elyani.svg" },
+  { name: "erada", logo: "/logos/erada.svg" },
   { name: "etlala", logo: "/logos/etlala.svg" },
-  { name: "HMASRI", logo: "/logos/HMASRI.svg" },
-  { name: "ITFA", logo: "/logos/ITFA.svg" },
-  { name: "KANAN", logo: "/logos/KANAN.svg" },
-  { name: "KUNOOZ", logo: "/logos/KUNOOZ.svg" },
-  { name: "MAAN", logo: "/logos/MAAN.svg" },
-  { name: "MONKEY", logo: "/logos/MONKEY.svg" },
-  { name: "MSB", logo: "/logos/MSB.svg" },
-  { name: "MSTAND", logo: "/logos/MSTAND.svg" },
-  { name: "OTC", logo: "/logos/OTC.svg" },
-  { name: "PETCARE", logo: "/logos/PETCARE.svg" },
-  { name: "RAWABT", logo: "/logos/RAWABT.svg" },
-  { name: "RICHY", logo: "/logos/RICHY.svg" },
-  { name: "RIYADA", logo: "/logos/RIYADA.svg" },
-  { name: "SAFINATALSAHRA", logo: "/logos/SAFINATALSAHRA.svg" },
-  { name: "SERAJ", logo: "/logos/SERAJ.svg" },
-  { name: "SIMSIM", logo: "/logos/SIMSIM.svg" },
-  { name: "TAMLUK", logo: "/logos/TAMLUK.svg" },
-  { name: "TAWASOL", logo: "/logos/TAWASOL.svg" },
-  { name: "TAWKUD", logo: "/logos/TAWKUD.svg" },
-  { name: "YADOM", logo: "/logos/YADOM.svg" },
+  { name: "gawda", logo: "/logos/gawda.svg" },
+  { name: "hmasri", logo: "/logos/hmasri.svg" },
+  { name: "holol", logo: "/logos/holol.svg" },
+  { name: "itaf", logo: "/logos/itaf.svg" },
+  { name: "kanan", logo: "/logos/kanan.svg" },
+  { name: "kunooz", logo: "/logos/kunooz.svg" },
+  { name: "maan", logo: "/logos/maan.svg" },
+  { name: "monkey", logo: "/logos/monkey.svg" },
+  { name: "mostnd", logo: "/logos/mostnd.svg" },
+  { name: "naghm", logo: "/logos/naghm.svg" },
+  { name: "otc", logo: "/logos/otc.svg" },
+  { name: "rawabt", logo: "/logos/rawabt.svg" },
+  { name: "richy", logo: "/logos/richy.svg" },
+  { name: "safina", logo: "/logos/safina.svg" },
+  { name: "safwa", logo: "/logos/safwa.svg" },
+  { name: "seraj", logo: "/logos/seraj.svg" },
+  { name: "sharq", logo: "/logos/sharq.svg" },
+  { name: "smsm", logo: "/logos/smsm.svg" },
+  { name: "sre", logo: "/logos/sre.svg" },
+  { name: "tamluk", logo: "/logos/tamluk.svg" },
+  { name: "tawkid", logo: "/logos/tawkid.svg" },
+  { name: "tawsol", logo: "/logos/tawsol.svg" },
+  { name: "watnya", logo: "/logos/watnya.svg" },
+  { name: "yadoom", logo: "/logos/yadoom.svg" },
 ];
 
   // Auto-slide functionality
@@ -101,7 +100,9 @@ export default function ProjectsSection() {
             <div className="slider-container">
               <div 
                 className="slider-track"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                style={{ 
+                  transform: `translateX(${isRTL ? currentSlide * 100 : -currentSlide * 100}%)` 
+                }}
               >
                 {Array.from({ length: Math.ceil(partnerLogos.length / 6) }).map((_, slideIndex) => (
                   <div key={slideIndex} className="slide">
@@ -228,15 +229,17 @@ export default function ProjectsSection() {
 
         .partners-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-          gap: 30px;
+          grid-template-columns: repeat(6, 1fr);
+          gap: 20px;
           align-items: center;
           justify-items: center;
+          max-width: 1000px;
+          margin: 0 auto;
         }
 
         .partner-logo {
           width: 100%;
-          height: 100px;
+          height: 120px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -245,7 +248,7 @@ export default function ProjectsSection() {
         }
 
         .logo-container {
-          width: 160px;
+          width: 150px;
           height: 100px;
           display: flex;
           align-items: center;
@@ -350,16 +353,16 @@ export default function ProjectsSection() {
         .slider-dots {
           display: flex;
           justify-content: center;
-          gap: 12px;
+          gap: 6px;
           margin-top: 40px;
         }
 
         .dot {
-          width: 12px;
-          height: 12px;
+          width: 6px;
+          height: 6px;
           border-radius: 50%;
           border: none;
-          background: rgba(91, 67, 137, 0.3);
+          background: rgba(91, 67, 137, 0.4);
           cursor: pointer;
           transition: all 0.3s ease;
         }
@@ -367,7 +370,7 @@ export default function ProjectsSection() {
         .dot.active {
           background: var(--primary-color);
           transform: scale(1.2);
-          box-shadow: 0 0 0 4px rgba(91, 67, 137, 0.2);
+          box-shadow: 0 0 0 2px rgba(91, 67, 137, 0.2);
         }
 
         .dot:hover {
@@ -377,27 +380,11 @@ export default function ProjectsSection() {
 
         /* RTL Support */
         [dir="rtl"] .slider-track {
-          direction: ltr !important;
+          direction: ltr;
         }
 
         [dir="rtl"] .slide {
-          direction: ltr !important;
-        }
-
-        [dir="rtl"] .partners-grid {
-          direction: ltr !important;
-        }
-
-        [dir="rtl"] .partner-logo {
-          direction: ltr !important;
-        }
-
-        [dir="rtl"] .logo-container {
-          direction: ltr !important;
-        }
-
-        [dir="rtl"] .logo-image {
-          direction: ltr !important;
+          direction: ltr;
         }
 
         [dir="rtl"] .prev-btn {
@@ -419,8 +406,9 @@ export default function ProjectsSection() {
         /* Responsive Design */
         @media (max-width: 1024px) {
           .partners-grid {
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            max-width: 800px;
           }
 
           .section-title {
@@ -435,13 +423,13 @@ export default function ProjectsSection() {
 
           .logo-container {
             width: 140px;
-            height: 90px;
-            padding: 12px;
+            height: 95px;
+            padding: 15px;
           }
 
           .logo-image {
             max-width: 110px;
-            max-height: 70px;
+            max-height: 75px;
           }
         }
 
@@ -463,9 +451,9 @@ export default function ProjectsSection() {
           }
 
           .partners-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
-            max-width: 400px;
+            max-width: 500px;
             margin: 0 auto;
           }
 
@@ -474,14 +462,14 @@ export default function ProjectsSection() {
           }
 
           .logo-container {
-            width: 160px;
-            height: 100px;
+            width: 130px;
+            height: 90px;
             padding: 12px;
           }
 
           .logo-image {
-            max-width: 130px;
-            max-height: 80px;
+            max-width: 100px;
+            max-height: 70px;
           }
 
           .slider-btn {
@@ -535,7 +523,7 @@ export default function ProjectsSection() {
           .partners-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
-            max-width: 320px;
+            max-width: 350px;
           }
 
           .slide {
@@ -543,14 +531,14 @@ export default function ProjectsSection() {
           }
 
           .logo-container {
-            width: 140px;
-            height: 90px;
+            width: 120px;
+            height: 80px;
             padding: 10px;
           }
 
           .logo-image {
-            max-width: 115px;
-            max-height: 70px;
+            max-width: 90px;
+            max-height: 60px;
           }
 
           .slider-controls {
@@ -596,13 +584,13 @@ export default function ProjectsSection() {
           }
 
           .dot {
-            width: 10px;
-            height: 10px;
+            width: 3px;
+            height: 3px;
           }
 
           .slider-dots {
             margin-top: 30px;
-            gap: 8px;
+            gap: 6px;
           }
         }
 

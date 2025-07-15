@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next'
+import Head from 'next/head'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
@@ -42,6 +43,14 @@ export default function AccountingServices() {
 
   return (
     <>
+      <Head>
+        <title>{t('meta.accounting.title')}</title>
+        <meta name="description" content={t('meta.accounting.description')} />
+        <meta property="og:title" content={t('meta.accounting.title')} />
+        <meta property="og:description" content={t('meta.accounting.description')} />
+        <meta name="twitter:title" content={t('meta.accounting.title')} />
+        <meta name="twitter:description" content={t('meta.accounting.description')} />
+      </Head>
       {/* Hero Section */}
       <section className="service-hero">
         <div className="container">
@@ -111,9 +120,7 @@ export default function AccountingServices() {
                 <Link href="/contact" className="btn-primary">
                   {t('contact.discoverMore')}
                 </Link>
-                <Link href="/services" className="btn-secondary">
-                  {t('services.viewAllServices')}
-                </Link>
+              
               </div>
             </div>
           </AnimatedElement>

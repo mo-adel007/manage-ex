@@ -110,6 +110,10 @@ export default function WhyChooseUsContent() {
           box-shadow: 0 10px 30px rgba(91, 67, 137, 0.1);
         }
 
+        [dir="rtl"] .challenge-item:hover {
+          transform: translateX(-10px);
+        }
+
         .challenge-icon {
           width: 40px;
           height: 40px;
@@ -189,17 +193,39 @@ export default function WhyChooseUsContent() {
         }
 
         @media (max-width: 768px) {
+          .why-choose-us-content {
+            padding: 60px 0;
+          }
+
           .section-title {
             font-size: 2rem;
+            text-align: center;
           }
 
           .challenge-item {
             flex-direction: column;
             text-align: center;
+            padding: 25px 20px;
+          }
+
+          .challenge-item:hover {
+            transform: translateY(-5px);
+          }
+
+          [dir="rtl"] .challenge-item:hover {
+            transform: translateY(-5px);
           }
 
           .challenge-icon {
             margin: 0 auto 15px;
+          }
+
+          .features-grid {
+            gap: 20px;
+          }
+
+          .feature-card {
+            padding: 25px 20px;
           }
         }
       `}</style>

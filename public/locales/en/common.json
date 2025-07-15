@@ -1,4 +1,54 @@
 {
+  "meta": {
+    "home": {
+      "title": "ManageEx | Smart Business Solutions for Sustainable Growth",
+      "description": "Discover ManageEx services in marketing, design, accounting, and HR – smart solutions to drive your business growth efficiently."
+    },
+    "about": {
+      "title": "About ManageEx | Your Partner in Administrative Success",
+      "description": "Learn about ManageEx's vision and mission in delivering integrated services that enhance efficiency and achieve strategic goals."
+    },
+    "services": {
+      "title": "ManageEx Services | Tailored Solutions for Business Success",
+      "description": "A full range of services in accounting, HR, marketing, design, web development, and business support — tailored to your needs."
+    },
+    "whyChooseUs": {
+      "title": "Why ManageEx? | Efficiency, Simplicity, and Savings",
+      "description": "Discover how ManageEx stands out with professional services that reduce costs and improve operational efficiency."
+    },
+    "contact": {
+      "title": "Contact ManageEx | Tailored Support and Consulting",
+      "description": "Reach out to ManageEx for personalized services and expert support to help grow your business."
+    },
+    "careers": {
+      "title": "ManageEx Careers | Join Our Team",
+      "description": "Explore career opportunities at ManageEx and become part of a team that values innovation and excellence."
+    },
+    "accounting": {
+      "title": "Accounting Solutions | Accurate & Professional Financial Management",
+      "description": "Comprehensive accounting services including financial statements, taxes, payroll, and financial analysis to boost business performance."
+    },
+    "hr": {
+      "title": "HR Solutions | Efficient Human Capital Management",
+      "description": "Professional HR services including recruitment, payroll, training, performance, and legal compliance to ensure productive workplaces."
+    },
+    "marketing": {
+      "title": "Marketing Services | Smart Digital Presence & Growth",
+      "description": "Integrated digital marketing including content creation, advertising, SEO, and analytics to grow your online presence."
+    },
+    "design": {
+      "title": "Design Services | Bold & Impactful Visual Identity",
+      "description": "Professional design services including branding, profiles, social media visuals, packaging, and motion graphics."
+    },
+    "web": {
+      "title": "Web Development | Seamless Professional Digital Experience",
+      "description": "Custom-built websites that reflect your brand with great UX, fast performance, and SEO optimization."
+    },
+    "business": {
+      "title": "Business Services | Custom Administrative Solutions",
+      "description": "Tailored services to build your operational structure and support sustainable growth and efficiency."
+    }
+  },
   "nav": {
     "home": "Home",
     "about": "About us",
@@ -126,18 +176,59 @@
     },
     "hr": {
       "title": "HR Solutions",
-      "description": "ManageEX offers integrated, modern HR solutions that empower companies to build strong teams and achieve optimal operational efficiency. We support our clients in managing their human resources professionally while ensuring compliance with internal policies and labor regulations.",
+      "description": "ManageEX offers integrated, modern HR solutions that empower companies to build strong teams and achieve optimal operational efficiency. We support our clients in managing their human resources professionally while ensuring compliance with internal policies and labor regulations. We also provide a comprehensive onboarding experience that helps business owners understand the value of HR and avoid legal or financial risks caused by poor management.",
+      "cta": "Ready to transform your HR processes and build a stronger workforce? Let's discuss your specific needs.",
       "services": {
-        "recruitment": "Recruitment & Talent Acquisition - Identifying suitable candidates based on job requirements, screening applicants and conducting initial interviews to ensure the best fit, offering recruitment consulting, including designing the full recruitment process for a professional experience",
-        "management": "Employee Affairs Management - Preparing employment contracts and managing employee files in compliance with current legal frameworks, tracking attendance, leaves, and shifts to maintain workflow organization",
-        "training": "Training & Development - Creating and delivering customized training programs based on staff needs and company goals, enhancing leadership and management skills to boost operational efficiency",
-        "performance": "Performance Management & Competency Evaluation - Setting performance metrics aligned with business goals and strategic vision, conducting periodic reviews and offering recommendations to optimize efficiency",
-        "consulting": "HR Consulting - Offering solutions to improve workplace culture and increase employee loyalty, developing compliant HR policies, designing performance-based reward systems to boost productivity"
+        "recruitment": {
+          "title": "Recruitment & Talent Acquisition",
+          "items": [
+            "Identifying suitable candidates based on job requirements",
+            "Screening applicants and conducting initial interviews to ensure the best fit",
+            "Offering recruitment consulting, including designing the full recruitment process for a professional experience",
+            "Publishing job ads through the right channels to attract qualified candidates",
+            "Crafting precise job descriptions for clarity and alignment with role expectations"
+          ]
+        },
+        "management": {
+          "title": "Employee Affairs Management",
+          "items": [
+            "Preparing employment contracts and managing employee files in compliance with current legal frameworks",
+            "Tracking attendance, leaves, and shifts to maintain workflow organization",
+            "Developing HR policies and procedures aligned with local labor laws and company regulations",
+            "Designing and managing payroll systems, including overtime, allowances, and incentives",
+            "Tailoring solutions for both white-collar and blue-collar employee segments"
+          ]
+        },
+        "training": {
+          "title": "Training & Development",
+          "items": [
+            "Creating and delivering customized training programs based on staff needs and company goals",
+            "Enhancing leadership and management skills to boost operational efficiency",
+            "Conducting performance evaluations and developing individual growth plans to improve productivity"
+          ]
+        },
+        "performance": {
+          "title": "Performance Management & Competency Evaluation",
+          "items": [
+            "Setting performance metrics aligned with business goals and strategic vision",
+            "Conducting periodic reviews and offering recommendations to optimize efficiency",
+            "Managing incentive and reward systems that fairly motivate staff and drive satisfaction"
+          ]
+        },
+        "consulting": {
+          "title": "HR Consulting",
+          "items": [
+            "Offering solutions to improve workplace culture and increase employee loyalty",
+            "Developing compliant HR policies, with a strong focus on income tax understanding and management to avoid legal or financial issues",
+            "Designing performance-based reward systems to boost productivity",
+            "Preparing payroll statements and ensuring full compliance with financial and regulatory standards"
+          ]
+        }
       }
     },
     "marketing": {
       "title": "Marketing Services",
-      "description": "ManageEx offers comprehensive marketing solutions to help businesses strengthen their online presence, engage effectively with customers, and achieve sustainable growth. We design and implement tailored marketing strategies using compelling content, well-planned advertising campaigns, and performance analytics to ensure optimal results.",
+      "description": "ManageEx offers comprehensive marketing solutions to help businesses strengthen their online presence, engage effectively with customers, and achieve sustainable growth.",
       "services": {
         "social": {
           "title": "Social Media Management",
@@ -200,22 +291,6 @@
           "title": "Social Media Visual Content",
           "items": [
             "Interactive and consistent post designs aligned with your brand identity",
-            "Editable templates for unified publishing",
-            "Covers, flyers, and promotional posters for your products and services"
-          ]
-        },
-        "packaging": {
-          "title": "Packaging & Print Materials",
-          "items": [
-            "Menus, packaging, and bags that reflect your brand quality",
-            "Promo brochures and handouts — high quality",
-            "Print-ready designs customized with precision"
-          ]
-        },
-        "visualContent": {
-          "title": "Social Media Visual Content",
-          "items": [
-            "Interactive and consistent post designs aligned with your brand identity",
             "Editable templates for regular and unified content publishing",
             "Covers, flyers, and promotional posters tailored to your products/services"
           ]
@@ -241,14 +316,49 @@
     },
     "webDevelopment": {
       "title": "Web Development",
-      "description": "At ManageEx, we offer comprehensive website design services that deliver a seamless digital experience—from concept to the launch of a professional website that accurately reflects your brand identity. We focus on crafting visually appealing, user-friendly interfaces while ensuring high performance and full compatibility across all devices.",
-      "features": {
-        "custom": "Custom design that reflects your business identity",
-        "responsive": "Fully responsive across all devices",
-        "seo": "Search engine optimization (SEO) ready",
-        "performance": "High loading speed and optimized performance",
-        "cms": "Easy-to-use content management dashboard",
-        "integration": "Integrated with social media and marketing tools"
+      "description": "At ManageEx, we offer comprehensive website design services that deliver a seamless digital experience—from concept to the launch of a professional website that accurately reflects your brand identity. We focus on crafting visually appealing, user-friendly interfaces while ensuring high performance and full compatibility across all devices. Whether your goal is to showcase services, sell online, or build a strong digital presence, we develop websites that merge creativity with technology to provide a smooth user experience and deliver tangible results.",
+      "cta": "Ready to transform your business? Get in touch with us today and let's build an exceptional website together.",
+      "services": {
+        "design": {
+          "title": "Custom Website Design",
+          "items": [
+            "Custom design that reflects your business identity",
+            "User-friendly interface design focused on user experience",
+            "Modern, professional layouts that engage visitors"
+          ]
+        },
+        "development": {
+          "title": "Web Development & Programming",
+          "items": [
+            "Fully responsive across all devices",
+            "High loading speed and optimized performance",
+            "Clean, maintainable code following best practices"
+          ]
+        },
+        "optimization": {
+          "title": "SEO & Performance",
+          "items": [
+            "Search engine optimization (SEO) ready",
+            "Advanced performance optimization",
+            "Fast loading times and smooth functionality"
+          ]
+        },
+        "management": {
+          "title": "Content Management",
+          "items": [
+            "Easy-to-use content management dashboard",
+            "Simple content updates without technical knowledge",
+            "Secure admin panel for website management"
+          ]
+        },
+        "integration": {
+          "title": "Integration & Tools",
+          "items": [
+            "Integrated with social media and marketing tools",
+            "E-commerce functionality for online selling",
+            "Analytics and tracking implementation"
+          ]
+        }
       }
     },
     "business": {
@@ -311,17 +421,36 @@
     },
     "team": {
       "title": "Our Team",
+      "description": "Our dedicated team brings together expertise, innovation, and commitment to deliver exceptional results. We combine rigorous training, high precision standards, and fast delivery to ensure your business success.",
       "training": "Rigorous training",
+      "trainingDesc": "Our team undergoes continuous professional development and specialized training programs to stay ahead of industry standards and deliver cutting-edge solutions.",
       "precision": "High precision",
-      "delivery": "Fast delivery"
-    },
-    "consulting": {
-      "title": "Consulting Services",
-      "description": "We provide expert consulting services in management and organizational structuring."
+      "precisionDesc": "We maintain meticulous attention to detail in every project, ensuring accuracy and quality that exceeds expectations and drives measurable results.",
+      "delivery": "Fast delivery",
+      "deliveryDesc": "Through streamlined processes and efficient project management, we deliver high-quality solutions on time, every time, without compromising on excellence.",
+      "stats": {
+        "projectsCompleted": "Projects Completed",
+        "happyClients": "Happy Clients",
+        "supportAvailable": "Support Available",
+        "yearsExperience": "Years Experience"
+      }
     },
     "success": {
       "title": "Success Stories",
-      "description": "Some of our clients have reduced their HR costs by up to 60% and achieved remarkable success thanks to our services."
+      "description": "Our proven track record demonstrates tangible results and measurable impact. Here's how we've helped businesses transform and achieve their goals through strategic partnerships and innovative solutions.",
+      "stories": {
+        "costReduction": "Cost Reduction",
+        "costReductionDesc": "Average cost reduction achieved by our clients through optimized processes and efficient resource management, leading to significant savings and improved profitability.",
+        "efficiencyIncrease": "Efficiency Increase",
+        "efficiencyIncreaseDesc": "Increase in operational efficiency through streamlined workflows, automation, and strategic process improvements that boost productivity.",
+        "clientSatisfaction": "Client Satisfaction", 
+        "clientSatisfactionDesc": "Client satisfaction rate with our comprehensive solutions, ongoing support, and commitment to delivering exceptional value and measurable results."
+      },
+      "cta": {
+        "title": "Ready to Join Our Success Stories?",
+        "description": "Transform your business with proven strategies and expert guidance. Let's discuss how we can help you achieve similar remarkable results.",
+        "button": "Get Started Today"
+      }
     },
     "partners": "Partners in Success",
     "latestTechnology": {

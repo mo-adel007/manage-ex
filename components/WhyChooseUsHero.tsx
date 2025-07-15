@@ -42,6 +42,32 @@ export default function WhyChooseUsHero() {
           margin: 0 auto;
           line-height: 1.6;
         }
+
+        @media (max-width: 768px) {
+          .why-choose-us-hero {
+            padding: 80px 0 60px;
+          }
+
+          .hero-title {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            margin-bottom: 20px;
+          }
+
+          .hero-description {
+            font-size: 16px;
+            max-width: 90%;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .why-choose-us-hero {
+            padding: 60px 0 40px;
+          }
+
+          .hero-description {
+            font-size: 15px;
+          }
+        }
       `}</style>
     </section>
   )

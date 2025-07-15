@@ -9,20 +9,20 @@ export default function WhyChooseUsSuccess() {
   const successStories = [
     {
       percentage: '60%',
-      metric: 'HR Cost Reduction',
-      description: 'Average cost savings achieved by our clients',
+      metric: t('whyChooseUs.success.stories.costReduction'),
+      description: t('whyChooseUs.success.stories.costReductionDesc'),
       icon: 'fas fa-chart-line'
     },
     {
       percentage: '50%',
-      metric: 'Efficiency Increase',
-      description: 'Improvement in operational efficiency',
+      metric: t('whyChooseUs.success.stories.efficiencyIncrease'),
+      description: t('whyChooseUs.success.stories.efficiencyIncreaseDesc'),
       icon: 'fas fa-rocket'
     },
     {
       percentage: '100%',
-      metric: 'Client Satisfaction',
-      description: 'Clients report smoother workflow experience',
+      metric: t('whyChooseUs.success.stories.clientSatisfaction'),
+      description: t('whyChooseUs.success.stories.clientSatisfactionDesc'),
       icon: 'fas fa-heart'
     }
   ]
@@ -69,9 +69,9 @@ export default function WhyChooseUsSuccess() {
 
         <AnimatedElement animation="bounce-in" delay={1.2}>
           <div className="cta-section">
-            <h3>Ready to Transform Your Business?</h3>
-            <p>Join our successful clients and experience the ManageEx difference</p>
-            <a href="/contact" className="btn-primary">Start Your Journey</a>
+            <h3>{t('whyChooseUs.success.cta.title')}</h3>
+            <p>{t('whyChooseUs.success.cta.description')}</p>
+            <a href="/contact" className="btn-primary">{t('whyChooseUs.success.cta.button')}</a>
           </div>
         </AnimatedElement>
       </div>
@@ -253,20 +253,29 @@ export default function WhyChooseUsSuccess() {
         }
 
         @media (max-width: 768px) {
+          .why-choose-us-success {
+            padding: 60px 0;
+          }
+
+          .section-header {
+            margin-bottom: 50px;
+          }
+
           .section-title {
             font-size: 2rem;
           }
 
           .success-stories {
             grid-template-columns: 1fr;
+            margin-bottom: 60px;
+          }
+
+          .success-card {
+            padding: 40px 25px;
           }
 
           .success-percentage {
             font-size: 3rem;
-          }
-
-          .partners-grid {
-            grid-template-columns: repeat(2, 1fr);
           }
 
           .cta-section {
@@ -279,8 +288,20 @@ export default function WhyChooseUsSuccess() {
         }
 
         @media (max-width: 480px) {
-          .partners-grid {
-            grid-template-columns: 1fr;
+          .success-stories {
+            gap: 20px;
+          }
+
+          .success-card {
+            padding: 30px 20px;
+          }
+
+          .success-percentage {
+            font-size: 2.5rem;
+          }
+
+          .cta-section {
+            padding: 30px 20px;
           }
         }
       `}</style>

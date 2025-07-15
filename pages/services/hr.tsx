@@ -5,38 +5,38 @@ import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import AnimatedElement from '@/components/AnimatedElement'
 
-export default function DesignServices() {
+export default function HRServices() {
   const { t } = useTranslation('common')
 
   const services = [
     {
-      key: 'identity',
-      icon: 'fas fa-palette',
-      color: 'identity',
+      key: 'recruitment',
+      icon: 'fas fa-search',
+      color: 'recruitment',
       number: '01'
     },
     {
-      key: 'profiles', 
-      icon: 'fas fa-file-alt',
-      color: 'profiles',
+      key: 'management', 
+      icon: 'fas fa-users-cog',
+      color: 'management',
       number: '02'
     },
     {
-      key: 'social',
-      icon: 'fas fa-share-alt',
-      color: 'social',
+      key: 'training',
+      icon: 'fas fa-graduation-cap',
+      color: 'training',
       number: '03'
     },
     {
-      key: 'packaging',
-      icon: 'fas fa-box',
-      color: 'packaging',
+      key: 'performance',
+      icon: 'fas fa-chart-line',
+      color: 'performance',
       number: '04'
     },
     {
-      key: 'motion',
-      icon: 'fas fa-video',
-      color: 'motion',
+      key: 'consulting',
+      icon: 'fas fa-handshake',
+      color: 'consulting',
       number: '05'
     }
   ]
@@ -44,15 +44,15 @@ export default function DesignServices() {
   return (
     <>
       <Head>
-        <title>{t('meta.design.title')}</title>
-        <meta name="description" content={t('meta.design.description')} />
-        <meta property="og:title" content={t('meta.design.title')} />
-        <meta property="og:description" content={t('meta.design.description')} />
-        <meta name="twitter:title" content={t('meta.design.title')} />
-        <meta name="twitter:description" content={t('meta.design.description')} />
+        <title>{t('meta.hr.title')}</title>
+        <meta name="description" content={t('meta.hr.description')} />
+        <meta property="og:title" content={t('meta.hr.title')} />
+        <meta property="og:description" content={t('meta.hr.description')} />
+        <meta name="twitter:title" content={t('meta.hr.title')} />
+        <meta name="twitter:description" content={t('meta.hr.description')} />
       </Head>
       {/* Hero Section */}
-      <section className="design-hero">
+      <section className="hr-hero">
         <div className="container">
           <AnimatedElement animation="text-focus">
             <div className="hero-content">
@@ -61,9 +61,9 @@ export default function DesignServices() {
                 <span>{t('common.backToServices')}</span>
               </Link>
               <span className="section-tag">{t('services.tag')}</span>
-              <h1 className="hero-title">{t('services.design.title')}</h1>
+              <h1 className="hero-title">{t('services.hr.title')}</h1>
               <p className="hero-description">
-                {t('services.design.description')}
+                {t('services.hr.description')}
               </p>
             </div>
           </AnimatedElement>
@@ -71,7 +71,7 @@ export default function DesignServices() {
       </section>
 
       {/* Services Timeline */}
-      <section className="design-services">
+      <section className="hr-services">
         <div className="container">
           <div className="services-timeline">
             {services.map((service, index) => (
@@ -88,13 +88,13 @@ export default function DesignServices() {
                         <i className={service.icon}></i>
                       </div>
                       <h3 className="service-title">
-                        {t(`services.design.services.${service.key}.title`)}
+                        {t(`services.hr.services.${service.key}.title`)}
                       </h3>
                     </div>
                     
                     <div className="service-details">
                       <ul className="service-list">
-                        {(t(`services.design.services.${service.key}.items`, { returnObjects: true }) as string[]).map((item, itemIndex) => (
+                        {(t(`services.hr.services.${service.key}.items`, { returnObjects: true }) as string[]).map((item, itemIndex) => (
                           <li key={itemIndex} className="service-item">
                             <div className="item-bullet">
                               <i className="fas fa-check"></i>
@@ -118,20 +118,20 @@ export default function DesignServices() {
       </section>
 
       {/* CTA Section */}
-      <section className="design-cta">
+      <section className="hr-cta">
         <div className="container">
           <AnimatedElement animation="bounce-in">
             <div className="cta-content">
               <div className="cta-icon">
-                <i className="fas fa-paint-brush"></i>
+                <i className="fas fa-user-tie"></i>
               </div>
               <h2>{t('contact.discussBusiness')}</h2>
-              <p>{t('services.design.cta')}</p>
+              <p>{t('services.hr.cta')}</p>
               <div className="cta-actions">
                 <Link href="/contact" className="btn-primary">
                   {t('contact.discoverMore')}
                 </Link>
-              
+                
               </div>
             </div>
           </AnimatedElement>
@@ -139,14 +139,14 @@ export default function DesignServices() {
       </section>
 
       <style jsx>{`
-        .design-hero {
+        .hr-hero {
           padding: 120px 0 80px;
           background: linear-gradient(135deg, var(--current-bg-primary) 0%, var(--current-bg-secondary) 100%);
           position: relative;
           overflow: hidden;
         }
 
-        .design-hero::before {
+        .hr-hero::before {
           content: '';
           position: absolute;
           top: 0;
@@ -226,7 +226,7 @@ export default function DesignServices() {
           margin: 0;
         }
 
-        .design-services {
+        .hr-services {
           padding: 100px 0;
           background: var(--current-bg-primary);
         }
@@ -287,23 +287,23 @@ export default function DesignServices() {
           border-radius: 20px 20px 0 0;
         }
 
-        .identity .timeline-content::before {
-          background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+        .recruitment .timeline-content::before {
+          background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
         }
 
-        .profiles .timeline-content::before {
-          background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+        .management .timeline-content::before {
+          background: linear-gradient(135deg, #27ae60 0%, #219a52 100%);
         }
 
-        .social .timeline-content::before {
-          background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
+        .training .timeline-content::before {
+          background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
         }
 
-        .packaging .timeline-content::before {
-          background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+        .performance .timeline-content::before {
+          background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
         }
 
-        .motion .timeline-content::before {
+        .consulting .timeline-content::before {
           background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         }
 
@@ -372,23 +372,23 @@ export default function DesignServices() {
           flex-shrink: 0;
         }
 
-        .identity .service-icon {
-          background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+        .recruitment .service-icon {
+          background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
         }
 
-        .profiles .service-icon {
-          background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+        .management .service-icon {
+          background: linear-gradient(135deg, #27ae60 0%, #219a52 100%);
         }
 
-        .social .service-icon {
-          background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
+        .training .service-icon {
+          background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
         }
 
-        .packaging .service-icon {
-          background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+        .performance .service-icon {
+          background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
         }
 
-        .motion .service-icon {
+        .consulting .service-icon {
           background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         }
 
@@ -452,7 +452,7 @@ export default function DesignServices() {
           box-shadow: 0 0 0 4px rgba(91, 67, 137, 0.2);
         }
 
-        .design-cta {
+        .hr-cta {
           padding: 100px 0;
           background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
           color: var(--accent-white);
@@ -605,7 +605,7 @@ export default function DesignServices() {
         }
 
         @media (max-width: 480px) {
-          .design-hero {
+          .hr-hero {
             padding: 100px 0 60px;
           }
 
@@ -629,6 +629,69 @@ export default function DesignServices() {
             width: 60px;
             height: 60px;
             font-size: 24px;
+          }
+        }
+
+        /* RTL Support */
+        [dir="rtl"] .timeline-item.left {
+          justify-content: flex-start;
+          padding-left: 60px;
+          padding-right: 0;
+        }
+
+        [dir="rtl"] .timeline-item.right {
+          justify-content: flex-end;
+          padding-right: 60px;
+          padding-left: 0;
+        }
+
+        [dir="rtl"] .timeline-item.left .timeline-content::after {
+          left: -15px;
+          right: auto;
+          border-right: 15px solid var(--current-bg-secondary);
+          border-left: none;
+        }
+
+        [dir="rtl"] .timeline-item.right .timeline-content::after {
+          right: -15px;
+          left: auto;
+          border-left: 15px solid var(--current-bg-secondary);
+          border-right: none;
+        }
+
+        [dir="rtl"] .service-header {
+          flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .service-item {
+          flex-direction: row-reverse;
+          text-align: right;
+        }
+
+        @media (max-width: 768px) {
+          [dir="rtl"] .timeline-item.left,
+          [dir="rtl"] .timeline-item.right {
+            justify-content: flex-start;
+            padding-right: 70px;
+            padding-left: 0;
+          }
+
+          [dir="rtl"] .timeline-item.left .timeline-content::after,
+          [dir="rtl"] .timeline-item.right .timeline-content::after {
+            right: -15px;
+            left: auto;
+            border-left: 15px solid var(--current-bg-secondary);
+            border-right: none;
+          }
+
+          [dir="rtl"] .timeline-connector {
+            right: 30px;
+            left: auto;
+          }
+
+          [dir="rtl"] .services-timeline::before {
+            right: 30px;
+            left: auto;
           }
         }
       `}</style>

@@ -283,7 +283,7 @@ export default function Footer() {
         .contact-grid {
            display: flex;
           justify-content: center;
-          align-items: center;
+          align-items: stretch;
           gap: 30px;
         }
 
@@ -295,6 +295,11 @@ export default function Footer() {
           transition: all 0.3s ease;
           position: relative;
           overflow: hidden;
+          flex: 1;
+          max-width: 350px;
+          min-height: 400px;
+          display: flex;
+          flex-direction: column;
         }
 
         .contact-card::before {
@@ -348,24 +353,30 @@ export default function Footer() {
           display: flex;
           flex-direction: column;
           gap: 15px;
+          flex: 1;
         }
 
         .contact-item {
           display: flex;
-          align-items: flex-start;
-          gap: 12px;
+          align-items: center;
+          gap: 15px;
+          padding: 12px 0;
         }
 
         .contact-icon {
-          width: 20px;
-          height: 20px;
+          width: 18px;
+          height: 18px;
           color: var(--primary-color);
-          margin-top: 2px;
           flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 16px;
         }
 
         .contact-icon.whatsapp {
           color: #25d366;
+          font-size: 18px;
         }
 
         .contact-info {
@@ -374,12 +385,12 @@ export default function Footer() {
 
         .contact-label {
           display: block;
-          font-size: 12px;
+          font-size: 11px;
           font-weight: 600;
           color: var(--current-text-muted);
           text-transform: uppercase;
           letter-spacing: 0.5px;
-          margin-bottom: 4px;
+          margin-bottom: 6px;
         }
 
         .contact-value {
@@ -389,6 +400,7 @@ export default function Footer() {
           font-size: 14px;
           line-height: 1.4;
           display: block;
+          transition: color 0.3s ease;
         }
 
         .contact-value:hover {
@@ -398,7 +410,12 @@ export default function Footer() {
         .whatsapp-numbers {
           display: flex;
           flex-direction: column;
-          gap: 2px;
+          gap: 4px;
+        }
+
+        .whatsapp-numbers .contact-value {
+          font-size: 13px;
+          padding: 2px 0;
         }
 
         .legal-info {
@@ -561,12 +578,14 @@ export default function Footer() {
         /* Responsive Design */
         @media (max-width: 1200px) {
           .contact-grid {
-            grid-template-columns: 1fr 1fr;
+            flex-direction: column;
+            align-items: center;
             gap: 20px;
           }
 
-          .map-section {
-            grid-column: 1 / -1;
+          .contact-card {
+            max-width: 500px;
+            width: 100%;
           }
         }
 
@@ -578,8 +597,13 @@ export default function Footer() {
           }
 
           .contact-grid {
-            grid-template-columns: 1fr;
+            flex-direction: column;
             gap: 20px;
+          }
+
+          .contact-card {
+            min-height: auto;
+            max-width: none;
           }
 
           .footer-social {
@@ -615,13 +639,19 @@ export default function Footer() {
           }
 
           .contact-item {
-            flex-direction: column;
-            text-align: center;
-            gap: 8px;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
           }
 
           .contact-icon {
-            margin: 0 auto;
+            width: 16px;
+            height: 16px;
+            font-size: 14px;
+          }
+
+          .contact-icon.whatsapp {
+            font-size: 16px;
           }
 
           .legal-item {

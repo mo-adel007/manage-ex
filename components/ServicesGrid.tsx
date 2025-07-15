@@ -35,6 +35,18 @@ export default function ServicesGrid() {
       description: t("services.businessServices.description"),
       image: "/marketing.jpg",
     },
+     {
+      slug: "hr",
+      title: t("services.hr.title"),
+      description: t("services.hr.description"),
+      image: "/hr.jpg",
+    },
+     {
+      slug: "web",
+      title: t("services.web.title"),
+      description: t("services.web.description"),
+      image: "/web.png",
+    },
   ];
 
   const handleCardClick = (index: number) => {

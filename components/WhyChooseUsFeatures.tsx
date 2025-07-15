@@ -207,22 +207,53 @@ export default function WhyChooseUsFeatures() {
         }
 
         @media (max-width: 768px) {
+          .why-choose-us-features {
+            padding: 60px 0;
+          }
+
+          .features-wrapper {
+            gap: 50px;
+          }
+
           .section-title {
             font-size: 2rem;
           }
 
+          .section-description {
+            margin-bottom: 40px;
+          }
+
           .success-metrics {
             grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 40px;
+          }
+
+          .metric-card {
+            padding: 30px 25px;
           }
 
           .consulting-areas {
             grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+          }
+
+          .consulting-card {
+            padding: 25px 15px;
           }
         }
 
         @media (max-width: 480px) {
           .consulting-areas {
             grid-template-columns: 1fr;
+          }
+
+          .metric-card {
+            padding: 25px 20px;
+          }
+
+          .metric-content h3 {
+            font-size: 2.5rem;
           }
         }
       `}</style>
