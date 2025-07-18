@@ -165,20 +165,77 @@ export default function Footer() {
           <div className="footer-social-section">
             <h4 className="social-title">Follow Us</h4>
             <div className="footer-social">
-              <a href="#" className="social-link" aria-label="Facebook">
+              <a 
+                href="https://web.facebook.com/profile.php?id=61563955933702" 
+                className="social-link facebook" 
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" className="social-link" aria-label="Instagram">
+              <a 
+                href="https://www.instagram.com/manage.ex/?hl=ar" 
+                className="social-link instagram" 
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#" className="social-link" aria-label="WhatsApp">
+              <a 
+                href="https://wa.me/966532402275" 
+                className="social-link whatsapp" 
+                aria-label="WhatsApp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-whatsapp"></i>
               </a>
-              <a href="#" className="social-link" aria-label="TikTok">
+              <a 
+                href="https://www.tiktok.com/@manageex?_t=ZS-8y4dVn5zen2&_r=1" 
+                className="social-link tiktok" 
+                aria-label="TikTok"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-tiktok"></i>
               </a>
-              <a href="#" className="social-link" aria-label="LinkedIn">
+              <a 
+                href="https://www.linkedin.com/company/104369975" 
+                className="social-link linkedin" 
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-linkedin-in"></i>
+              </a>
+              <a 
+                href="https://x.com/ManageEx" 
+                className="social-link twitter" 
+                aria-label="X (Twitter)"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-x"></i>
+              </a>
+              <a 
+                href="https://www.behance.net/manageexcompany1" 
+                className="social-link behance" 
+                aria-label="Behance"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-behance"></i>
+              </a>
+              <a 
+                href="https://www.snapchat.com/add/ManageEX" 
+                className="social-link snapchat" 
+                aria-label="Snapchat"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-snapchat-ghost"></i>
               </a>
             </div>
           </div>
@@ -538,15 +595,92 @@ export default function Footer() {
           border-radius: 50%;
           background: var(--primary-color);
           text-decoration: none;
+          position: relative;
+          overflow: hidden;
         }
 
         .social-link i {
           color: #fff !important;
+          font-size: 16px;
+          z-index: 2;
+          position: relative;
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          text-align: center;
+          line-height: 16px;
         }
 
+        /* Ensure WhatsApp icon is visible */
+
         .social-link:hover {
-          background: var(--primary-color);
           transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Specific social media colors */
+        .social-link.facebook {
+          background: #1877f2;
+        }
+
+        .social-link.facebook:hover {
+          background: #166fe5;
+        }
+
+        .social-link.instagram {
+          background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-link.whatsapp {
+          background: #25d366;
+        }
+
+        .social-link.whatsapp:hover {
+          background: #22c55e;
+        }
+
+        .social-link.tiktok {
+          background: #000;
+        }
+
+        .social-link.tiktok:hover {
+          background: #333;
+        }
+
+        .social-link.linkedin {
+          background: #0a66c2;
+        }
+
+        .social-link.linkedin:hover {
+          background: #0952a3;
+        }
+
+        .social-link.twitter {
+          background: #1d9bf0;
+        }
+
+        .social-link.twitter:hover {
+          background: #1a8cd8;
+        }
+
+        .social-link.behance {
+          background: #1769ff;
+        }
+
+        .social-link.behance:hover {
+          background: #0056e0;
+        }
+
+        .social-link.snapchat {
+          background: #fffc00;
+        }
+
+        .social-link.snapchat:hover {
+          background: #e6e300;
+        }
+
+        .social-link.snapchat i {
+          color: #000 !important;
         }
 
         /* Footer Bottom */

@@ -35,7 +35,7 @@ export default function ScrollToTop() {
       <style jsx>{`
         .scroll-to-top {
           position: fixed;
-          bottom: 100px;
+          bottom: 110px;
           right: 30px;
           width: 50px;
           height: 50px;

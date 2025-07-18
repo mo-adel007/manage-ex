@@ -119,10 +119,14 @@ export default function Header() {
               <LanguageSwitcher />
               
               <div className="social-links desktop-only">
-                <Link href="#" className="social-link" aria-label="Facebook"><i className="fab fa-facebook-f"></i></Link>
-                <Link href="#" className="social-link" aria-label="Instagram"><i className="fab fa-instagram"></i></Link>
-                <Link href="#" className="social-link" aria-label="WhatsApp"><i className="fab fa-whatsapp"></i></Link>
-                <Link href="#" className="social-link" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></Link>
+                <Link href="https://web.facebook.com/profile.php?id=61563955933702" className="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></Link>
+                <Link href="https://www.instagram.com/manage.ex/?hl=ar" className="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></Link>
+                <Link href="https://wa.me/966532402275" className="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i className="fab fa-whatsapp"></i></Link>
+                <Link href="https://www.tiktok.com/@manageex?_t=ZS-8y4dVn5zen2&_r=1" className="social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i className="fab fa-tiktok"></i></Link>
+                <Link href="https://www.linkedin.com/company/104369975" className="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></Link>
+                <Link href="https://x.com/ManageEx" className="social-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i className="fab fa-x"></i></Link>
+                <Link href="https://www.behance.net/manageexcompany1" className="social-link" aria-label="Behance" target="_blank" rel="noopener noreferrer"><i className="fab fa-behance"></i></Link>
+                <Link href="https://www.snapchat.com/add/ManageEX" className="social-link" aria-label="Snapchat" target="_blank" rel="noopener noreferrer"><i className="fab fa-snapchat-ghost"></i></Link>
               </div>
               
               <button 
@@ -177,18 +181,14 @@ export default function Header() {
           
           <div className="mobile-nav-footer">
             <div className="mobile-social-links">
-              <Link href="#" className="mobile-social-link" aria-label="Facebook">
-                <i className="fab fa-facebook-f"></i>
-              </Link>
-              <Link href="#" className="mobile-social-link" aria-label="Instagram">
-                <i className="fab fa-instagram"></i>
-              </Link>
-              <Link href="#" className="mobile-social-link" aria-label="WhatsApp">
-                <i className="fab fa-whatsapp"></i>
-              </Link>
-              <Link href="#" className="mobile-social-link" aria-label="LinkedIn">
-                <i className="fab fa-linkedin-in"></i>
-              </Link>
+              <Link href="https://web.facebook.com/profile.php?id=61563955933702" className="mobile-social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></Link>
+              <Link href="https://www.instagram.com/manage.ex/?hl=ar" className="mobile-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></Link>
+              <Link href="https://wa.me/966532402275" className="mobile-social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i className="fab fa-whatsapp"></i></Link>
+              <Link href="https://www.tiktok.com/@manageex?_t=ZS-8y4dVn5zen2&_r=1" className="mobile-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i className="fab fa-tiktok"></i></Link>
+              <Link href="https://www.linkedin.com/company/104369975" className="mobile-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></Link>
+              <Link href="https://x.com/ManageEx" className="mobile-social-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i className="fab fa-x-twitter"></i></Link>
+              <Link href="https://www.behance.net/manageexcompany1" className="mobile-social-link" aria-label="Behance" target="_blank" rel="noopener noreferrer"><i className="fab fa-behance"></i></Link>
+              <Link href="https://www.snapchat.com/add/ManageEX" className="mobile-social-link" aria-label="Snapchat" target="_blank" rel="noopener noreferrer"><i className="fab fa-snapchat-ghost"></i></Link>
             </div>
             <div className="mobile-footer-text">
               <p>&copy; 2024 ManageEx</p>

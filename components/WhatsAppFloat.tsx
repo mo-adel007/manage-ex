@@ -1,76 +1,92 @@
 'use client'
 
-import AnimatedElement from './AnimatedElement'
-
+// Direct implementation without AnimatedElement wrapper for better visibility
 export default function WhatsAppFloat() {
   const handleClick = () => {
-    const phoneNumber = '966505154013' // +966 50 515 4013
+    const phoneNumber = '966532402275' // +966 53 240 2275
     const message = 'Hello! I\'m interested in your business management services.'
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
 
   return (
-    <AnimatedElement animation="bounce-in" delay={2}>
-      <div 
-        className="whatsapp-float" 
-        onClick={handleClick}
-        role="button"
-        tabIndex={0}
-        aria-label="Contact us on WhatsApp"
-        title="Chat with us on WhatsApp"
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            handleClick();
-          }
-        }}
-      >
-        <i className="fab fa-whatsapp" aria-hidden="true"></i>
-        {/* Fallback text if icon doesn't load */}
-        <span className="whatsapp-fallback" style={{display: 'none'}}>WA</span>
-      </div>
+    <div 
+      className="whatsapp-float" 
+      onClick={handleClick}
+      role="button"
+      tabIndex={0}
+      aria-label="Contact us on WhatsApp"
+      title="Chat with us on WhatsApp"
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleClick();
+        }
+      }}
+    >
+      <i className="fab fa-whatsapp" aria-hidden="true"></i>
 
       <style jsx>{`
         .whatsapp-float {
           position: fixed;
           bottom: 30px;
-          left: 30px;
-          width: 60px;
-          height: 60px;
+          right: 30px;
+          width: 65px;
+          height: 65px;
           background: #25d366;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 24px;
+          font-size: 32px;
           color: white;
           cursor: pointer;
-          z-index: 9999;
-          box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+          z-index: 999999;
+          box-shadow: 0 6px 16px 2px rgba(37, 211, 102, 0.8);
           transition: all 0.3s ease;
           user-select: none;
           -webkit-tap-highlight-color: transparent;
-          border: 2px solid rgba(255, 255, 255, 0.2);
+          border: 3px solid rgba(255, 255, 255, 0.6);
+          animation: whatsapp-pulse 2s infinite;
         }
 
         .whatsapp-float:hover {
           transform: scale(1.1);
-          box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+          box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
         }
 
         .whatsapp-float:active {
           transform: scale(0.95);
         }
 
+        .whatsapp-float i {
+          color: white;
+          font-size: 28px;
+        }
+
+        @keyframes whatsapp-pulse {
+          0% {
+            box-shadow: 0 6px 16px 2px rgba(37, 211, 102, 0.7);
+            transform: scale(1);
+          }
+          50% {
+            box-shadow: 0 8px 24px 4px rgba(37, 211, 102, 0.9);
+            transform: scale(1.05);
+          }
+          100% {
+            box-shadow: 0 6px 16px 2px rgba(37, 211, 102, 0.7);
+            transform: scale(1);
+          }
+        }
+
         /* Tablet adjustments */
         @media (max-width: 768px) and (min-width: 481px) {
           .whatsapp-float {
             bottom: 25px;
-            left: 25px;
+            right: 25px;
             width: 55px;
             height: 55px;
-            font-size: 22px;
+            font-size: 24px;
           }
         }
 
@@ -78,16 +94,16 @@ export default function WhatsAppFloat() {
         @media (max-width: 480px) {
           .whatsapp-float {
             bottom: 20px;
-            left: 20px;
+            right: 20px;
             width: 52px;
             height: 52px;
-            font-size: 20px;
+            font-size: 22px;
             box-shadow: 0 3px 15px rgba(37, 211, 102, 0.5);
           }
           
           .whatsapp-float:hover {
-            transform: none; /* Disable hover effects on mobile */
-            box-shadow: 0 3px 15px rgba(37, 211, 102, 0.5);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.7);
           }
         }
 
@@ -95,47 +111,13 @@ export default function WhatsAppFloat() {
         @media (max-width: 360px) {
           .whatsapp-float {
             bottom: 15px;
-            left: 15px;
+            right: 15px;
             width: 48px;
             height: 48px;
-            font-size: 18px;
+            font-size: 20px;
           }
-        }
-
-        /* Landscape mobile adjustments */
-        @media (max-height: 500px) and (max-width: 900px) {
-          .whatsapp-float {
-            bottom: 15px;
-            left: 15px;
-            width: 50px;
-            height: 50px;
-            font-size: 19px;
-          }
-        }
-
-        /* High DPI displays */
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-          .whatsapp-float {
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
-          }
-        }
-
-        /* Fallback for when Font Awesome doesn't load */
-        .whatsapp-float .fab.fa-whatsapp:before {
-          content: "\f232";
-        }
-        
-        .whatsapp-float .fab:before {
-          font-family: "Font Awesome 6 Brands", "FontAwesome", sans-serif;
-        }
-        
-        /* Show fallback text if icon doesn't work */
-        .whatsapp-float:not(:has(.fab.fa-whatsapp:before)) .whatsapp-fallback {
-          display: block !important;
-          font-weight: bold;
-          font-size: 14px;
         }
       `}</style>
-    </AnimatedElement>
+    </div>
   )
 }

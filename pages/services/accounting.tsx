@@ -115,7 +115,6 @@ export default function AccountingServices() {
           <AnimatedElement animation="bounce-in">
             <div className="cta-content">
               <h2>{t('contact.discussBusiness')}</h2>
-              <p>{t('services.accounting.cta')}</p>
               <div className="cta-actions">
                 <Link href="/contact" className="btn-primary">
                   {t('contact.discoverMore')}
