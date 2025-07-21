@@ -54,10 +54,10 @@ export default function BusinessServices() {
                 <span>{t('common.backToServices')}</span>
               </Link>
               <span className="section-tag">{t('services.tag')}</span>
-              <h1 className="hero-title">Business Services</h1>
-              <p className="hero-subtitle">Customized services, just for you</p>
+              <h1 className="hero-title">{t('services.business.title')}</h1>
+              <p className="hero-subtitle">{t('services.business.subtitle')}</p>
               <p className="hero-description">
-                At ManageEx, we understand that entrepreneurs need more than just strong ideas — they need a solid administrative foundation that supports their journey. That's why our Business Services offer integrated solutions designed to empower companies, drive sustainable growth, and enhance operational efficiency — all while keeping full focus on core objectives.
+                {t('services.business.description')}
               </p>
             </div>
           </AnimatedElement>
@@ -75,24 +75,24 @@ export default function BusinessServices() {
                   <div className="card-icon">
                     <i className="fas fa-lightbulb"></i>
                   </div>
-                  <h3>Tailored Solutions</h3>
-                  <p>We create customized business packages that align perfectly with your specific needs and goals.</p>
+                  <h3>{t('services.business.infoCards.tailored.title')}</h3>
+                  <p>{t('services.business.infoCards.tailored.description')}</p>
                 </div>
 
                 <div className="info-card">
                   <div className="card-icon">
                     <i className="fas fa-chart-line"></i>
                   </div>
-                  <h3>Growth-Focused</h3>
-                  <p>Our services are designed to drive sustainable growth while maintaining operational efficiency.</p>
+                  <h3>{t('services.business.infoCards.growth.title')}</h3>
+                  <p>{t('services.business.infoCards.growth.description')}</p>
                 </div>
 
                 <div className="info-card">
                   <div className="card-icon">
                     <i className="fas fa-cogs"></i>
                   </div>
-                  <h3>Administrative Excellence</h3>
-                  <p>Strong administrative foundation that supports your entrepreneurial journey every step of the way.</p>
+                  <h3>{t('services.business.infoCards.excellence.title')}</h3>
+                  <p>{t('services.business.infoCards.excellence.description')}</p>
                 </div>
               </div>
             </AnimatedElement>
@@ -101,13 +101,13 @@ export default function BusinessServices() {
             <AnimatedElement animation="roll-in-right" delay={0.3}>
               <div className="form-section">
                 <div className="form-header">
-                  <h2>Let's Build Your Perfect Package</h2>
-                  <p>Tell us about your needs, and we'll create a customized solution just for you.</p>
+                  <h2>{t('services.business.formHeader.title')}</h2>
+                  <p>{t('services.business.formHeader.description')}</p>
                 </div>
 
                 <form className="business-form" onSubmit={handleSubmit}>
                   <div className="form-group">
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="name">{t('services.business.form.name')}</label>
                     <input
                       type="text"
                       id="name"
@@ -119,8 +119,8 @@ export default function BusinessServices() {
                     />
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="contact">Contact Number</label>
+                                    <div className="form-group">
+                    <label htmlFor="contact">{t('services.business.form.contact')}</label>
                     <input
                       type="tel"
                       id="contact"
@@ -133,7 +133,7 @@ export default function BusinessServices() {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="email">E-mail</label>
+                    <label htmlFor="email">{t('services.business.form.email')}</label>
                     <input
                       type="email"
                       id="email"
@@ -146,7 +146,7 @@ export default function BusinessServices() {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="needs">Let us know your needs</label>
+                    <label htmlFor="needs">{t('services.business.form.needs')}</label>
                     <textarea
                       id="needs"
                       name="needs"
@@ -160,7 +160,12 @@ export default function BusinessServices() {
 
                   <button type="submit" className="submit-btn">
                     <i className="fas fa-paper-plane"></i>
-                    Send Request
+                    {t('services.business.form.submit')}
+                  </button>
+
+                  <button type="submit" className="submit-btn">
+                    <i className="fas fa-paper-plane"></i>
+                    {t('services.business.form.submit')}
                   </button>
                 </form>
               </div>
@@ -178,7 +183,7 @@ export default function BusinessServices() {
                 <i className="fas fa-handshake"></i>
               </div>
               <h2>{t('contact.discussBusiness')}</h2>
-              <p>Ready to build a strong administrative foundation for your business? Let's discuss how our customized solutions can support your entrepreneurial journey.</p>
+              <p>{t('services.business.cta.description')}</p>
               <div className="cta-actions">
                 <Link href="/contact" className="btn-primary">
                   {t('contact.discoverMore')}

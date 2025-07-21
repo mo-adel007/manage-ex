@@ -41,7 +41,7 @@ export default function Footer() {
                     <i className="fas fa-phone contact-icon"></i>
                     <div className="contact-info">
                       <span className="contact-label">{t("footer.call")}</span>
-                      <a href="tel:+966530942000" className="contact-value">
+                      <a href="tel:+966530942000" className="contact-value phone-number">
                         +966 53 094 2000
                       </a>
                     </div>
@@ -56,13 +56,13 @@ export default function Footer() {
                       <div className="whatsapp-numbers">
                         <a
                           href="https://wa.me/966532402275"
-                          className="contact-value"
+                          className="contact-value phone-number"
                         >
                           +966 53 240 2275
                         </a>
                         <a
                           href="https://wa.me/966505154013"
-                          className="contact-value"
+                          className="contact-value phone-number"
                         >
                           +966 50 515 4013
                         </a>
@@ -124,7 +124,7 @@ export default function Footer() {
                     <i className="fas fa-phone contact-icon"></i>
                     <div className="contact-info">
                       <span className="contact-label">{t("footer.call")}</span>
-                      <a href="tel:+201150038400" className="contact-value">
+                      <a href="tel:+201150038400" className="contact-value phone-number">
                         (+02) 1150038400
                       </a>
                     </div>
@@ -458,6 +458,26 @@ export default function Footer() {
           line-height: 1.4;
           display: block;
           transition: color 0.3s ease;
+          /* Force Western numerals in Arabic */
+          font-variant-numeric: lining-nums;
+          direction: ltr;
+          text-align: left;
+          unicode-bidi: embed;
+        }
+
+        /* Override for RTL layout */
+        [dir="rtl"] .contact-value {
+          text-align: right;
+          direction: ltr;
+          unicode-bidi: embed;
+        }
+
+        /* Specific styling for phone numbers */
+        .phone-number {
+          font-family: inherit;
+          letter-spacing: 0.25px;
+          font-weight: 600;
+          color: var(--current-text-primary);
         }
 
         .contact-value:hover {
@@ -498,6 +518,22 @@ export default function Footer() {
           font-size: 12px;
           color: var(--current-text-primary);
           font-weight: 500;
+          /* Force Western numerals in Arabic */
+          font-variant-numeric: lining-nums;
+          direction: ltr;
+          unicode-bidi: embed;
+        }
+
+        /* Override for RTL layout */
+        [dir="rtl"] .legal-value {
+          direction: ltr;
+          unicode-bidi: embed;
+        }
+
+        /* Additional styling for numeric values */
+        .legal-value,
+        .phone-number {
+          font-variant-numeric: tabular-nums;
         }
 
         /* Map Section */

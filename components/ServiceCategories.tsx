@@ -126,7 +126,7 @@ export default function ServiceCategories() {
           right: 0;
           background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
           padding: 40px 20px 20px;
-          color: var(--accent-white);
+          color: #ffffff;
         }
 
         .category-overlay h3 {
@@ -134,6 +134,7 @@ export default function ServiceCategories() {
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 1px;
+          color: #ffffff;
         }
 
         @media (max-width: 768px) {

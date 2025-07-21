@@ -137,7 +137,7 @@ export default function WebDevelopmentServices() {
       <style jsx>{`
         .web-hero {
           padding: 120px 0 80px;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
           position: relative;
           overflow: hidden;
         }
@@ -151,6 +151,8 @@ export default function WebDevelopmentServices() {
           bottom: 0;
           background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="code-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><text x="2" y="10" font-family="monospace" font-size="8" fill="%23ffffff" opacity="0.1">{'<>'}</text><text x="2" y="18" font-family="monospace" font-size="8" fill="%23ffffff" opacity="0.1">{'{}'}</text></pattern></defs><rect width="100" height="100" fill="url(%23code-pattern)"/></svg>');
           opacity: 0.3;
+          pointer-events: none;
+          z-index: 1;
         }
 
         .web-hero::after {
@@ -161,7 +163,9 @@ export default function WebDevelopmentServices() {
           right: 0;
           bottom: 0;
           background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                      radial-gradient(circle at 70% 30%, rgba(102,126,234,0.3) 0%, transparent 50%);
+                      radial-gradient(circle at 70% 30%, rgba(91,67,137,0.3) 0%, transparent 50%);
+          pointer-events: none;
+          z-index: 1;
         }
 
         .hero-content {
@@ -169,7 +173,7 @@ export default function WebDevelopmentServices() {
           margin: 0 auto;
           text-align: center;
           position: relative;
-          z-index: 1;
+          z-index: 5;
         }
 
         .back-link {
@@ -182,11 +186,22 @@ export default function WebDevelopmentServices() {
           margin-bottom: 20px;
           transition: all 0.3s ease;
           font-size: 14px;
+          position: relative;
+          z-index: 20;
+          cursor: pointer;
+          pointer-events: auto;
+          background: rgba(255, 255, 255, 0.1);
+          padding: 8px 12px;
+          border-radius: 25px;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .back-link:hover {
           color: white;
           transform: translateX(-5px);
+          background: rgba(255, 255, 255, 0.2);
+          box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
         }
 
         [dir="rtl"] .back-link {
@@ -195,6 +210,8 @@ export default function WebDevelopmentServices() {
 
         [dir="rtl"] .back-link:hover {
           transform: translateX(5px);
+          background: rgba(255, 255, 255, 0.2);
+          box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
         }
 
         [dir="rtl"] .back-link i {
@@ -246,8 +263,8 @@ export default function WebDevelopmentServices() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(45deg, transparent 49%, rgba(102,126,234,0.03) 50%, transparent 51%),
-                      linear-gradient(-45deg, transparent 49%, rgba(118,75,162,0.03) 50%, transparent 51%);
+          background: linear-gradient(45deg, transparent 49%, rgba(91,67,137,0.03) 50%, transparent 51%),
+                      linear-gradient(-45deg, transparent 49%, rgba(194,151,193,0.03) 50%, transparent 51%);
           background-size: 60px 60px;
         }
 
@@ -282,53 +299,53 @@ export default function WebDevelopmentServices() {
         }
 
         .design .service-card::before {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         }
 
         .development .service-card::before {
-          background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+          background: linear-gradient(135deg, var(--secondary-color) 0%, var(--golden-accent) 100%);
         }
 
         .optimization .service-card::before {
-          background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+          background: linear-gradient(135deg, var(--golden-accent) 0%, var(--primary-color) 100%);
         }
 
         .management .service-card::before {
-          background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--golden-accent) 100%);
         }
 
         .integration .service-card::before {
-          background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+          background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
         }
 
         .service-card:hover {
           transform: translateY(-15px) scale(1.02);
-          box-shadow: 0 25px 50px rgba(102, 126, 234, 0.2);
+          box-shadow: 0 25px 50px rgba(91, 67, 137, 0.2);
         }
 
         .design:hover {
-          border-color: #667eea;
-          box-shadow: 0 25px 50px rgba(102, 126, 234, 0.3);
+          border-color: var(--primary-color);
+          box-shadow: 0 25px 50px rgba(91, 67, 137, 0.3);
         }
 
         .development:hover {
-          border-color: #f093fb;
-          box-shadow: 0 25px 50px rgba(240, 147, 251, 0.3);
+          border-color: var(--secondary-color);
+          box-shadow: 0 25px 50px rgba(194, 151, 193, 0.3);
         }
 
         .optimization:hover {
-          border-color: #4facfe;
-          box-shadow: 0 25px 50px rgba(79, 172, 254, 0.3);
+          border-color: var(--golden-accent);
+          box-shadow: 0 25px 50px rgba(139, 124, 200, 0.3);
         }
 
         .management:hover {
-          border-color: #43e97b;
-          box-shadow: 0 25px 50px rgba(67, 233, 123, 0.3);
+          border-color: var(--primary-color);
+          box-shadow: 0 25px 50px rgba(91, 67, 137, 0.3);
         }
 
         .integration:hover {
-          border-color: #fa709a;
-          box-shadow: 0 25px 50px rgba(250, 112, 154, 0.3);
+          border-color: var(--secondary-color);
+          box-shadow: 0 25px 50px rgba(194, 151, 193, 0.3);
         }
 
         .card-glow {
@@ -344,23 +361,23 @@ export default function WebDevelopmentServices() {
         }
 
         .design .card-glow {
-          background: radial-gradient(circle at center, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+          background: radial-gradient(circle at center, rgba(91, 67, 137, 0.1) 0%, transparent 70%);
         }
 
         .development .card-glow {
-          background: radial-gradient(circle at center, rgba(240, 147, 251, 0.1) 0%, transparent 70%);
+          background: radial-gradient(circle at center, rgba(194, 151, 193, 0.1) 0%, transparent 70%);
         }
 
         .optimization .card-glow {
-          background: radial-gradient(circle at center, rgba(79, 172, 254, 0.1) 0%, transparent 70%);
+          background: radial-gradient(circle at center, rgba(139, 124, 200, 0.1) 0%, transparent 70%);
         }
 
         .management .card-glow {
-          background: radial-gradient(circle at center, rgba(67, 233, 123, 0.1) 0%, transparent 70%);
+          background: radial-gradient(circle at center, rgba(91, 67, 137, 0.1) 0%, transparent 70%);
         }
 
         .integration .card-glow {
-          background: radial-gradient(circle at center, rgba(250, 112, 154, 0.1) 0%, transparent 70%);
+          background: radial-gradient(circle at center, rgba(194, 151, 193, 0.1) 0%, transparent 70%);
         }
 
         .service-card:hover .card-glow {
@@ -378,7 +395,7 @@ export default function WebDevelopmentServices() {
           font-size: 24px;
           font-weight: 900;
           color: var(--current-text-secondary);
-          background: rgba(102, 126, 234, 0.1);
+          background: rgba(91, 67, 137, 0.1);
           width: 55px;
           height: 55px;
           border-radius: 15px;
@@ -421,23 +438,23 @@ export default function WebDevelopmentServices() {
         }
 
         .design .service-icon {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         }
 
         .development .service-icon {
-          background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+          background: linear-gradient(135deg, var(--secondary-color) 0%, var(--golden-accent) 100%);
         }
 
         .optimization .service-icon {
-          background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+          background: linear-gradient(135deg, var(--golden-accent) 0%, var(--primary-color) 100%);
         }
 
         .management .service-icon {
-          background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--golden-accent) 100%);
         }
 
         .integration .service-icon {
-          background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+          background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
         }
 
         .service-card:hover .service-number {
@@ -489,7 +506,7 @@ export default function WebDevelopmentServices() {
         .item-bullet {
           width: 22px;
           height: 22px;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -503,7 +520,7 @@ export default function WebDevelopmentServices() {
 
         .service-item:hover .item-bullet {
           transform: scale(1.2);
-          box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+          box-shadow: 0 5px 15px rgba(91, 67, 137, 0.4);
         }
 
         .service-item span {
@@ -519,7 +536,7 @@ export default function WebDevelopmentServices() {
 
         .web-cta {
           padding: 100px 0;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
           color: white;
           text-align: center;
           position: relative;
@@ -599,7 +616,7 @@ export default function WebDevelopmentServices() {
 
         .btn-primary {
           background: white;
-          color: #667eea;
+          color: var(--primary-color);
         }
 
         .btn-primary::before {
@@ -630,7 +647,7 @@ export default function WebDevelopmentServices() {
 
         .btn-secondary:hover {
           background: white;
-          color: #667eea;
+          color: var(--primary-color);
           transform: translateY(-2px);
           box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
         }

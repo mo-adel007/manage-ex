@@ -26,7 +26,6 @@ export default function ContactSection() {
                 </div>
               </div>
               <h2>{t('contact.discussBusiness')}</h2>
-              <Link href="/contact" className="btn-golden">{t('contact.discoverMore')}</Link>
             </div>
           </AnimatedElement>
 

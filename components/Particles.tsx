@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Renderer, Camera, Geometry, Program, Mesh } from "ogl";
+import { useTheme } from "./ThemeProvider";
 
 const defaultColors = ["#2d1856", "#2d1856", "#2d1856"];
 
@@ -163,6 +164,7 @@ const Particles = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
   const [isRTL, setIsRTL] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     // Check if we're in RTL mode
@@ -240,7 +242,6 @@ const Particles = ({
     const positions = new Float32Array(count * 3);
     const randoms = new Float32Array(count * 4);
     const colors = new Float32Array(count * 3);
-    const palette = particleColors && particleColors.length > 0 ? particleColors : defaultColors;
 
     for (let i = 0; i < count; i++) {
       let x, y, z, len;
@@ -253,8 +254,13 @@ const Particles = ({
       const r = Math.cbrt(Math.random());
       positions.set([x * r, y * r, z * r], i * 3);
       randoms.set([Math.random(), Math.random(), Math.random(), Math.random()], i * 4);
-      const col = hexToRgb(palette[Math.floor(Math.random() * palette.length)]);
-      colors.set(col, i * 3);
+      
+      // Set particle colors based on theme
+      if (theme === 'light') {
+        colors.set([0, 0, 0], i * 3); // Pure black RGB values for light theme
+      } else {
+        colors.set([1, 1, 1], i * 3); // Pure white RGB values for dark theme
+      }
     }
 
     const geometry = new Geometry(gl, {
@@ -341,6 +347,7 @@ const Particles = ({
     contrastLevel,
     saturationLevel,
     isRTL,
+    theme,
   ]);
 
   return (

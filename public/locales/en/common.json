@@ -176,7 +176,7 @@
     },
     "hr": {
       "title": "HR Solutions",
-      "description": "ManageEX offers integrated, modern HR solutions that empower companies to build strong teams and achieve optimal operational efficiency. We support our clients in managing their human resources professionally while ensuring compliance with internal policies and labor regulations. We also provide a comprehensive onboarding experience that helps business owners understand the value of HR and avoid legal or financial risks caused by poor management.",
+      "description": "ManageEX offers integrated, modern HR solutions that empower companies to build strong teams and achieve optimal operational efficiency. We support our clients in managing their human resources professionally.",
       "cta": "Ready to transform your HR processes and build a stronger workforce? Let's discuss your specific needs.",
       "services": {
         "recruitment": {
@@ -365,11 +365,33 @@
       "title": "Business Services",
       "subtitle": "Customized services, just for you",
       "description": "At ManageEx, we understand that entrepreneurs need more than just strong ideas — they need a solid administrative foundation that supports their journey. That's why our Business Services offer integrated solutions designed to empower companies, drive sustainable growth, and enhance operational efficiency — all while keeping full focus on core objectives.",
+      "formHeader": {
+        "title": "Let's Build Your Perfect Package",
+        "description": "Tell us about your needs, and we'll create a customized solution just for you."
+      },
+      "infoCards": {
+        "tailored": {
+          "title": "Tailored Solutions",
+          "description": "We create customized business packages that align perfectly with your specific needs and goals."
+        },
+        "growth": {
+          "title": "Growth-Focused",
+          "description": "Our services are designed to drive sustainable growth while maintaining operational efficiency."
+        },
+        "excellence": {
+          "title": "Administrative Excellence",
+          "description": "Strong administrative foundation that supports your entrepreneurial journey every step of the way."
+        }
+      },
       "form": {
         "name": "Name",
         "contact": "Contact Number",
         "email": "E-mail",
-        "needs": "Let us know your needs — we'll build your perfect package."
+        "needs": "Let us know your needs — we'll build your perfect package.",
+        "submit": "Send Request"
+      },
+      "cta": {
+        "description": "Ready to build a strong administrative foundation for your business? Let's discuss how our customized solutions can support your entrepreneurial journey."
       }
     },
     "hrSolutions": {
