@@ -692,11 +692,11 @@ export default function Footer() {
         }
 
         .social-link.twitter {
-          background: #1d9bf0;
+          background: #000;
         }
 
         .social-link.twitter:hover {
-          background: #1a8cd8;
+          background: #333;
         }
 
         .social-link.behance {

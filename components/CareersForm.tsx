@@ -289,7 +289,11 @@ export default function CareersForm() {
                         </div>
                         <div className="contact-details">
                           <p className="contact-label">{t('careers.form.phone')}</p>
-                          <p className="contact-value">{t('contact.info.phone')}</p>
+                          <p className="contact-value">
+                            <span style={{ direction: 'ltr', unicodeBidi: 'embed' }}>
+                              {t('contact.info.phone')}
+                            </span>
+                          </p>
                         </div>
                       </div>
                       <div className="contact-item">

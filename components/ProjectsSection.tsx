@@ -42,7 +42,7 @@ export default function ProjectsSection() {
   { name: "gawda", logo: "/logos/gawda.svg" },
   { name: "hmasri", logo: "/logos/hmasri.svg" },
   { name: "holol", logo: "/logos/holol.svg" },
-  { name: "itaf", logo: "/logos/itaf.svg" },
+  { name: "itaf", logo: "/logos/itfaa.svg" },
   { name: "kanan", logo: "/logos/kanan.svg" },
   { name: "kunooz", logo: "/logos/kunooz.svg" },
   { name: "maan", logo: "/logos/maan.svg" },
@@ -115,8 +115,8 @@ export default function ProjectsSection() {
                               <Image
                                 src={partner.logo}
                                 alt={partner.name}
-                                width={120}
-                                height={80}
+                                width={200}
+                                height={180}
                                 className="logo-image"
                               />
                             </div>
@@ -248,8 +248,8 @@ export default function ProjectsSection() {
         }
 
         .logo-container {
-          width: 150px;
-          height: 100px;
+          width: 180px;
+          height: 150px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -290,11 +290,9 @@ export default function ProjectsSection() {
         }
 
         .logo-image {
-          width: 100%;
-          height: 100%;
+          width: 120px !important;
+          height: 100px !important;
           object-fit: contain;
-          max-width: 120px;
-          max-height: 80px;
           filter: grayscale(100%) opacity(0.7);
           transition: all 0.4s ease;
         }
@@ -422,14 +420,16 @@ export default function ProjectsSection() {
           }
 
           .logo-container {
-            width: 140px;
-            height: 95px;
+            width: 160px;
+            height: 130px;
             padding: 15px;
           }
 
           .logo-image {
-            max-width: 110px;
-            max-height: 75px;
+            width: 130px !important;
+            height: 100px !important;
+            max-width: 130px;
+            max-height: 100px;
           }
         }
 
@@ -462,14 +462,16 @@ export default function ProjectsSection() {
           }
 
           .logo-container {
-            width: 130px;
-            height: 90px;
+            width: 150px;
+            height: 120px;
             padding: 12px;
           }
 
           .logo-image {
-            max-width: 100px;
-            max-height: 70px;
+            width: 120px !important;
+            height: 90px !important;
+            max-width: 120px;
+            max-height: 90px;
           }
 
           .slider-btn {
@@ -531,14 +533,16 @@ export default function ProjectsSection() {
           }
 
           .logo-container {
-            width: 120px;
-            height: 80px;
+            width: 140px;
+            height: 110px;
             padding: 10px;
           }
 
           .logo-image {
-            max-width: 90px;
-            max-height: 60px;
+            width: 110px !important;
+            height: 80px !important;
+            max-width: 110px;
+            max-height: 80px;
           }
 
           .slider-controls {

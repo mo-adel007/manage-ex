@@ -29,7 +29,11 @@ export default function ContactInfoSection() {
               </div>
               <div className="contact-content">
                 <h4>{t('contact.email')}</h4>
-                <p>{t('contact.info.email')}<br />{t('contact.info.phone')}</p>
+                <p>
+                  <span style={{ direction: 'ltr', unicodeBidi: 'embed' }}>{t('contact.info.email')}</span>
+                  <br />
+                  <span style={{ direction: 'ltr', unicodeBidi: 'embed' }}>{t('contact.info.phone')}</span>
+                </p>
               </div>
             </div>
           </AnimatedElement>

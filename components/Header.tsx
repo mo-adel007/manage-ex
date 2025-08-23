@@ -186,7 +186,7 @@ export default function Header() {
               <Link href="https://wa.me/966532402275" className="mobile-social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i className="fab fa-whatsapp"></i></Link>
               <Link href="https://www.tiktok.com/@manageex?_t=ZS-8y4dVn5zen2&_r=1" className="mobile-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i className="fab fa-tiktok"></i></Link>
               <Link href="https://www.linkedin.com/company/104369975" className="mobile-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></Link>
-              <Link href="https://x.com/ManageEx" className="mobile-social-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i className="fab fa-x-twitter"></i></Link>
+              <Link href="https://x.com/ManageEx" className="mobile-social-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i className="fab fa-x"></i></Link>
               <Link href="https://www.behance.net/manageexcompany1" className="mobile-social-link" aria-label="Behance" target="_blank" rel="noopener noreferrer"><i className="fab fa-behance"></i></Link>
               <Link href="https://www.snapchat.com/add/ManageEX" className="mobile-social-link" aria-label="Snapchat" target="_blank" rel="noopener noreferrer"><i className="fab fa-snapchat-ghost"></i></Link>
             </div>
@@ -627,7 +627,7 @@ export default function Header() {
           left: auto;
           right: 0;
         }
-
+  
         .mobile-nav-footer {
           padding: 20px;
           border-top: 2px solid rgba(91, 67, 137, 0.1);
@@ -655,6 +655,18 @@ export default function Header() {
           background: rgba(91, 67, 137, 0.08);
           text-decoration: none;
           border: 1px solid rgba(91, 67, 137, 0.15);
+        }
+
+        /* X (Twitter) variant for mobile */
+        .mobile-social-link[aria-label="X (Twitter)"] {
+          background: #000;
+          border-color: #000;
+        }
+
+        .mobile-social-link[aria-label="X (Twitter)"]:hover {
+          background: #333;
+          border-color: #333;
+          color: #fff;
         }
 
         .mobile-social-link:hover {

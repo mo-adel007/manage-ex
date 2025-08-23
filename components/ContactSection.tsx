@@ -51,9 +51,9 @@ export default function ContactSection() {
                   <div className="info-content">
                     <h4>{t('contact.email')}</h4>
                     <p>
-                      {t('contact.info.email')}
+                      <span style={{ direction: 'ltr', unicodeBidi: 'embed' }}>{t('contact.info.email')}</span>
                       <br />
-                      {t('contact.info.phone')}
+                      <span style={{ direction: 'ltr', unicodeBidi: 'embed' }}>{t('contact.info.phone')}</span>
                     </p>
                   </div>
                 </div>
