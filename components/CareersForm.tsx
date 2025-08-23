@@ -359,7 +359,6 @@ export default function CareersForm() {
         }
 
         .careers-section {
-          margin-top: 80px;
           padding: 96px 0;
           min-height: 100vh;
         }
@@ -368,6 +367,7 @@ export default function CareersForm() {
           max-width: 1280px;
           margin: 0 auto;
           padding: 0 16px;
+          margin-top: 30px
         }
 
         .section-header {

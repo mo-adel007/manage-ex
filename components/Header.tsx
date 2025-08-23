@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/router'
 import { useTheme } from './ThemeProvider'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useTranslation } from 'next-i18next'
@@ -11,7 +11,13 @@ import { useTranslation } from 'next-i18next'
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const pathname = usePathname()
+  // Use Pages Router; derive a locale-agnostic pathname for active link detection
+  const router = useRouter()
+  const rawPath = (router.asPath || '/').split('?')[0].split('#')[0]
+  const localePrefix = router.locale ? `/${router.locale}` : ''
+  const pathname = rawPath.startsWith(localePrefix) && localePrefix
+    ? rawPath.slice(localePrefix.length) || '/'
+    : rawPath || '/'
   const { theme, toggleTheme } = useTheme()
   const { t } = useTranslation('common')
 
@@ -97,11 +103,11 @@ export default function Header() {
             {/* Desktop Navigation */}
             <nav className="desktop-nav">
               <ul className="nav-list">
-                {desktopNavLinks.map((link) => (
+        {desktopNavLinks.map((link) => (
                   <li key={link.href} className="nav-item">
                     <Link
-                      href={link.href}
-                      className={`nav-link ${pathname === link.href ? 'active' : ''}`}
+          href={link.href}
+          className={`nav-link ${pathname === (link.href || '/') ? 'active' : ''}`}
                       prefetch={true}
                     >
                       {link.label}
@@ -161,11 +167,11 @@ export default function Header() {
           
           <div className="mobile-nav-body">
             <ul className="mobile-nav-list">
-              {mobileNavLinks.map((link) => (
+      {mobileNavLinks.map((link) => (
                 <li key={link.href} className="mobile-nav-item">
                   <Link
                     href={link.href}
-                    className={`mobile-nav-link ${pathname === link.href ? 'active' : ''}`}
+        className={`mobile-nav-link ${pathname === (link.href || '/') ? 'active' : ''}`}
                     onClick={handleLinkClick}
                     prefetch={true}
                   >

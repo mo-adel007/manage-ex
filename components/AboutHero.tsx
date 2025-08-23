@@ -30,15 +30,17 @@ export default function AboutHero() {
           padding: 120px 0 80px;
           background: var(--current-bg-primary);
           text-align: center;
-          margin-top: 80px;
         }
 
         .hero-content {
+        
           max-width: 900px;
           margin: 0 auto;
         }
 
         .section-tag {
+                  margin-top: 80px;
+
           display: inline-block;
           padding: 8px 16px;
           background: linear-gradient(135deg, var(--primary-color) 0%, var(--golden-accent) 100%);
